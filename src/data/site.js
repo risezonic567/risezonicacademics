@@ -1,0 +1,45 @@
+export const siteConfig = {
+  name: "Risezonic Academics",
+  shortName: "Risezonic",
+  subName: "Academics",
+  tagline: "Live mentors, real campaigns and placement support, all in one program.",
+  description:
+    "Risezonic Academics is a premier digital marketing training academy offering mentor-led, project-based courses with dedicated placement assistance.",
+  url: "https://academics.risezonic.com",
+  announcement: {
+    text: "New batch starts [date] | Free demo class | Reserve a seat",
+    batchDate: "[date]",
+  },
+  contact: {
+    phone: "[+91 00000 00000]",
+    whatsapp: "[+91 00000 00000]",
+    whatsappLink: "https://wa.me/910000000000?text=[Hi%20Risezonic%20Academics]",
+    email: "[admissions@risezonic.com]",
+    address: "[Rise Tower, Knowledge Park, Cyber City, India]",
+    hours: "[Mon - Sat: 9:00 AM - 7:00 PM]",
+    mapLabel: "Map: add Google Maps embed here",
+  },
+  navLinks: [
+    { label: "Home", href: "/" },
+    { label: "Courses", href: "/courses", hasDropdown: true },
+    { label: "Placement", href: "/placement" },
+    { label: "About", href: "/about" },
+    { label: "Blog", href: "/blog" },
+    { label: "Contact", href: "/contact" },
+  ],
+  socials: {
+    linkedin: "https://linkedin.com/company/[risezonic-academics]",
+    instagram: "https://instagram.com/[risezonicacademics]",
+    youtube: "https://youtube.com/@[risezonicacademics]",
+    twitter: "https://x.com/[risezonic]",
+  },
+  stats: {
+    studentsTrained: "[00+]",
+    projectsBuilt: "[00+]",
+    placementRate: "[00%]",
+    mentorsCount: "[00+]",
+    rating: "[0.0]",
+    highestPackage: "[00 LPA]",
+    averagePackage: "[00 LPA]",
+  },
+};

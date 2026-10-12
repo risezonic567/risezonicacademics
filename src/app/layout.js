@@ -1,0 +1,58 @@
+import { Gabarito, Albert_Sans } from "next/font/google";
+import "./globals.css";
+import { siteConfig } from "@/data/site";
+import { LeadModalProvider } from "@/components/modal/LeadModalProvider";
+import { AnnouncementBar } from "@/components/layout/AnnouncementBar";
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
+import { StickyMobileCta } from "@/components/layout/StickyMobileCta";
+
+const gabarito = Gabarito({
+  subsets: ["latin"],
+  weight: ["600", "700"],
+  variable: "--font-gabarito",
+  display: "swap",
+});
+
+const albertSans = Albert_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-albert-sans",
+  display: "swap",
+});
+
+export const metadata = {
+  title: {
+    default: `${siteConfig.name} | Digital Marketing Training Academy`,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  metadataBase: new URL(siteConfig.url),
+  icons: {
+    icon: "/favicon.ico",
+  },
+};
+
+export default function RootLayout({ children }) {
+  return (
+    <html
+      lang="en"
+      data-scroll-behavior="smooth"
+      suppressHydrationWarning
+      className={`${gabarito.variable} ${albertSans.variable} scroll-smooth antialiased`}
+    >
+      <body
+        suppressHydrationWarning
+        className="min-h-screen bg-bg text-text font-sans flex flex-col selection:bg-accent selection:text-bg"
+      >
+        <LeadModalProvider>
+          <AnnouncementBar />
+          <Navbar />
+          <main className="flex-1 w-full">{children}</main>
+          <Footer />
+          <StickyMobileCta />
+        </LeadModalProvider>
+      </body>
+    </html>
+  );
+}
