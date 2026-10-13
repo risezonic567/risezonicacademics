@@ -36,12 +36,6 @@ function CounterItem({ icon: Icon, value, label, index }) {
       variant="surface"
       className="p-6 sm:p-8 flex flex-col items-center text-center relative overflow-hidden group hover:border-accent/40"
     >
-      {/* Glow highlight on hover */}
-      <div
-        aria-hidden="true"
-        className="absolute -top-12 -right-12 w-28 h-28 bg-accent/5 rounded-full blur-2xl group-hover:bg-accent/15 transition-all duration-500"
-      />
-
       <div className="w-12 h-12 rounded-2xl bg-surface-2 border border-line flex items-center justify-center text-accent mb-4 group-hover:border-accent/40 group-hover:scale-105 transition-all duration-300">
         <Icon className="w-6 h-6" />
       </div>
@@ -91,7 +85,7 @@ export function Stats() {
   ];
 
   return (
-    <section className="py-20 sm:py-28 bg-bg relative">
+    <section className="py-20 sm:py-28 bg-light relative">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {statsData.map((stat, index) => (

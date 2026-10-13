@@ -85,7 +85,7 @@ export default async function BlogPostPage({ params }) {
       />
 
       {/* Header Section */}
-      <header className="pt-12 sm:pt-16 pb-10 bg-surface/30 border-b border-line">
+      <header className="pt-12 sm:pt-16 pb-10 bg-surface border-b border-line">
         <div className="max-w-[840px] mx-auto px-5 sm:px-8">
           {/* Breadcrumb */}
           <nav
@@ -107,7 +107,7 @@ export default async function BlogPostPage({ params }) {
 
           {/* Category Badge & Meta */}
           <div className="flex items-center gap-3 mb-4">
-            <span className="px-3 py-1 rounded-full bg-accent/15 border border-accent/30 text-light text-xs font-semibold uppercase tracking-wider">
+            <span className="px-3 py-1 rounded-full bg-accent/15 border border-accent/30 text-accent text-xs font-semibold uppercase tracking-wider">
               {post.category}
             </span>
             <span className="text-xs text-muted flex items-center gap-1.5">
@@ -134,7 +134,7 @@ export default async function BlogPostPage({ params }) {
       {/* Body Container */}
       <div className="max-w-[720px] mx-auto px-5 sm:px-8 py-12 sm:py-16">
         {/* Featured Image Placeholder */}
-        <div className="w-full aspect-[16/9] rounded-2xl bg-gradient-to-br from-surface-2 via-surface to-bg border border-accent/25 flex flex-col items-center justify-center p-6 text-center mb-10 shadow-xl relative overflow-hidden">
+        <div className="w-full aspect-[16/9] rounded-2xl bg-surface-2 border border-line flex flex-col items-center justify-center p-6 text-center mb-10 relative overflow-hidden">
           <div className="absolute inset-0">
             <SiteImage
               image={post.image}
@@ -159,7 +159,7 @@ export default async function BlogPostPage({ params }) {
               );
             }
             return (
-              <p key={index} className="text-text/90 leading-[1.75]">
+              <p key={index} className="text-muted leading-[1.75]">
                 {block.text}
               </p>
             );
@@ -173,7 +173,7 @@ export default async function BlogPostPage({ params }) {
         </div>
 
         {/* Mid-Article CTA Card */}
-        <div className="mt-14 rounded-2xl bg-gradient-to-r from-surface via-surface-2 to-surface border border-accent/40 p-6 sm:p-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
+        <div className="mt-14 rounded-2xl bg-surface border border-line p-6 sm:p-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="space-y-1">
             <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-accent uppercase tracking-wider">
               <Sparkles className="w-3.5 h-3.5" />

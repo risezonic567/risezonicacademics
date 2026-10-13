@@ -41,7 +41,7 @@ export function BlogList({ posts = [] }) {
               onClick={() => setSelectedCategory(cat)}
               className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer select-none ${
                 isActive
-                  ? "bg-primary text-bg shadow-md shadow-primary/15"
+                  ? "bg-light text-accent"
                   : "bg-surface border border-line text-muted hover:text-text hover:border-primary/40"
               }`}
             >
@@ -67,7 +67,7 @@ export function BlogList({ posts = [] }) {
                 >
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                     {/* Visual Placeholder (5 cols) */}
-                    <div className="lg:col-span-5 aspect-[16/10] rounded-2xl bg-gradient-to-br from-surface-2 via-surface to-bg border border-line flex flex-col items-center justify-center p-6 text-center relative overflow-hidden group-hover:border-accent/40 transition-colors">
+                    <div className="lg:col-span-5 aspect-[16/10] rounded-2xl bg-surface-2 border border-line flex flex-col items-center justify-center p-6 text-center relative overflow-hidden group-hover:border-accent/40 transition-colors">
                       <div className="absolute inset-0">
                         <SiteImage
                           image={featuredPost.image}
@@ -82,7 +82,7 @@ export function BlogList({ posts = [] }) {
                     <div className="lg:col-span-7 flex flex-col justify-between">
                       <div>
                         <div className="flex items-center gap-3 mb-3">
-                          <span className="px-2.5 py-0.5 rounded-full bg-accent/15 border border-accent/30 text-light text-xs font-semibold uppercase tracking-wider">
+                          <span className="px-2.5 py-0.5 rounded-full bg-accent/15 border border-accent/30 text-accent text-xs font-semibold uppercase tracking-wider">
                             {featuredPost.category}
                           </span>
                           <span className="text-xs text-muted flex items-center gap-1.5">
@@ -191,7 +191,7 @@ export function BlogList({ posts = [] }) {
 
       {/* 5. CTA Strip */}
       <Reveal>
-        <div className="rounded-[22px] bg-gradient-to-r from-surface via-surface-2 to-surface border border-accent/35 p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl text-center md:text-left">
+        <div className="rounded-[22px] bg-surface border border-line p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
           <div className="space-y-1">
             <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-accent uppercase tracking-wider mb-1">
               <Sparkles className="w-3.5 h-3.5" />

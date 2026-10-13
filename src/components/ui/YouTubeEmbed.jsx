@@ -34,7 +34,7 @@ export function YouTubeEmbed({ video = demoClass }) {
         type="button"
         aria-label="Play video"
         onClick={() => setIsPlaying(true)}
-        className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/70 bg-black/60 text-white"
+        className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-line bg-surface text-text"
       >
         <svg
           aria-hidden="true"

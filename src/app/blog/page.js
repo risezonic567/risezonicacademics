@@ -13,7 +13,7 @@ export default function BlogPage() {
   return (
     <div className="bg-bg text-text min-h-screen">
       {/* 1. Header */}
-      <section className="pt-12 sm:pt-16 pb-12 sm:pb-16 bg-surface/30 border-b border-line relative overflow-hidden">
+      <section className="pt-12 sm:pt-16 pb-12 sm:pb-16 bg-surface border-b border-line relative overflow-hidden">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           {/* Breadcrumb */}
           <nav
@@ -29,7 +29,7 @@ export default function BlogPage() {
 
           <div className="max-w-3xl">
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold font-heading text-text leading-[1.12] tracking-tight mb-4">
-              Digital marketing <span className="text-accent">blog</span>
+              Digital marketing <span className="text-text">blog</span>
             </h1>
             <p className="text-base sm:text-lg text-muted leading-relaxed">
               Actionable guides, paid media strategies, SEO teardowns, and interview tactics from active practitioners.

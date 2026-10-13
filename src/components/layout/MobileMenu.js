@@ -43,7 +43,7 @@ export function MobileMenu({ isOpen, onClose }) {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
             onClick={onClose}
-            className="fixed inset-0 z-50 bg-black/60 lg:hidden"
+            className="fixed inset-0 z-50 bg-black/50 lg:hidden"
             aria-hidden="true"
           />
 
@@ -60,7 +60,7 @@ export function MobileMenu({ isOpen, onClose }) {
               {/* Header */}
               <div className="p-5 border-b border-line flex items-center justify-between">
                 <Link href="/" onClick={onClose} className="flex items-center gap-2.5">
-                  <div className="w-9 h-9 rounded-md bg-primary text-bg flex items-center justify-center font-heading font-bold text-lg">
+                  <div className="w-9 h-9 rounded-md bg-primary text-ink flex items-center justify-center font-heading font-bold text-lg">
                     R
                   </div>
                   <div className="flex items-baseline gap-2 font-heading text-xl font-bold text-text">
@@ -89,7 +89,7 @@ export function MobileMenu({ isOpen, onClose }) {
                         onClick={onClose}
                         className={`flex items-center justify-between px-3 py-3 rounded-md text-lg font-medium transition-colors ${
                           isActive
-                            ? "bg-primary/10 text-accent"
+                            ? "bg-light text-accent"
                             : "text-text hover:bg-surface-2"
                         }`}
                       >

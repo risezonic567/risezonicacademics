@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import {
-  ArrowRight,
   Star,
   Award,
   TrendingUp,
@@ -50,23 +49,7 @@ export function Hero() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-bg pt-10 sm:pt-16 pb-0">
-      {/* Decorative Background Elements (aria-hidden) */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden"
-      >
-        {/* Concentric Circle 1 (520px, accent at 12% opacity) */}
-        <div className="absolute top-[120px] h-[520px] w-[520px] rounded-full border border-accent/12" />
-
-        {/* Concentric Circle 2 (360px, accent at 18% opacity) */}
-        <div className="absolute top-[200px] h-[360px] w-[360px] rounded-full border border-accent/18" />
-
-        {/* Large soft teal circle bleeding off the bottom center (about 460 by 300px, primary at 20% opacity) */}
-        <div className="absolute bottom-[-100px] left-1/2 h-[300px] w-[460px] -translate-x-1/2 rounded-full bg-primary/20 blur-[90px]" />
-      </div>
-
-      {/* Top Centered Content Block */}
+    <section className="relative overflow-hidden bg-surface pt-10 sm:pt-16 pb-0 border-b border-line">
       <div className="relative z-10 mx-auto max-w-[720px] px-5 sm:px-8 text-center">
         <motion.div
           variants={containerVariants}
@@ -87,7 +70,7 @@ export function Hero() {
               </span>
               <span
                 aria-hidden="true"
-                className="block text-accent h-[1.3em] overflow-hidden relative mt-1 sm:mt-2"
+                className="block text-text h-[1.3em] overflow-hidden relative mt-1 sm:mt-2"
               >
                 {shouldReduceMotion ? (
                   <span>get hired</span>
@@ -99,7 +82,7 @@ export function Hero() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -22 }}
                       transition={{ duration: 0.4, ease: "easeInOut" }}
-                      className="inline-block"
+                      className="inline-block text-accent"
                     >
                       {rotatingWords[wordIndex]}
                     </motion.span>
@@ -125,15 +108,14 @@ export function Hero() {
               source="hero"
               variant="primary"
               size="lg"
-              className="w-full sm:w-auto px-7 py-3.5 text-sm sm:text-base font-bold shadow-lg shadow-primary/20"
+              className="w-full sm:w-auto px-7 py-3.5 text-sm sm:text-base font-bold"
             >
               <span>Register now</span>
-              <ArrowRight className="w-4 h-4 ml-1.5" />
             </OpenModalButton>
 
             <Link
               href="/courses"
-              className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 rounded-xl border border-white/25 text-white hover:border-accent hover:text-accent font-semibold transition-all text-sm sm:text-base active:scale-[0.98]"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 rounded-xl border border-line text-text hover:border-primary hover:text-accent font-semibold transition-colors text-sm sm:text-base active:scale-[0.98]"
             >
               Explore courses
             </Link>
@@ -149,7 +131,7 @@ export function Hero() {
               <div className="h-6 w-6 rounded-full border-2 border-bg bg-surface-2 flex items-center justify-center text-[10px] text-accent font-bold">
                 <SiteImage image={images.avatars[0]} className="rounded-full object-cover" sizes="24px" fill />
               </div>
-              <div className="h-6 w-6 rounded-full border-2 border-bg bg-primary/30 flex items-center justify-center text-[10px] text-light font-bold">
+              <div className="h-6 w-6 rounded-full border-2 border-bg bg-light flex items-center justify-center text-[10px] text-accent font-bold">
                 <SiteImage image={images.avatars[1]} className="rounded-full object-cover" sizes="24px" fill />
               </div>
               <div className="h-6 w-6 rounded-full border-2 border-bg bg-accent/30 flex items-center justify-center text-[10px] text-accent font-bold">
@@ -176,9 +158,7 @@ export function Hero() {
         transition={{ duration: 0.7, delay: 0.35, ease: [0.21, 0.47, 0.32, 0.98] }}
         className="relative mx-auto mt-9 sm:mt-12 px-4 sm:px-7 max-w-[1200px]"
       >
-        <div className="relative rounded-t-[20px] border border-b-0 border-accent/40 bg-surface shadow-2xl overflow-visible">
-          {/* Top Edge Floating Chips */}
-          {/* Chip Left: Certificate */}
+        <div         className="relative rounded-t-[20px] border border-b-0 border-line bg-light overflow-visible">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={
@@ -202,13 +182,12 @@ export function Hero() {
                     },
                   }
             }
-            className="absolute -top-3.5 sm:-top-4 left-4 sm:left-10 z-20 flex items-center gap-1.5 rounded-full border border-accent/40 bg-surface-2 px-3 py-1 text-[11px] sm:text-xs font-semibold text-text shadow-lg backdrop-blur-md"
+            className="absolute -top-3.5 sm:-top-4 left-4 sm:left-10 z-20 flex items-center gap-1.5 rounded-full border border-line bg-surface px-3 py-1 text-[11px] sm:text-xs font-semibold text-text"
           >
             <Award className="h-3.5 w-3.5 text-accent" />
             <span>Certificate</span>
           </motion.div>
 
-          {/* Chip Right: Placement */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={
@@ -233,14 +212,13 @@ export function Hero() {
                     },
                   }
             }
-            className="absolute -top-3.5 sm:-top-4 right-4 sm:right-10 z-20 flex items-center gap-1.5 rounded-full border border-accent/40 bg-surface-2 px-3 py-1 text-[11px] sm:text-xs font-semibold text-text shadow-lg backdrop-blur-md"
+            className="absolute -top-3.5 sm:-top-4 right-4 sm:right-10 z-20 flex items-center gap-1.5 rounded-full border border-line bg-surface px-3 py-1 text-[11px] sm:text-xs font-semibold text-text"
           >
             <TrendingUp className="h-3.5 w-3.5 text-accent" />
             <span>[00%] placement</span>
           </motion.div>
 
-          {/* Main Visual Frame (Banner photo placeholder block) */}
-          <div className="relative w-full aspect-[16/10] sm:h-[235px] lg:h-[340px] flex items-center justify-center bg-gradient-to-b from-surface-2/80 via-surface to-bg/90 overflow-hidden">
+          <div className="relative w-full aspect-[16/10] sm:h-[235px] lg:h-[340px] flex items-center justify-center bg-surface-2 overflow-hidden">
             <SiteImage
               image={images.hero}
               fill
@@ -254,9 +232,9 @@ export function Hero() {
               initial={{ opacity: 0, scale: 0.85 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.65, duration: 0.4 }}
-              className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 z-20 w-[140px] sm:w-[170px] rounded-xl border border-line bg-surface-2/95 p-3 shadow-xl backdrop-blur-md"
+              className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 z-20 w-[140px] sm:w-[170px] rounded-xl border border-line bg-surface-2 p-3"
             >
-              <div className="text-[10px] sm:text-xs font-medium text-muted uppercase tracking-wider">
+              <div className="text-[10px] sm:text-xs font-medium text-muted">
                 Campaign results
               </div>
               <div className="mt-0.5 text-base sm:text-xl font-bold font-heading text-accent">
@@ -287,7 +265,7 @@ export function Hero() {
               initial={{ opacity: 0, scale: 0.85 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.7, duration: 0.4 }}
-              className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 z-20 w-[140px] sm:w-[170px] rounded-xl border border-line bg-surface-2/95 p-3 shadow-xl backdrop-blur-md text-left"
+              className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 z-20 w-[140px] sm:w-[170px] rounded-xl border border-line bg-surface-2 p-3 text-left"
             >
               <div className="flex items-center gap-1.5">
                 <span className="relative flex h-[7px] w-[7px]">
@@ -300,7 +278,7 @@ export function Hero() {
               </div>
 
               <div className="mt-2 flex items-center gap-2">
-                <div className="h-[28px] w-[28px] sm:h-[30px] sm:w-[30px] rounded-full bg-primary/20 border border-primary/40 flex items-center justify-center text-[10px] text-accent font-bold shrink-0">
+                <div className="h-[28px] w-[28px] sm:h-[30px] sm:w-[30px] rounded-full bg-light border border-primary/40 flex items-center justify-center text-[10px] text-accent font-bold shrink-0">
                   M
                 </div>
                 <div className="min-w-0">

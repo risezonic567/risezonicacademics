@@ -10,7 +10,7 @@ import { SiteImage } from "@/components/ui/SiteImage";
 
 export function Mentors() {
   return (
-    <section className="py-20 sm:py-28 bg-surface/40 border-y border-line relative">
+    <section className="py-20 sm:py-28 bg-surface border-y border-line relative">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
         <SectionHeading
           title="Learn Directly from Active Practitioners"
@@ -40,7 +40,7 @@ export function Mentors() {
                       />
                     </div>
 
-                    <div className="absolute bottom-0 right-0 p-1.5 rounded-full bg-primary text-bg shadow-md">
+                    <div className="absolute bottom-0 right-0 p-1.5 rounded-full bg-primary text-ink">
                       <UserCheck className="w-3.5 h-3.5" />
                     </div>
                   </div>

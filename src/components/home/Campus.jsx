@@ -78,7 +78,7 @@ export function Campus() {
                 key={item.id}
                 className={`${item.colSpan} h-full`}
               >
-                <div className="h-full w-full rounded-[20px] bg-surface border border-line hover:border-primary/50 transition-all duration-300 p-6 flex flex-col justify-between group overflow-hidden relative shadow-lg">
+                <div className="h-full w-full rounded-[20px] bg-surface border border-line hover:border-primary/50 transition-all duration-300 p-6 flex flex-col justify-between group overflow-hidden relative">
                   <div className="absolute inset-0">
                     <SiteImage
                       image={images.campus[Number(item.id.slice(-1)) - 1]}
@@ -87,16 +87,6 @@ export function Campus() {
                       className="object-cover"
                     />
                   </div>
-                  {/* Pattern & Background Glow */}
-                  <div
-                    aria-hidden="true"
-                    className="absolute inset-0 opacity-[0.04] bg-[radial-gradient(#2DD4BF_1px,transparent_1px)] [background-size:16px_16px]"
-                  />
-                  <div
-                    aria-hidden="true"
-                    className="absolute -bottom-8 -right-8 w-24 h-24 bg-accent/5 rounded-full blur-xl group-hover:bg-accent/15 transition-all"
-                  />
-
                   {/* Top Header */}
                   <div className="relative z-10 flex items-center justify-between">
                     <div className="w-10 h-10 rounded-xl bg-surface-2 border border-line text-accent flex items-center justify-center group-hover:scale-105 transition-transform">

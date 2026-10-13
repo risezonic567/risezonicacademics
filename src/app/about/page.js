@@ -86,7 +86,7 @@ export default function AboutPage() {
   return (
     <div className="bg-bg text-text min-h-screen">
       {/* 1. Page Header */}
-      <section className="pt-12 sm:pt-16 pb-12 sm:pb-16 bg-surface/30 border-b border-line relative overflow-hidden">
+      <section className="pt-12 sm:pt-16 pb-12 sm:pb-16 bg-surface border-b border-line relative overflow-hidden">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           {/* Breadcrumb */}
           <nav
@@ -105,7 +105,7 @@ export default function AboutPage() {
 
           <div className="max-w-3xl">
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold font-heading text-text leading-[1.12] tracking-tight mb-5">
-              About <span className="text-accent">Risezonic Academics</span>
+              About <span className="text-text">Risezonic Academics</span>
             </h1>
             <p className="text-base sm:text-lg text-muted leading-relaxed">
               Bridging the gap between theoretical marketing concepts and high-impact digital execution through mentor-led, project-driven training.
@@ -154,7 +154,7 @@ export default function AboutPage() {
             {/* Image Placeholder Block (5 cols) */}
             <div className="lg:col-span-5">
               <Reveal delay={0.15}>
-                <div className="relative rounded-[24px] bg-gradient-to-br from-surface via-surface to-surface-2 border border-accent/35 p-8 shadow-2xl overflow-hidden aspect-[4/3] flex flex-col justify-between">
+                <div className="relative rounded-[24px] bg-surface border border-line p-8 overflow-hidden aspect-[4/3] flex flex-col justify-between">
                   <div className="absolute inset-0">
                     <SiteImage
                       image={images.about}
@@ -163,15 +163,9 @@ export default function AboutPage() {
                       className="object-cover"
                     />
                   </div>
-                  {/* Subtle Background Radial Pattern */}
-                  <div
-                    aria-hidden="true"
-                    className="absolute inset-0 opacity-[0.06] bg-[radial-gradient(#2DD4BF_1px,transparent_1px)] [background-size:16px_16px]"
-                  />
-
                   {/* Header Badge */}
                   <div className="relative z-10 flex items-center justify-between">
-                    <span className="px-3 py-1 rounded-full bg-accent/15 border border-accent/30 text-light text-xs font-semibold">
+                    <span className="px-3 py-1 rounded-full bg-accent/15 border border-accent/30 text-accent text-xs font-semibold">
                       Academy Studio
                     </span>
                     <span className="text-xs text-muted font-mono">Est. [founding year]</span>
@@ -194,7 +188,7 @@ export default function AboutPage() {
       </section>
 
       {/* 3. Mission and Values */}
-      <section className="py-20 sm:py-28 bg-surface/30 border-y border-line relative">
+      <section className="py-20 sm:py-28 bg-surface border-y border-line relative">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <SectionHeading
             title="Our Mission & Academy Values"
@@ -236,7 +230,7 @@ export default function AboutPage() {
       {/* 4. Numbers Strip */}
       <section className="py-14 sm:py-18 bg-bg relative">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
-          <div className="rounded-[22px] bg-surface border border-accent/25 p-6 sm:p-10 shadow-xl">
+          <div className="rounded-[22px] bg-surface border border-accent/25 p-6 sm:p-10">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 divide-y lg:divide-y-0 lg:divide-x divide-line">
               {/* Stat 1 */}
               <div className="flex items-center gap-4 pt-4 lg:pt-0 lg:px-4 first:pt-0 first:lg:px-0">
@@ -303,7 +297,7 @@ export default function AboutPage() {
       </section>
 
       {/* 5. How We Teach */}
-      <section className="py-20 sm:py-28 bg-surface-2/30 border-y border-line relative">
+      <section className="py-20 sm:py-28 bg-surface-2 border-y border-line relative">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <SectionHeading
             title="How We Teach Digital Marketing"
@@ -359,11 +353,7 @@ export default function AboutPage() {
       <section className="py-20 sm:py-28 bg-bg relative overflow-hidden">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <Reveal>
-            <div className="relative rounded-[28px] bg-gradient-to-b from-surface via-surface to-surface-2 border border-accent/40 p-8 sm:p-14 text-center shadow-2xl overflow-hidden">
-              <div
-                aria-hidden="true"
-                className="absolute -top-32 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-primary/15 rounded-full blur-[100px] pointer-events-none"
-              />
+            <div className="relative rounded-[28px] bg-surface border border-line p-8 sm:p-14 text-center overflow-hidden">
 
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-text leading-[1.15] max-w-2xl mx-auto tracking-tight mb-4">
                 Want to see how we teach?
@@ -378,7 +368,7 @@ export default function AboutPage() {
                   source="about-cta"
                   variant="primary"
                   size="lg"
-                  className="w-full sm:w-auto px-8 py-4 font-bold shadow-xl shadow-primary/25 text-base"
+                  className="w-full sm:w-auto px-8 py-4 font-bold text-base"
                 >
                   <span>Book free counselling</span>
                   <ArrowRight className="w-4 h-4 ml-2" />

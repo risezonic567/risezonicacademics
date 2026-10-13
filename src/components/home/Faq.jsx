@@ -28,7 +28,7 @@ export function Faq() {
   };
 
   return (
-    <section className="py-20 sm:py-28 bg-surface-2/40 border-y border-line relative">
+    <section className="py-20 sm:py-28 bg-surface-2 border-y border-line relative">
       {/* FAQPage JSON-LD */}
       <script
         type="application/ld+json"
@@ -51,8 +51,8 @@ export function Faq() {
                 key={faq.id}
                 className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
                   isOpen
-                    ? "bg-surface border-accent/40 shadow-lg shadow-accent/5 ring-1 ring-accent/20"
-                    : "bg-surface/70 border-line hover:border-primary/40"
+                    ? "bg-surface border-accent/40"
+                    : "bg-surface border-line hover:border-primary/40"
                 }`}
               >
                 <button

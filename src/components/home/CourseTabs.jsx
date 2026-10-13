@@ -15,7 +15,7 @@ export function CourseTabs() {
     moduleGroups.find((g) => g.id === activeTabId) || moduleGroups[0];
 
   return (
-    <section className="py-20 sm:py-28 bg-surface/40 border-t border-line relative">
+    <section className="py-20 sm:py-28 bg-surface border-t border-line relative">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
         <SectionHeading
           title="Explore Deep-Dive Module Tracks"
@@ -35,7 +35,7 @@ export function CourseTabs() {
                 onClick={() => setActiveTabId(group.id)}
                 className={`flex-1 min-w-[130px] sm:min-w-[150px] py-3 px-4 rounded-xl text-xs sm:text-sm font-heading font-semibold transition-all duration-200 cursor-pointer text-center select-none ${
                   isActive
-                    ? "bg-primary text-bg shadow-md shadow-primary/15"
+                    ? "bg-light text-accent"
                     : "text-muted hover:text-text hover:bg-surface-2"
                 }`}
               >
@@ -53,19 +53,13 @@ export function CourseTabs() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -16 }}
             transition={{ duration: 0.35, ease: "easeOut" }}
-            className="rounded-[24px] bg-surface border border-line p-6 sm:p-10 shadow-2xl relative overflow-hidden"
+            className="rounded-[24px] bg-surface border border-line p-6 sm:p-10 relative overflow-hidden"
           >
-            {/* Background Accent Shimmer */}
-            <div
-              aria-hidden="true"
-              className="absolute -top-24 -right-24 w-72 h-72 bg-accent/5 rounded-full blur-3xl pointer-events-none"
-            />
-
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
               {/* Left Column: Overview, Tools, and CTA (5 cols) */}
               <div className="lg:col-span-5 space-y-6">
                 <div>
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent/15 border border-accent/30 text-light text-xs font-semibold mb-3">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent/15 border border-accent/30 text-text text-xs font-semibold mb-3">
                     <Sparkles className="w-3.5 h-3.5 text-accent" />
                     <span>Track Overview</span>
                   </div>
@@ -123,7 +117,7 @@ export function CourseTabs() {
                 {activeGroup.topics.map((topic, index) => (
                   <div
                     key={index}
-                    className="p-4 rounded-xl bg-surface-2/70 border border-line hover:border-accent/30 transition-colors flex items-start gap-3.5"
+                    className="p-4 rounded-xl bg-surface-2 border border-line hover:border-accent/30 transition-colors flex items-start gap-3.5"
                   >
                     <div className="w-5 h-5 rounded-full bg-accent/15 border border-accent/40 flex items-center justify-center shrink-0 mt-0.5 text-accent">
                       <CheckCircle2 className="w-3.5 h-3.5" />

@@ -22,9 +22,9 @@ export function Tabs({ tabs, defaultTabId, onChange, className = "" }) {
               key={tab.id}
               type="button"
               onClick={() => handleTabChange(tab.id)}
-              className={`flex-1 min-w-[120px] py-2.5 px-4 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer text-center ${
+              className={`flex-1 min-w-[120px] py-2.5 px-4 rounded-lg text-xs sm:text-sm font-semibold transition-colors duration-200 cursor-pointer text-center ${
                 isActive
-                  ? "bg-primary text-bg shadow-md shadow-primary/10"
+                  ? "bg-light text-accent"
                   : "text-muted hover:text-text hover:bg-surface-2"
               }`}
             >

@@ -77,7 +77,7 @@ export function Journey() {
                 ease: "easeInOut",
               }}
               style={{ transformOrigin: "left" }}
-              className="h-full bg-gradient-to-r from-primary via-accent to-primary"
+              className="h-full bg-accent"
             />
           </div>
 
@@ -101,7 +101,7 @@ export function Journey() {
                 >
                   {/* Step Number Circle Icon */}
                   <div className="relative mb-5">
-                    <div className="w-[84px] h-[84px] rounded-2xl bg-surface border-2 border-line group-hover:border-accent flex flex-col items-center justify-center text-text transition-all duration-300 shadow-xl group-hover:shadow-accent/10 group-hover:-translate-y-1">
+                    <div className="w-[84px] h-[84px] rounded-2xl bg-surface border-2 border-line group-hover:border-accent flex flex-col items-center justify-center text-text transition-all duration-300 group-hover:-translate-y-1">
                       <Icon className="w-6 h-6 text-accent mb-1 group-hover:scale-110 transition-transform" />
                       <span className="text-[11px] font-heading font-bold text-muted">
                         STEP {step.num}

@@ -15,7 +15,7 @@ export function Button({
   ...props
 }) {
   const baseStyles =
-    "inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-200 cursor-pointer select-none focus-visible:outline-2 focus-visible:outline-accent disabled:opacity-50 disabled:cursor-not-allowed";
+    "inline-flex items-center justify-center font-semibold rounded-lg border transition-colors duration-200 cursor-pointer select-none focus-visible:outline-2 focus-visible:outline-accent disabled:opacity-50 disabled:cursor-not-allowed";
 
   const sizeStyles = {
     sm: "text-xs px-3.5 py-1.5 gap-1.5",
@@ -25,13 +25,13 @@ export function Button({
 
   const variantStyles = {
     primary:
-      "bg-primary text-bg hover:bg-accent shadow-md shadow-primary/10 active:scale-[0.98]",
+      "bg-primary text-ink border-primary hover:bg-accent-hover hover:border-accent-hover",
     secondary:
-      "bg-transparent border border-white/25 text-white hover:border-accent hover:text-accent active:scale-[0.98]",
+      "bg-surface border border-line text-text hover:border-primary hover:text-accent-hover",
     outline:
-      "bg-transparent border border-line text-text hover:border-primary hover:text-primary active:scale-[0.98]",
+      "bg-transparent border border-line text-text hover:border-primary hover:text-accent-hover",
     ghost:
-      "bg-transparent text-muted hover:text-text hover:bg-surface-2 active:scale-[0.98]",
+      "bg-transparent border border-transparent text-muted hover:text-text hover:bg-surface-2",
   };
 
   const combinedStyles = `${baseStyles} ${sizeStyles[size] || sizeStyles.md} ${

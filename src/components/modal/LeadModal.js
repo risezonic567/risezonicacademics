@@ -19,7 +19,7 @@ export function LeadModal({ isOpen, onClose, source, initialCourse }) {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.2 }}
-                className="fixed inset-0 z-50 bg-bg/80 backdrop-blur-sm"
+                className="fixed inset-0 z-50 bg-black/50"
               />
             </Dialog.Overlay>
 
@@ -31,13 +31,13 @@ export function LeadModal({ isOpen, onClose, source, initialCourse }) {
                   animate={{ opacity: 1, scale: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.96, y: 20 }}
                   transition={{ duration: 0.25, ease: "easeOut" }}
-                  className="pointer-events-auto relative w-full sm:max-w-[520px] max-h-[92vh] sm:max-h-[90vh] flex flex-col bg-surface border border-accent/35 rounded-t-[24px] sm:rounded-[20px] shadow-2xl overflow-hidden focus:outline-none"
+                  className="pointer-events-auto relative w-full sm:max-w-[520px] max-h-[92vh] sm:max-h-[90vh] flex flex-col bg-surface border border-line rounded-t-[24px] sm:rounded-[20px] overflow-hidden focus:outline-none"
                   aria-describedby="lead-modal-description"
                 >
                   {/* Modal Header */}
-                  <div className="px-6 pt-6 pb-4 border-b border-line flex items-start justify-between relative bg-surface-2/60">
+                  <div className="px-6 pt-6 pb-4 border-b border-line flex items-start justify-between relative bg-surface-2">
                     <div>
-                      <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-accent/15 border border-accent/30 text-light text-xs font-medium mb-1.5">
+                      <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-accent/15 border border-accent/30 text-accent text-xs font-medium mb-1.5">
                         <Sparkles className="w-3.5 h-3.5 text-accent" />
                         <span>Free 1-on-1 Session</span>
                       </div>

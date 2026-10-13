@@ -100,7 +100,7 @@ export default function PlacementPage() {
   return (
     <div className="bg-bg text-text min-h-screen">
       {/* 1. Page Header */}
-      <section className="pt-12 sm:pt-16 pb-12 sm:pb-16 bg-surface/30 border-b border-line relative overflow-hidden">
+      <section className="pt-12 sm:pt-16 pb-12 sm:pb-16 bg-surface border-b border-line relative overflow-hidden">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           {/* Breadcrumb */}
           <nav
@@ -116,7 +116,7 @@ export default function PlacementPage() {
 
           <div className="max-w-3xl">
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold font-heading text-text leading-[1.12] tracking-tight mb-4">
-              Placement support that <span className="text-accent">prepares you</span>
+              Placement support that <span className="text-text">prepares you</span>
             </h1>
             <p className="text-base sm:text-lg text-muted leading-relaxed">
               From polished resumes and live campaign portfolios to rigorous mock interviews and direct introductions to hiring partners.
@@ -173,7 +173,7 @@ export default function PlacementPage() {
       </section>
 
       {/* 3. Numbers Strip */}
-      <section className="py-14 sm:py-18 bg-surface-2/30 border-y border-line relative">
+      <section className="py-14 sm:py-18 bg-surface-2 border-y border-line relative">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 divide-y lg:divide-y-0 lg:divide-x divide-line">
             {/* Stat 1 */}
@@ -267,7 +267,7 @@ export default function PlacementPage() {
       </section>
 
       {/* 5. Placed Learners (6 Cards) */}
-      <section className="py-20 sm:py-28 bg-surface/30 border-y border-line relative">
+      <section className="py-20 sm:py-28 bg-surface border-y border-line relative">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <SectionHeading
             title="Placed Learners & Roles"
@@ -307,13 +307,13 @@ export default function PlacementPage() {
                         </div>
                       </div>
 
-                      <span className="px-2.5 py-1 rounded-full bg-primary/15 border border-primary/30 text-primary text-xs font-semibold shrink-0">
+                      <span className="px-2.5 py-1 rounded-full bg-light border border-primary/30 text-accent text-xs font-semibold shrink-0">
                         {student.package}
                       </span>
                     </div>
 
                     {/* One-Line Quote Placeholder */}
-                    <p className="text-xs sm:text-sm text-muted/90 italic leading-relaxed border-t border-line/60 pt-4">
+                    <p className="text-xs sm:text-sm text-muted italic leading-relaxed border-t border-line/60 pt-4">
                       &ldquo;{student.quote}&rdquo;
                     </p>
                   </div>
@@ -348,7 +348,7 @@ export default function PlacementPage() {
                   variant="surface"
                   className="p-6 flex flex-col justify-start group hover:border-primary/40"
                 >
-                  <div className="w-8 h-8 rounded-lg bg-primary/15 border border-primary/30 flex items-center justify-center text-primary mb-3.5">
+                  <div className="w-8 h-8 rounded-lg bg-light border border-primary/30 flex items-center justify-center text-accent mb-3.5">
                     <CheckCircle2 className="w-4 h-4" />
                   </div>
                   <h4 className="font-heading font-bold text-sm sm:text-base text-text mb-2 group-hover:text-accent transition-colors">
@@ -368,7 +368,7 @@ export default function PlacementPage() {
       <section className="py-6 sm:py-10 bg-bg relative">
         <div className="max-w-[840px] mx-auto px-5 sm:px-8">
           <Reveal>
-            <div className="rounded-2xl bg-surface-2 border border-accent/30 p-6 sm:p-7 flex items-start gap-4 shadow-lg">
+            <div className="rounded-2xl bg-surface-2 border border-accent/30 p-6 sm:p-7 flex items-start gap-4">
               <AlertCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
               <div>
                 <h4 className="font-heading font-semibold text-text text-sm sm:text-base mb-1">
@@ -384,14 +384,10 @@ export default function PlacementPage() {
       </section>
 
       {/* 8. Final CTA */}
-      <section className="py-16 sm:py-24 bg-surface-2/30 border-t border-line relative overflow-hidden">
+      <section className="py-16 sm:py-24 bg-surface-2 border-t border-line relative overflow-hidden">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <Reveal>
-            <div className="relative rounded-[28px] bg-gradient-to-b from-surface via-surface to-surface-2 border border-accent/40 p-8 sm:p-14 text-center shadow-2xl overflow-hidden">
-              <div
-                aria-hidden="true"
-                className="absolute -top-32 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-primary/15 rounded-full blur-[100px] pointer-events-none"
-              />
+            <div className="relative rounded-[28px] bg-surface border border-line p-8 sm:p-14 text-center overflow-hidden">
 
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-text leading-[1.15] max-w-2xl mx-auto tracking-tight mb-4">
                 Ready to take the next step in digital marketing?
@@ -406,7 +402,7 @@ export default function PlacementPage() {
                   source="placement-cta"
                   variant="primary"
                   size="lg"
-                  className="w-full sm:w-auto px-8 py-4 font-bold shadow-xl shadow-primary/25 text-base"
+                  className="w-full sm:w-auto px-8 py-4 font-bold text-base"
                 >
                   <span>Book free counselling</span>
                   <ArrowRight className="w-4 h-4 ml-2" />

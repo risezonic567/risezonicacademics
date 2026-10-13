@@ -10,7 +10,7 @@ import { Check, Clock, Briefcase, IndianRupee, Sparkles } from "lucide-react";
 
 export function Programs() {
   return (
-    <section className="py-20 sm:py-28 bg-surface-2/30 border-t border-line relative">
+    <section className="py-20 sm:py-28 bg-surface-2 border-t border-line relative">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
         <SectionHeading
           title="Industry-Led Marketing Programs"
@@ -30,15 +30,15 @@ export function Programs() {
                 <div
                   className={`w-full flex flex-col justify-between rounded-[20px] p-6 transition-all duration-300 relative ${
                     isPro
-                      ? "bg-surface border-2 border-primary shadow-xl shadow-primary/10 ring-1 ring-primary/30 -translate-y-1"
-                      : "bg-surface border border-line hover:border-primary/50 hover:-translate-y-1 hover:shadow-lg"
+                      ? "bg-light border-2 border-primary -translate-y-1"
+                      : "bg-surface border border-line hover:border-primary/50 hover:-translate-y-1"
                   }`}
                 >
                   {/* Popular Floating Badge */}
                   {isPro && (
                     <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary text-bg font-heading font-bold text-[11px] uppercase tracking-wider shadow-md">
-                        <Sparkles className="w-3 h-3 text-bg" />
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary text-ink font-heading font-bold text-[11px] uppercase tracking-wider">
+                        <Sparkles className="w-3 h-3 text-ink" />
                         <span>Most Popular</span>
                       </span>
                     </div>
@@ -91,8 +91,8 @@ export function Programs() {
                           key={i}
                           className="flex items-start gap-2 text-xs text-muted leading-relaxed"
                         >
-                          <div className="w-4 h-4 rounded-full bg-primary/15 border border-primary/30 flex items-center justify-center shrink-0 mt-0.5">
-                            <Check className="w-2.5 h-2.5 text-primary" />
+                          <div className="w-4 h-4 rounded-full bg-light border border-primary/30 flex items-center justify-center shrink-0 mt-0.5">
+                            <Check className="w-2.5 h-2.5 text-accent" />
                           </div>
                           <span>{bullet}</span>
                         </div>

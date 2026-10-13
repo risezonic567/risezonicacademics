@@ -27,7 +27,7 @@ export function PlacementSnapshot() {
             className="p-7 sm:p-9 border-accent/30 relative overflow-hidden group hover:border-primary"
           >
             <div className="flex items-center justify-between mb-4">
-              <div className="w-12 h-12 rounded-xl bg-primary/15 border border-primary/30 flex items-center justify-center text-primary">
+              <div className="w-12 h-12 rounded-xl bg-light border border-primary/30 flex items-center justify-center text-accent">
                 <TrendingUp className="w-6 h-6" />
               </div>
               <span className="text-xs uppercase tracking-wider font-semibold text-accent">
@@ -97,7 +97,7 @@ export function PlacementSnapshot() {
         <Reveal className="text-center">
           <Link
             href="/placement"
-            className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-surface border border-accent/40 text-text hover:border-primary hover:text-accent font-semibold transition-all shadow-lg text-sm sm:text-base group"
+            className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-surface border border-accent/40 text-text hover:border-primary hover:text-accent font-semibold transition-all text-sm sm:text-base group"
           >
             <span>Explore Full Placement Statistics & Process</span>
             <ArrowRight className="w-4 h-4 text-accent group-hover:translate-x-1 transition-transform" />

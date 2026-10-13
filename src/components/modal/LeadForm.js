@@ -85,7 +85,7 @@ export function LeadForm({ source = "modal", initialCourse = "", onClose }) {
   if (submissionState === "success") {
     return (
       <div className="py-8 px-2 text-center flex flex-col items-center">
-        <div className="w-16 h-16 rounded-full bg-primary/20 border border-primary flex items-center justify-center text-primary mb-4">
+        <div className="w-16 h-16 rounded-full bg-light border border-primary flex items-center justify-center text-accent mb-4">
           <CheckCircle2 className="w-8 h-8" />
         </div>
         <h3 className="text-xl font-bold font-heading text-text mb-2">
@@ -97,7 +97,7 @@ export function LeadForm({ source = "modal", initialCourse = "", onClose }) {
         <button
           type="button"
           onClick={onClose}
-          className="w-full sm:w-auto px-8 py-3 rounded-xl bg-primary text-bg font-semibold hover:bg-accent transition-colors"
+          className="w-full sm:w-auto px-8 py-3 rounded-xl bg-primary text-ink font-semibold hover:bg-accent-hover transition-colors"
         >
           Close
         </button>
@@ -120,7 +120,7 @@ export function LeadForm({ source = "modal", initialCourse = "", onClose }) {
       </div>
 
       {submissionState === "error" && (
-        <div className="p-3 rounded-lg bg-red-500/10 border border-red-500/30 text-red-300 text-sm flex items-center gap-2">
+        <div className="p-3 rounded-lg bg-red-500/10 border border-red-500/30 text-red-700 text-sm flex items-center gap-2">
           <AlertCircle className="w-4 h-4 shrink-0" />
           <span>{errorMessage}</span>
         </div>
@@ -135,10 +135,10 @@ export function LeadForm({ source = "modal", initialCourse = "", onClose }) {
           type="text"
           placeholder="e.g. Rahul Sharma"
           {...register("fullName")}
-          className="w-full px-3.5 py-2.5 rounded-xl bg-surface-2 border border-line text-text placeholder-muted/50 text-sm focus:border-accent focus:outline-none transition-colors"
+          className="w-full px-3.5 py-2.5 rounded-xl bg-bg border border-line text-text placeholder-muted/50 text-sm focus:border-accent focus:ring-2 focus:ring-accent focus:outline-none transition-colors"
         />
         {errors.fullName && (
-          <p className="mt-1 text-xs text-red-400">{errors.fullName.message}</p>
+          <p className="mt-1 text-xs text-red-700">{errors.fullName.message}</p>
         )}
       </div>
 
@@ -152,10 +152,10 @@ export function LeadForm({ source = "modal", initialCourse = "", onClose }) {
             type="tel"
             placeholder="10-digit mobile number"
             {...register("phone")}
-            className="w-full px-3.5 py-2.5 rounded-xl bg-surface-2 border border-line text-text placeholder-muted/50 text-sm focus:border-accent focus:outline-none transition-colors"
+            className="w-full px-3.5 py-2.5 rounded-xl bg-bg border border-line text-text placeholder-muted/50 text-sm focus:border-accent focus:ring-2 focus:ring-accent focus:outline-none transition-colors"
           />
           {errors.phone && (
-            <p className="mt-1 text-xs text-red-400">{errors.phone.message}</p>
+            <p className="mt-1 text-xs text-red-700">{errors.phone.message}</p>
           )}
         </div>
 
@@ -167,10 +167,10 @@ export function LeadForm({ source = "modal", initialCourse = "", onClose }) {
             type="email"
             placeholder="name@example.com"
             {...register("email")}
-            className="w-full px-3.5 py-2.5 rounded-xl bg-surface-2 border border-line text-text placeholder-muted/50 text-sm focus:border-accent focus:outline-none transition-colors"
+            className="w-full px-3.5 py-2.5 rounded-xl bg-bg border border-line text-text placeholder-muted/50 text-sm focus:border-accent focus:ring-2 focus:ring-accent focus:outline-none transition-colors"
           />
           {errors.email && (
-            <p className="mt-1 text-xs text-red-400">{errors.email.message}</p>
+            <p className="mt-1 text-xs text-red-700">{errors.email.message}</p>
           )}
         </div>
       </div>
@@ -185,10 +185,10 @@ export function LeadForm({ source = "modal", initialCourse = "", onClose }) {
             type="text"
             placeholder="e.g. New Delhi"
             {...register("city")}
-            className="w-full px-3.5 py-2.5 rounded-xl bg-surface-2 border border-line text-text placeholder-muted/50 text-sm focus:border-accent focus:outline-none transition-colors"
+            className="w-full px-3.5 py-2.5 rounded-xl bg-bg border border-line text-text placeholder-muted/50 text-sm focus:border-accent focus:ring-2 focus:ring-accent focus:outline-none transition-colors"
           />
           {errors.city && (
-            <p className="mt-1 text-xs text-red-400">{errors.city.message}</p>
+            <p className="mt-1 text-xs text-red-700">{errors.city.message}</p>
           )}
         </div>
 
@@ -198,7 +198,7 @@ export function LeadForm({ source = "modal", initialCourse = "", onClose }) {
           </label>
           <select
             {...register("course")}
-            className="w-full px-3.5 py-2.5 rounded-xl bg-surface-2 border border-line text-text text-sm focus:border-accent focus:outline-none transition-colors"
+            className="w-full px-3.5 py-2.5 rounded-xl bg-bg border border-line text-text text-sm focus:border-accent focus:ring-2 focus:ring-accent focus:outline-none transition-colors"
           >
             {coursePlans.map((plan) => (
               <option key={plan.slug} value={plan.slug} className="bg-surface text-text">
@@ -210,7 +210,7 @@ export function LeadForm({ source = "modal", initialCourse = "", onClose }) {
             </option>
           </select>
           {errors.course && (
-            <p className="mt-1 text-xs text-red-400">{errors.course.message}</p>
+            <p className="mt-1 text-xs text-red-700">{errors.course.message}</p>
           )}
         </div>
       </div>
@@ -241,7 +241,7 @@ export function LeadForm({ source = "modal", initialCourse = "", onClose }) {
           </label>
         </div>
         {errors.preferredMode && (
-          <p className="mt-1 text-xs text-red-400">{errors.preferredMode.message}</p>
+          <p className="mt-1 text-xs text-red-700">{errors.preferredMode.message}</p>
         )}
       </div>
 
@@ -254,7 +254,7 @@ export function LeadForm({ source = "modal", initialCourse = "", onClose }) {
           rows={2}
           placeholder="Tell us about your learning goals or questions..."
           {...register("message")}
-          className="w-full px-3.5 py-2 rounded-xl bg-surface-2 border border-line text-text placeholder-muted/50 text-sm focus:border-accent focus:outline-none resize-none transition-colors"
+          className="w-full px-3.5 py-2 rounded-xl bg-bg border border-line text-text placeholder-muted/50 text-sm focus:border-accent focus:ring-2 focus:ring-accent focus:outline-none resize-none transition-colors"
         />
       </div>
 
@@ -262,11 +262,11 @@ export function LeadForm({ source = "modal", initialCourse = "", onClose }) {
       <button
         type="submit"
         disabled={submissionState === "submitting"}
-        className="w-full py-3.5 px-6 rounded-xl bg-primary text-bg font-semibold text-sm sm:text-base flex items-center justify-center gap-2 hover:bg-accent transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer shadow-lg shadow-primary/10"
+        className="w-full py-3.5 px-6 rounded-xl bg-primary text-ink font-semibold text-sm sm:text-base flex items-center justify-center gap-2 hover:bg-accent-hover transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
       >
         {submissionState === "submitting" ? (
           <>
-            <Loader2 className="w-4 h-4 animate-spin text-bg" />
+            <Loader2 className="w-4 h-4 animate-spin text-ink" />
             <span>Submitting details...</span>
           </>
         ) : (

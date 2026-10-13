@@ -22,7 +22,7 @@ export function SuccessStories() {
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <section className="py-20 sm:py-28 bg-surface-2/40 border-y border-line relative overflow-hidden">
+    <section className="py-20 sm:py-28 bg-surface-2 border-y border-line relative overflow-hidden">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
         <SectionHeading
           title="Transformative Outcomes & Career Shifts"
@@ -43,7 +43,7 @@ export function SuccessStories() {
               >
                 <Card
                   variant="surface"
-                  className="p-8 sm:p-10 relative overflow-hidden border-accent/25 shadow-2xl"
+                  className="p-8 sm:p-10 relative overflow-hidden border-accent/25"
                 >
                   {/* Decorative Watermark Quote Icon */}
                   <Quote
@@ -62,7 +62,7 @@ export function SuccessStories() {
                       ))}
                     </div>
 
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/15 border border-primary/30 text-primary text-xs font-semibold">
+                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-light border border-primary/30 text-accent text-xs font-semibold">
                       <Award className="w-3.5 h-3.5" />
                       <span>Package: {currentTestimonial.package}</span>
                     </div>

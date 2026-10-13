@@ -24,7 +24,7 @@
 //           {/* Column 1: Brand & Short About */}
 //           <div className="space-y-4">
 //             <Link href="/" className="flex items-center gap-2.5">
-//               <div className="w-[28px] h-[28px] rounded-lg bg-primary text-bg flex items-center justify-center font-heading font-bold text-sm">
+//               <div className="w-[28px] h-[28px] rounded-lg bg-primary text-ink flex items-center justify-center font-heading font-bold text-sm">
 //                 R
 //               </div>
 //               <div className="flex items-baseline gap-1.5 font-heading text-xl font-bold text-text">
@@ -252,7 +252,7 @@ export function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-md bg-primary text-bg flex items-center justify-center font-heading font-bold text-base">
+              <div className="w-8 h-8 rounded-md bg-primary text-ink flex items-center justify-center font-heading font-bold text-base">
                 R
               </div>
               <div className="flex items-baseline gap-2 font-heading text-xl font-bold text-text">

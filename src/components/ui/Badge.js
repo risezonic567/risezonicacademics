@@ -9,14 +9,14 @@ export function Badge({
   className = "",
 }) {
   const variantStyles = {
-    accent: "bg-accent/12 border-accent/35 text-light",
-    primary: "bg-primary/15 border-primary/40 text-primary",
+    accent: "bg-accent/12 border-accent/35 text-accent",
+    primary: "bg-light border-primary/40 text-accent",
     muted: "bg-surface-2 border-line text-muted",
   };
 
   return (
     <div
-      className={`inline-flex items-center gap-2 px-3 py-1 rounded-full border text-[11px] sm:text-xs font-medium tracking-wide uppercase ${
+      className={`inline-flex items-center gap-2 px-3 py-1 rounded-lg border text-[11px] sm:text-xs font-medium ${
         variantStyles[variant] || variantStyles.accent
       } ${className}`}
     >

@@ -95,7 +95,7 @@ export default function ContactPage() {
   return (
     <div className="bg-bg text-text min-h-screen">
       {/* 1. Page Header */}
-      <section className="pt-12 sm:pt-16 pb-12 sm:pb-16 bg-surface/30 border-b border-line relative overflow-hidden">
+      <section className="pt-12 sm:pt-16 pb-12 sm:pb-16 bg-surface border-b border-line relative overflow-hidden">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           {/* Breadcrumb */}
           <nav
@@ -111,7 +111,7 @@ export default function ContactPage() {
 
           <div className="max-w-3xl">
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold font-heading text-text leading-[1.12] tracking-tight mb-4">
-              Talk to our <span className="text-accent">counsellors</span>
+              Talk to our <span className="text-text">counsellors</span>
             </h1>
             <p className="text-base sm:text-lg text-muted leading-relaxed">
               Tell us what you want to learn and we will call you back.
@@ -143,7 +143,7 @@ export default function ContactPage() {
                       {card.value}
                     </div>
                   </div>
-                  <p className="mt-4 text-xs text-muted/80 border-t border-line/60 pt-3">
+                  <p className="mt-4 text-xs text-muted border-t border-line/60 pt-3">
                     {card.subtext}
                   </p>
                 </div>
@@ -186,7 +186,7 @@ export default function ContactPage() {
               source="contact-callback"
               variant="primary"
               size="lg"
-              className="w-full sm:w-auto px-8 py-3.5 shadow-xl shadow-primary/20 text-sm sm:text-base font-bold"
+              className="w-full sm:w-auto px-8 py-3.5 text-sm sm:text-base font-bold"
             >
               <span>Request a callback</span>
               <ArrowRight className="w-4 h-4 ml-2" />
@@ -196,7 +196,7 @@ export default function ContactPage() {
               href={siteConfig.contact.whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl border border-white/25 text-white hover:border-accent hover:text-accent font-semibold transition-all text-sm sm:text-base active:scale-[0.98]"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl border border-line text-text hover:border-accent hover:text-accent font-semibold transition-all text-sm sm:text-base active:scale-[0.98]"
             >
               <MessageCircle className="w-4 h-4 text-accent" />
               <span>Chat on WhatsApp</span>
@@ -206,7 +206,7 @@ export default function ContactPage() {
       </section>
 
       {/* 4. Map Block */}
-      <section className="py-12 sm:py-16 bg-surface/30 border-y border-line relative">
+      <section className="py-12 sm:py-16 bg-surface border-y border-line relative">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <div className="mb-8 text-center max-w-xl mx-auto">
             <h2 className="text-2xl sm:text-3xl font-heading font-bold text-text">
@@ -226,7 +226,7 @@ export default function ContactPage() {
                 referrerPolicy="no-referrer-when-downgrade"
               />
             */}
-            <div className="relative w-full aspect-[4/3] md:aspect-[16/9] rounded-[24px] bg-gradient-to-br from-surface-2 via-surface to-bg border border-accent/30 shadow-2xl overflow-hidden flex flex-col items-center justify-center p-6 text-center group">
+            <div className="relative w-full aspect-[4/3] md:aspect-[16/9] rounded-[24px] bg-surface-2 border border-line overflow-hidden flex flex-col items-center justify-center p-6 text-center group">
               <div className="absolute inset-0">
                 <SiteImage
                   image={images.contactMap}
@@ -235,12 +235,7 @@ export default function ContactPage() {
                   className="object-cover"
                 />
               </div>
-              <div
-                aria-hidden="true"
-                className="absolute inset-0 opacity-[0.06] bg-[radial-gradient(#2DD4BF_1px,transparent_1px)] [background-size:20px_20px]"
-              />
-
-              <div className="relative z-10 w-16 h-16 rounded-2xl bg-surface-2 border border-line text-accent flex items-center justify-center mb-4 group-hover:scale-105 transition-transform shadow-lg">
+              <div className="relative z-10 w-16 h-16 rounded-2xl bg-surface-2 border border-line text-accent flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
                 <Map className="w-8 h-8" />
               </div>
 
@@ -276,14 +271,10 @@ export default function ContactPage() {
       </section>
 
       {/* 6. Final CTA */}
-      <section className="py-16 sm:py-24 bg-surface-2/30 border-t border-line relative overflow-hidden">
+      <section className="py-16 sm:py-24 bg-surface-2 border-t border-line relative overflow-hidden">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <Reveal>
-            <div className="relative rounded-[28px] bg-gradient-to-b from-surface via-surface to-surface-2 border border-accent/40 p-8 sm:p-14 text-center shadow-2xl overflow-hidden">
-              <div
-                aria-hidden="true"
-                className="absolute -top-32 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-primary/15 rounded-full blur-[100px] pointer-events-none"
-              />
+            <div className="relative rounded-[28px] bg-surface border border-line p-8 sm:p-14 text-center overflow-hidden">
 
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-text leading-[1.15] max-w-2xl mx-auto tracking-tight mb-4">
                 Ready to speak with our admissions team?
@@ -298,7 +289,7 @@ export default function ContactPage() {
                   source="contact-cta"
                   variant="primary"
                   size="lg"
-                  className="w-full sm:w-auto px-8 py-4 font-bold shadow-xl shadow-primary/25 text-base"
+                  className="w-full sm:w-auto px-8 py-4 font-bold text-base"
                 >
                   <span>Book free counselling</span>
                   <ArrowRight className="w-4 h-4 ml-2" />

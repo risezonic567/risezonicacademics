@@ -1,4 +1,4 @@
-import { Gabarito, Albert_Sans } from "next/font/google";
+import { Bricolage_Grotesque, Figtree } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/data/site";
 import { LeadModalProvider } from "@/components/modal/LeadModalProvider";
@@ -7,17 +7,17 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { StickyMobileCta } from "@/components/layout/StickyMobileCta";
 
-const gabarito = Gabarito({
+const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
   weight: ["600", "700"],
-  variable: "--font-gabarito",
+  variable: "--font-heading",
   display: "swap",
 });
 
-const albertSans = Albert_Sans({
+const figtree = Figtree({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-albert-sans",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-body",
   display: "swap",
 });
 
@@ -39,11 +39,11 @@ export default function RootLayout({ children }) {
       lang="en"
       data-scroll-behavior="smooth"
       suppressHydrationWarning
-      className={`${gabarito.variable} ${albertSans.variable} scroll-smooth antialiased`}
+      className={`${bricolage.variable} ${figtree.variable} scroll-smooth antialiased`}
     >
       <body
         suppressHydrationWarning
-        className="min-h-screen bg-bg text-text font-sans flex flex-col selection:bg-accent selection:text-bg"
+        className="min-h-screen bg-bg text-text font-body flex flex-col selection:bg-accent selection:text-ink"
       >
         <LeadModalProvider>
           <AnnouncementBar />

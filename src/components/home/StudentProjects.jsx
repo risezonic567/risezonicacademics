@@ -30,7 +30,7 @@ export function StudentProjects() {
               >
                 <div>
                   {/* Image Placeholder Block */}
-                  <div className="relative w-full aspect-[16/9] bg-gradient-to-br from-surface-2 via-surface to-bg border-b border-line flex flex-col items-center justify-center p-6 text-center overflow-hidden">
+                  <div className="relative w-full aspect-[16/9] bg-surface-2 border-b border-line flex flex-col items-center justify-center p-6 text-center overflow-hidden">
                     <div className="absolute inset-0">
                       <SiteImage
                         image={project.image}
@@ -41,13 +41,13 @@ export function StudentProjects() {
                     </div>
 
                     {/* Metric Chip */}
-                    <div className="absolute top-4 left-4 z-10 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-2/90 border border-accent/40 text-accent text-xs font-semibold backdrop-blur-md">
+                    <div className="absolute top-4 left-4 z-10 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-2 border border-accent/40 text-accent text-xs font-semibold">
                       <TrendingUp className="w-3.5 h-3.5" />
                       <span>{project.metrics}</span>
                     </div>
 
                     {/* Category Chip */}
-                    <div className="absolute top-4 right-4 z-10 text-[11px] font-medium text-muted bg-surface/80 px-2.5 py-1 rounded-lg border border-line backdrop-blur-sm">
+                    <div className="absolute top-4 right-4 z-10 text-[11px] font-medium text-muted bg-surface px-2.5 py-1 rounded-lg border border-line">
                       {project.category}
                     </div>
 
