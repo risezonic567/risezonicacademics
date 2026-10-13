@@ -12,7 +12,7 @@ export const siteConfig = {
   },
   contact: {
     phone: "[+91 00000 00000]",
-    whatsapp: "[+91 00000 00000]",
+    whatsapp: "https://wa.me/910000000000",
     whatsappLink: "https://wa.me/910000000000?text=[Hi%20Risezonic%20Academics]",
     email: "[admissions@risezonic.com]",
     address: "[Rise Tower, Knowledge Park, Cyber City, India]",

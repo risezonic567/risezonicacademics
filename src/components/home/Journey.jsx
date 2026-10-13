@@ -2,14 +2,7 @@
 
 import React from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { SectionHeading } from "@/components/ui/SectionHeading";
-import {
-  UserCheck,
-  BookOpenCheck,
-  Hammer,
-  BriefcaseBusiness,
-  Trophy,
-} from "lucide-react";
+import { OpenModalButton } from "@/components/ui/OpenModalButton";
 
 export function Journey() {
   const shouldReduceMotion = useReducedMotion();
@@ -18,112 +11,84 @@ export function Journey() {
     {
       num: "01",
       title: "Enroll",
-      subtitle: "Orientation & Mentor Matching",
-      description: "Set up marketing toolkits, audit student benchmarks, and connect with faculty guides.",
-      icon: UserCheck,
+      description: "Pick the plan that fits your goal and reserve your seat.",
+      duration: "[Week 1]",
     },
     {
       num: "02",
       title: "Learn",
-      subtitle: "Live Campaign Labs",
-      description: "Master performance funnels, technical SEO, and retention workflows with live instruction.",
-      icon: BookOpenCheck,
+      description: "Live classes, recordings and notes on ads, SEO, analytics and content.",
+      duration: "[Week 2]",
     },
     {
       num: "03",
       title: "Build",
-      subtitle: "Real Ad Spend Capstone",
-      description: "Deploy real advertising budgets on Meta and Google Ads accounts to validate metrics.",
-      icon: Hammer,
+      description: "Run campaigns with a real ad budget and review the results with your mentor.",
+      duration: "[Week 3]",
     },
     {
       num: "04",
       title: "Intern",
-      subtitle: "Hands-on Industry Project",
-      description: "Work on real brand deliverables under agency mentorship to forge high-converting case studies.",
-      icon: BriefcaseBusiness,
+      description: "Work on live client tasks and add them to your portfolio.",
+      duration: "[Week 4]",
     },
     {
       num: "05",
-      title: "Get Hired",
-      subtitle: "Interviews & Placements",
-      description: "Conduct mock technical rounds, optimize your portfolio, and interview with partner companies.",
-      icon: Trophy,
+      title: "Get hired",
+      description: "Resume, mock interviews and introductions to hiring teams.",
+      duration: "[Week 5]",
     },
   ];
 
   return (
-    <section className="py-20 sm:py-28 bg-bg relative overflow-hidden">
+    <section className="py-20 sm:py-28 bg-bg">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
-        <SectionHeading
-          title="Your 5-Step Path from Beginner to Marketer"
-          highlightWord="Path"
-          subtitle="A battle-tested progression engineered to take you from foundational basics to top-tier career placements."
-        />
-
-        {/* Steps Container */}
-        <div className="relative mt-12 sm:mt-16">
-          {/* Desktop Connecting Line that draws as it scrolls into view */}
-          <div
-            aria-hidden="true"
-            className="hidden lg:block absolute top-[42px] left-[5%] right-[5%] h-[2px] bg-line z-0"
-          >
-            <motion.div
-              initial={{ scaleX: 0 }}
-              whileInView={{ scaleX: 1 }}
-              viewport={{ once: true, amount: 0.15 }}
-              transition={{
-                duration: shouldReduceMotion ? 0 : 1.2,
-                ease: "easeInOut",
-              }}
-              style={{ transformOrigin: "left" }}
-              className="h-full bg-accent"
-            />
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20">
+          <div className="self-start lg:sticky lg:top-28">
+            <h2 className="font-heading text-[clamp(2rem,3.2vw,2.75rem)] font-semibold leading-tight tracking-tight text-text">
+              From day one to your first job
+            </h2>
+            <p className="mt-5 text-lg leading-relaxed text-muted">
+              Every step has a clear outcome, so you always know what you are
+              working towards.
+            </p>
+            <OpenModalButton
+              source="steps-cta"
+              variant="primary"
+              className="mt-7 text-[17px] hover:bg-primary hover:border-accent"
+            >
+              Book free counselling
+            </OpenModalButton>
           </div>
 
-          {/* Steps Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-4 relative z-10">
-            {steps.map((step, idx) => {
-              const Icon = step.icon;
-
-              return (
-                <motion.div
-                  key={step.num}
-                  initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.15 }}
-                  transition={{
-                    duration: 0.5,
-                    delay: shouldReduceMotion ? 0 : idx * 0.12,
-                    ease: "easeOut",
-                  }}
-                  className="flex flex-col items-center text-center group"
-                >
-                  {/* Step Number Circle Icon */}
-                  <div className="relative mb-5">
-                    <div className="w-[84px] h-[84px] rounded-2xl bg-surface border-2 border-line group-hover:border-accent flex flex-col items-center justify-center text-text transition-all duration-300 group-hover:-translate-y-1">
-                      <Icon className="w-6 h-6 text-accent mb-1 group-hover:scale-110 transition-transform" />
-                      <span className="text-[11px] font-heading font-bold text-muted">
-                        STEP {step.num}
-                      </span>
-                    </div>
-
-                    {/* Step indicator dot on desktop */}
-                    <div className="hidden lg:block absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-accent ring-4 ring-bg" />
-                  </div>
-
-                  <h3 className="text-lg font-heading font-bold text-text mb-1 group-hover:text-accent transition-colors">
-                    {step.title}
-                  </h3>
-                  <div className="text-xs font-semibold text-accent mb-2">
-                    {step.subtitle}
-                  </div>
-                  <p className="text-xs text-muted leading-relaxed">
-                    {step.description}
-                  </p>
-                </motion.div>
-              );
-            })}
+          <div className="border-t border-line">
+            {steps.map((step, index) => (
+              <motion.div
+                key={step.num}
+                initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{
+                  duration: shouldReduceMotion ? 0 : 0.5,
+                  delay: shouldReduceMotion ? 0 : index * 0.08,
+                  ease: "easeOut",
+                }}
+                className="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-x-5 gap-y-2 border-b border-line py-6 sm:grid-cols-[auto_minmax(0,1fr)_auto] sm:gap-x-6"
+              >
+                <span className="row-span-2 font-heading text-5xl font-semibold leading-none text-accent">
+                  {step.num}
+                </span>
+                <h3 className="font-heading text-2xl font-semibold leading-tight text-text">
+                  {step.title}
+                </h3>
+                <span className="col-start-2 text-[17px] leading-relaxed text-text sm:col-start-2">
+                  {step.description}
+                </span>
+                <span className="col-start-2 text-base text-muted sm:col-start-3 sm:row-start-1 sm:row-span-2 sm:self-center">
+                  {step.duration}
+                </span>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>

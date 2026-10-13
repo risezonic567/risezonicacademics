@@ -3,12 +3,10 @@
 import React from "react";
 import Link from "next/link";
 import { siteConfig } from "@/data/site";
-import { hiringPartners } from "@/data/partners";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
-import { StaggerContainer, StaggerItem, Reveal } from "@/components/ui/Reveal";
-import { ArrowRight, TrendingUp, DollarSign, Building2 } from "lucide-react";
-import { SiteImage } from "@/components/ui/SiteImage";
+import { Reveal } from "@/components/ui/Reveal";
+import { ArrowRight, TrendingUp, DollarSign } from "lucide-react";
 
 export function PlacementSnapshot() {
   return (
@@ -61,36 +59,6 @@ export function PlacementSnapshot() {
               Average starting compensation across performance and SEO tracks.
             </p>
           </Card>
-        </div>
-
-        {/* Hiring Partners Grid */}
-        <div className="mt-6 mb-12">
-          <div className="text-center mb-6">
-            <span className="text-xs uppercase tracking-widest text-muted font-semibold flex items-center justify-center gap-2">
-              <Building2 className="w-3.5 h-3.5 text-accent" />
-              <span>Network Companies & Recruitment Agencies</span>
-            </span>
-          </div>
-
-          <StaggerContainer
-            staggerDelay={0.06}
-            className="grid grid-cols-2 sm:grid-cols-4 gap-4"
-          >
-            {hiringPartners.map((partner) => (
-              <StaggerItem key={partner.id}>
-                <div className="p-4 rounded-xl bg-surface-2 border border-line flex items-center justify-center text-center hover:border-accent/40 transition-colors">
-                  <div className="relative h-5 w-full">
-                    <SiteImage
-                      image={partner.image}
-                      fill
-                      sizes="(max-width: 640px) 40vw, 20vw"
-                      className="object-contain p-1"
-                    />
-                  </div>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
         </div>
 
         {/* Bottom CTA to /placement */}

@@ -156,9 +156,20 @@ export function Hero() {
         initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 60 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.35, ease: [0.21, 0.47, 0.32, 0.98] }}
-        className="relative mx-auto mt-9 sm:mt-12 px-4 sm:px-7 max-w-[1200px]"
+        className="relative mt-9 sm:mt-12 w-full"
       >
-        <div         className="relative rounded-t-[20px] border border-b-0 border-line bg-light overflow-visible">
+        <div className="relative w-full">
+          <div className="relative h-[280px] min-h-[280px] w-full overflow-hidden bg-light md:h-[380px] md:min-h-[380px] lg:h-[480px] lg:min-h-[480px]">
+            <SiteImage
+              image={images.hero}
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
+            />
+          </div>
+          <div className="pointer-events-none absolute inset-0 mx-auto max-w-[1200px] px-5 sm:px-8">
+            <div className="relative h-full">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={
@@ -182,7 +193,7 @@ export function Hero() {
                     },
                   }
             }
-            className="absolute -top-3.5 sm:-top-4 left-4 sm:left-10 z-20 flex items-center gap-1.5 rounded-full border border-line bg-surface px-3 py-1 text-[11px] sm:text-xs font-semibold text-text"
+            className="pointer-events-auto absolute -top-3.5 sm:-top-4 left-0 z-20 flex items-center gap-1.5 rounded-full border border-line bg-surface px-3 py-1 text-sm font-semibold text-text"
           >
             <Award className="h-3.5 w-3.5 text-accent" />
             <span>Certificate</span>
@@ -212,29 +223,20 @@ export function Hero() {
                     },
                   }
             }
-            className="absolute -top-3.5 sm:-top-4 right-4 sm:right-10 z-20 flex items-center gap-1.5 rounded-full border border-line bg-surface px-3 py-1 text-[11px] sm:text-xs font-semibold text-text"
+            className="pointer-events-auto absolute -top-3.5 sm:-top-4 right-0 z-20 flex items-center gap-1.5 rounded-full border border-line bg-surface px-3 py-1 text-sm font-semibold text-text"
           >
             <TrendingUp className="h-3.5 w-3.5 text-accent" />
             <span>[00%] placement</span>
           </motion.div>
-
-          <div className="relative w-full aspect-[16/10] sm:h-[235px] lg:h-[340px] flex items-center justify-center bg-surface-2 overflow-hidden">
-            <SiteImage
-              image={images.hero}
-              fill
-              priority
-              sizes="(max-width: 1200px) 100vw, 1200px"
-              className="object-cover"
-            />
 
             {/* Left Card: Campaign results (Overlapping bottom-left on desktop, inside on mobile) */}
             <motion.div
               initial={{ opacity: 0, scale: 0.85 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.65, duration: 0.4 }}
-              className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 z-20 w-[140px] sm:w-[170px] rounded-xl border border-line bg-surface-2 p-3"
+              className="pointer-events-auto absolute bottom-3 left-0 sm:bottom-4 z-20 w-[140px] sm:w-[170px] rounded-xl border border-line bg-surface-2 p-3"
             >
-              <div className="text-[10px] sm:text-xs font-medium text-muted">
+              <div className="text-sm font-medium text-muted">
                 Campaign results
               </div>
               <div className="mt-0.5 text-base sm:text-xl font-bold font-heading text-accent">
@@ -265,38 +267,39 @@ export function Hero() {
               initial={{ opacity: 0, scale: 0.85 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.7, duration: 0.4 }}
-              className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 z-20 w-[140px] sm:w-[170px] rounded-xl border border-line bg-surface-2 p-3 text-left"
+              className="pointer-events-auto absolute bottom-3 right-0 sm:bottom-4 z-20 w-[140px] sm:w-[170px] rounded-xl border border-line bg-surface-2 p-3 text-left"
             >
               <div className="flex items-center gap-1.5">
                 <span className="relative flex h-[7px] w-[7px]">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500 opacity-75" />
                   <span className="relative inline-flex h-[7px] w-[7px] rounded-full bg-red-500" />
                 </span>
-                <span className="text-[10px] sm:text-xs font-semibold text-text">
+                <span className="text-sm font-semibold text-text">
                   Live now
                 </span>
               </div>
 
               <div className="mt-2 flex items-center gap-2">
-                <div className="h-[28px] w-[28px] sm:h-[30px] sm:w-[30px] rounded-full bg-light border border-primary/40 flex items-center justify-center text-[10px] text-accent font-bold shrink-0">
+                <div className="h-[28px] w-[28px] sm:h-[30px] sm:w-[30px] rounded-full bg-light border border-primary/40 flex items-center justify-center text-sm text-accent font-bold shrink-0">
                   M
                 </div>
                 <div className="min-w-0">
-                  <div className="text-[11px] sm:text-xs font-semibold text-text truncate">
+                  <div className="text-sm font-semibold text-text truncate">
                     [Mentor name]
                   </div>
-                  <div className="text-[10px] text-accent truncate">
+                  <div className="text-sm text-accent truncate">
                     Google Ads
                   </div>
                 </div>
               </div>
 
-              <div className="mt-1.5 text-[10px] text-muted flex items-center gap-1">
+              <div className="mt-1.5 text-sm text-muted flex items-center gap-1">
                 <Radio className="h-3 w-3 text-red-400 shrink-0" />
                 <span>[00] students watching</span>
               </div>
             </motion.div>
           </div>
+        </div>
         </div>
       </motion.div>
     </section>

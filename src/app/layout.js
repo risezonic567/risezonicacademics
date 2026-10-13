@@ -2,7 +2,6 @@ import { Bricolage_Grotesque, Figtree } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/data/site";
 import { LeadModalProvider } from "@/components/modal/LeadModalProvider";
-import { AnnouncementBar } from "@/components/layout/AnnouncementBar";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { StickyMobileCta } from "@/components/layout/StickyMobileCta";
@@ -46,7 +45,6 @@ export default function RootLayout({ children }) {
         className="min-h-screen bg-bg text-text font-body flex flex-col selection:bg-accent selection:text-ink"
       >
         <LeadModalProvider>
-          <AnnouncementBar />
           <Navbar />
           <main className="flex-1 w-full">{children}</main>
           <Footer />
