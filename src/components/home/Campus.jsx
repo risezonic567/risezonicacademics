@@ -4,6 +4,8 @@ import React from "react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { StaggerContainer, StaggerItem } from "@/components/ui/Reveal";
 import { Laptop, Sparkles, Coffee, Mic, Presentation } from "lucide-react";
+import { images } from "@/data/images";
+import { SiteImage } from "@/components/ui/SiteImage";
 
 export function Campus() {
   const bentoItems = [
@@ -77,6 +79,14 @@ export function Campus() {
                 className={`${item.colSpan} h-full`}
               >
                 <div className="h-full w-full rounded-[20px] bg-surface border border-line hover:border-primary/50 transition-all duration-300 p-6 flex flex-col justify-between group overflow-hidden relative shadow-lg">
+                  <div className="absolute inset-0">
+                    <SiteImage
+                      image={images.campus[Number(item.id.slice(-1)) - 1]}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover"
+                    />
+                  </div>
                   {/* Pattern & Background Glow */}
                   <div
                     aria-hidden="true"
@@ -99,9 +109,6 @@ export function Campus() {
 
                   {/* Center Placeholder Watermark */}
                   <div className="relative z-10 my-auto text-center py-4">
-                    <span className="text-xs font-heading font-medium text-muted/60 uppercase tracking-widest block">
-                      Campus Photo Placeholder
-                    </span>
                   </div>
 
                   {/* Bottom Text */}

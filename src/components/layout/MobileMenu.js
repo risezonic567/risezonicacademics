@@ -13,12 +13,10 @@ export function MobileMenu({ isOpen, onClose }) {
   const pathname = usePathname();
   const onCloseRef = useRef(onClose);
 
-  // Always keep the latest onClose without re-running the route effect
   useEffect(() => {
     onCloseRef.current = onClose;
   });
 
-  // Lock body scroll when the menu is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -30,7 +28,6 @@ export function MobileMenu({ isOpen, onClose }) {
     };
   }, [isOpen]);
 
-  // Close the menu only when the route changes
   useEffect(() => {
     onCloseRef.current();
   }, [pathname]);
@@ -81,7 +78,6 @@ export function MobileMenu({ isOpen, onClose }) {
                 </button>
               </div>
 
-              {/* Links */}
               <nav className="p-5">
                 <div className="space-y-1">
                   {siteConfig.navLinks.map((link) => {

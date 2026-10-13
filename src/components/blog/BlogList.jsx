@@ -13,6 +13,7 @@ import {
   Sparkles,
   BookOpen,
 } from "lucide-react";
+import { SiteImage } from "@/components/ui/SiteImage";
 
 export function BlogList({ posts = [] }) {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -67,16 +68,14 @@ export function BlogList({ posts = [] }) {
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                     {/* Visual Placeholder (5 cols) */}
                     <div className="lg:col-span-5 aspect-[16/10] rounded-2xl bg-gradient-to-br from-surface-2 via-surface to-bg border border-line flex flex-col items-center justify-center p-6 text-center relative overflow-hidden group-hover:border-accent/40 transition-colors">
-                      <div
-                        aria-hidden="true"
-                        className="absolute inset-0 opacity-[0.06] bg-[radial-gradient(#2DD4BF_1px,transparent_1px)] [background-size:16px_16px]"
-                      />
-                      <div className="w-12 h-12 rounded-2xl bg-surface-2 border border-line text-accent flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
-                        <BookOpen className="w-6 h-6" />
+                      <div className="absolute inset-0">
+                        <SiteImage
+                          image={featuredPost.image}
+                          fill
+                          sizes="(max-width: 1024px) 100vw, 40vw"
+                          className="object-cover"
+                        />
                       </div>
-                      <span className="text-xs font-heading font-semibold text-text">
-                        Featured Article Visual
-                      </span>
                     </div>
 
                     {/* Content (7 cols) */}
@@ -142,10 +141,14 @@ export function BlogList({ posts = [] }) {
                         <div>
                           {/* Image Placeholder */}
                           <div className="w-full aspect-[16/10] rounded-xl bg-surface-2 border border-line flex flex-col items-center justify-center p-4 text-center mb-5 group-hover:border-accent/40 transition-colors relative overflow-hidden">
-                            <BookOpen className="w-6 h-6 text-accent mb-1 group-hover:scale-105 transition-transform" />
-                            <span className="text-[11px] font-heading text-muted">
-                              Article Thumbnail
-                            </span>
+                            <div className="absolute inset-0">
+                              <SiteImage
+                                image={post.image}
+                                fill
+                                sizes="(max-width: 768px) 100vw, 33vw"
+                                className="object-cover"
+                              />
+                            </div>
                           </div>
 
                           {/* Category Badge & Read Time */}

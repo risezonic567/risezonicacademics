@@ -6,6 +6,8 @@ import { Card } from "@/components/ui/Card";
 import { OpenModalButton } from "@/components/ui/OpenModalButton";
 import { Mentors } from "@/components/home/Mentors";
 import { Campus } from "@/components/home/Campus";
+import { images } from "@/data/images";
+import { SiteImage } from "@/components/ui/SiteImage";
 import {
   ChevronRight,
   Hammer,
@@ -153,6 +155,14 @@ export default function AboutPage() {
             <div className="lg:col-span-5">
               <Reveal delay={0.15}>
                 <div className="relative rounded-[24px] bg-gradient-to-br from-surface via-surface to-surface-2 border border-accent/35 p-8 shadow-2xl overflow-hidden aspect-[4/3] flex flex-col justify-between">
+                  <div className="absolute inset-0">
+                    <SiteImage
+                      image={images.about}
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 40vw"
+                      className="object-cover"
+                    />
+                  </div>
                   {/* Subtle Background Radial Pattern */}
                   <div
                     aria-hidden="true"
@@ -169,15 +179,6 @@ export default function AboutPage() {
 
                   {/* Center Placeholder Graphic */}
                   <div className="relative z-10 text-center my-auto py-6">
-                    <div className="w-14 h-14 rounded-2xl bg-surface-2 border border-line text-accent flex items-center justify-center mx-auto mb-3 shadow-inner">
-                      <Sparkles className="w-7 h-7" />
-                    </div>
-                    <span className="text-sm font-heading font-semibold text-text block">
-                      Founders & Academy Photo
-                    </span>
-                    <span className="text-xs text-muted mt-1 block">
-                      Live collaborative mentoring labs
-                    </span>
                   </div>
 
                   {/* Footer Caption */}

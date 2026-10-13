@@ -6,6 +6,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { ChevronLeft, ChevronRight, Star, Quote, Award } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { SiteImage } from "@/components/ui/SiteImage";
 
 export function SuccessStories() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -75,7 +76,12 @@ export function SuccessStories() {
                   {/* Student Details */}
                   <div className="flex items-center gap-3.5 border-t border-line/60 pt-5">
                     <div className="w-11 h-11 rounded-full bg-surface-2 border border-accent/40 flex items-center justify-center font-heading font-bold text-accent text-sm shrink-0">
-                      {currentTestimonial.studentName.slice(1, 2)}
+                      <SiteImage
+                        image={currentTestimonial.image}
+                        fill
+                        className="rounded-full object-cover"
+                        sizes="44px"
+                      />
                     </div>
                     <div>
                       <h4 className="font-heading font-bold text-text text-sm sm:text-base">

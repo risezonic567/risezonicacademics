@@ -1,3 +1,5 @@
+import { images } from "@/data/images";
+
 export const moduleGroups = [
   {
     id: "foundation",
@@ -68,6 +70,7 @@ export const moduleGroups = [
 export const coursePlans = [
   {
     slug: "starter",
+    image: images.plans.starter,
     name: "Starter",
     level: "Beginner",
     duration: "[X months]",
@@ -95,6 +98,7 @@ export const coursePlans = [
   },
   {
     slug: "pro",
+    image: images.plans.pro,
     name: "Pro",
     level: "Intermediate",
     duration: "[X months]",
@@ -122,6 +126,7 @@ export const coursePlans = [
   },
   {
     slug: "master",
+    image: images.plans.master,
     name: "Master",
     level: "Advanced",
     duration: "[X months]",
@@ -149,6 +154,7 @@ export const coursePlans = [
   },
   {
     slug: "custom",
+    image: images.plans.custom,
     name: "Custom Modules",
     level: "Any",
     duration: "[Flexible]",

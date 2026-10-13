@@ -8,6 +8,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { StaggerContainer, StaggerItem, Reveal } from "@/components/ui/Reveal";
 import { ArrowRight, TrendingUp, DollarSign, Building2 } from "lucide-react";
+import { SiteImage } from "@/components/ui/SiteImage";
 
 export function PlacementSnapshot() {
   return (
@@ -78,9 +79,14 @@ export function PlacementSnapshot() {
             {hiringPartners.map((partner) => (
               <StaggerItem key={partner.id}>
                 <div className="p-4 rounded-xl bg-surface-2 border border-line flex items-center justify-center text-center hover:border-accent/40 transition-colors">
-                  <span className="text-xs sm:text-sm font-heading font-medium text-text truncate">
-                    {partner.name}
-                  </span>
+                  <div className="relative h-5 w-full">
+                    <SiteImage
+                      image={partner.image}
+                      fill
+                      sizes="(max-width: 640px) 40vw, 20vw"
+                      className="object-contain p-1"
+                    />
+                  </div>
                 </div>
               </StaggerItem>
             ))}

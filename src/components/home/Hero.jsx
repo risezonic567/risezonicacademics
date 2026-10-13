@@ -12,6 +12,8 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { OpenModalButton } from "@/components/ui/OpenModalButton";
+import { SiteImage } from "@/components/ui/SiteImage";
+import { images } from "@/data/images";
 
 const rotatingWords = ["get hired", "start freelancing", "grow your business"];
 
@@ -145,13 +147,13 @@ export function Hero() {
             {/* Overlapping 24px avatars */}
             <div className="flex -space-x-2">
               <div className="h-6 w-6 rounded-full border-2 border-bg bg-surface-2 flex items-center justify-center text-[10px] text-accent font-bold">
-                A
+                <SiteImage image={images.avatars[0]} className="rounded-full object-cover" sizes="24px" fill />
               </div>
               <div className="h-6 w-6 rounded-full border-2 border-bg bg-primary/30 flex items-center justify-center text-[10px] text-light font-bold">
-                R
+                <SiteImage image={images.avatars[1]} className="rounded-full object-cover" sizes="24px" fill />
               </div>
               <div className="h-6 w-6 rounded-full border-2 border-bg bg-accent/30 flex items-center justify-center text-[10px] text-accent font-bold">
-                S
+                <SiteImage image={images.avatars[2]} className="rounded-full object-cover" sizes="24px" fill />
               </div>
             </div>
 
@@ -239,24 +241,13 @@ export function Hero() {
 
           {/* Main Visual Frame (Banner photo placeholder block) */}
           <div className="relative w-full aspect-[16/10] sm:h-[235px] lg:h-[340px] flex items-center justify-center bg-gradient-to-b from-surface-2/80 via-surface to-bg/90 overflow-hidden">
-            {/* Subtle grid pattern background */}
-            <div
-              aria-hidden="true"
-              className="absolute inset-0 opacity-[0.06] bg-[radial-gradient(#2DD4BF_1px,transparent_1px)] [background-size:16px_16px]"
+            <SiteImage
+              image={images.hero}
+              fill
+              priority
+              sizes="(max-width: 1200px) 100vw, 1200px"
+              className="object-cover"
             />
-
-            {/* Photo placeholder indication */}
-            <div className="relative z-10 flex flex-col items-center text-center px-4">
-              <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-2xl bg-accent/10 border border-accent/30 flex items-center justify-center text-accent mb-2">
-                <Sparkles className="h-5 w-5 sm:h-6 sm:w-6" />
-              </div>
-              <span className="font-heading font-semibold text-text text-sm sm:text-base">
-                Banner photo
-              </span>
-              <span className="text-muted text-[11px] sm:text-xs mt-0.5 max-w-xs">
-                Live classroom sessions & real-time analytics lab (1600 × 700)
-              </span>
-            </div>
 
             {/* Left Card: Campaign results (Overlapping bottom-left on desktop, inside on mobile) */}
             <motion.div

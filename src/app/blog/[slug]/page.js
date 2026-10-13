@@ -5,6 +5,7 @@ import { siteConfig } from "@/data/site";
 import { Card } from "@/components/ui/Card";
 import { OpenModalButton } from "@/components/ui/OpenModalButton";
 import { CopyLinkButton } from "@/components/blog/CopyLinkButton";
+import { SiteImage } from "@/components/ui/SiteImage";
 import {
   ChevronRight,
   Calendar,
@@ -134,19 +135,14 @@ export default async function BlogPostPage({ params }) {
       <div className="max-w-[720px] mx-auto px-5 sm:px-8 py-12 sm:py-16">
         {/* Featured Image Placeholder */}
         <div className="w-full aspect-[16/9] rounded-2xl bg-gradient-to-br from-surface-2 via-surface to-bg border border-accent/25 flex flex-col items-center justify-center p-6 text-center mb-10 shadow-xl relative overflow-hidden">
-          <div
-            aria-hidden="true"
-            className="absolute inset-0 opacity-[0.05] bg-[radial-gradient(#2DD4BF_1px,transparent_1px)] [background-size:16px_16px]"
-          />
-          <div className="w-14 h-14 rounded-2xl bg-surface-2 border border-line text-accent flex items-center justify-center mb-2 shadow-inner">
-            <BookOpen className="w-7 h-7" />
+          <div className="absolute inset-0">
+            <SiteImage
+              image={post.image}
+              fill
+              sizes="(max-width: 768px) 100vw, 720px"
+              className="object-cover"
+            />
           </div>
-          <span className="text-sm font-heading font-semibold text-text">
-            {post.title}
-          </span>
-          <span className="text-xs text-muted mt-1">
-            Article Case Study & Guide Visual
-          </span>
         </div>
 
         {/* Content Blocks */}

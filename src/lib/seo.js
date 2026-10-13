@@ -1,10 +1,11 @@
 import { siteConfig } from "@/data/site";
+import { images } from "@/data/images";
 
 export function generateMetadataHelper({
   title,
   description = siteConfig.tagline,
   path = "",
-  image = "/og-image.jpg",
+  image = images.og.src,
 }) {
   const url = `${siteConfig.url}${path}`;
   const fullTitle = title

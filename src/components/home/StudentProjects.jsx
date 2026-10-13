@@ -6,6 +6,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { StaggerContainer, StaggerItem } from "@/components/ui/Reveal";
 import { Card } from "@/components/ui/Card";
 import { ExternalLink, TrendingUp, Layers } from "lucide-react";
+import { SiteImage } from "@/components/ui/SiteImage";
 
 export function StudentProjects() {
   return (
@@ -30,11 +31,14 @@ export function StudentProjects() {
                 <div>
                   {/* Image Placeholder Block */}
                   <div className="relative w-full aspect-[16/9] bg-gradient-to-br from-surface-2 via-surface to-bg border-b border-line flex flex-col items-center justify-center p-6 text-center overflow-hidden">
-                    {/* Pattern Overlay */}
-                    <div
-                      aria-hidden="true"
-                      className="absolute inset-0 opacity-[0.05] bg-[radial-gradient(#2DD4BF_1px,transparent_1px)] [background-size:12px_12px]"
-                    />
+                    <div className="absolute inset-0">
+                      <SiteImage
+                        image={project.image}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-cover"
+                      />
+                    </div>
 
                     {/* Metric Chip */}
                     <div className="absolute top-4 left-4 z-10 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-2/90 border border-accent/40 text-accent text-xs font-semibold backdrop-blur-md">
@@ -47,15 +51,6 @@ export function StudentProjects() {
                       {project.category}
                     </div>
 
-                    {/* Center Placeholder Graphic */}
-                    <div className="relative z-10 flex flex-col items-center">
-                      <div className="w-12 h-12 rounded-2xl bg-primary/10 border border-primary/30 flex items-center justify-center text-accent mb-2 group-hover:scale-110 transition-transform duration-300">
-                        <Layers className="w-6 h-6" />
-                      </div>
-                      <span className="text-xs font-heading font-medium text-muted">
-                        Campaign Case Study Visual
-                      </span>
-                    </div>
                   </div>
 
                   {/* Body Content */}

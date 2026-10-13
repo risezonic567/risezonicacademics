@@ -3,6 +3,7 @@
 import React from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { hiringPartners } from "@/data/partners";
+import { SiteImage } from "@/components/ui/SiteImage";
 export function HiringPartners() {
   const shouldReduceMotion = useReducedMotion();
   const partnersList = [...hiringPartners, ...hiringPartners];
@@ -51,10 +52,11 @@ export function HiringPartners() {
               className="flex items-center justify-center min-w-[150px] sm:min-w-[190px] h-[60px] sm:h-[68px] px-6 rounded-2xl bg-surface border border-line hover:border-primary/50 transition-colors shadow-sm select-none group"
             >
               <div className="flex items-center gap-2.5">
-                <div className="w-2 h-2 rounded-full bg-accent/60 group-hover:bg-accent transition-colors" />
-                <span className="text-xs sm:text-sm font-heading font-medium text-muted group-hover:text-text transition-colors whitespace-nowrap">
-                  {partner.name}
-                </span>
+                <SiteImage
+                  image={partner.image}
+                  className="object-contain p-2"
+                  sizes="190px"
+                />
               </div>
             </div>
           ))}

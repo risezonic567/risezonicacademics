@@ -30,7 +30,7 @@ export const siteConfig = {
   socials: {
     linkedin: "https://linkedin.com/company/[risezonic-academics]",
     instagram: "https://instagram.com/[risezonicacademics]",
-    youtube: "https://youtube.com/@[risezonicacademics]",
+    youtube: "https://www.youtube.com/@YouTube",
     twitter: "https://x.com/[risezonic]",
   },
   stats: {

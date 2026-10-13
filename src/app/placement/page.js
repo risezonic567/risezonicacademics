@@ -6,6 +6,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal, StaggerContainer, StaggerItem } from "@/components/ui/Reveal";
 import { Card } from "@/components/ui/Card";
 import { OpenModalButton } from "@/components/ui/OpenModalButton";
+import { SiteImage } from "@/components/ui/SiteImage";
 import {
   ChevronRight,
   FileText,
@@ -289,7 +290,12 @@ export default function PlacementPage() {
                     <div className="flex items-center justify-between gap-3 mb-5">
                       <div className="flex items-center gap-3">
                         <div className="w-11 h-11 rounded-full bg-surface-2 border border-accent/40 flex items-center justify-center font-heading font-bold text-accent text-sm shrink-0">
-                          {student.studentName.slice(1, 2) || "S"}
+                          <SiteImage
+                            image={student.placementImage}
+                            fill
+                            className="rounded-full object-cover"
+                            sizes="44px"
+                          />
                         </div>
                         <div>
                           <h4 className="font-heading font-bold text-text text-sm sm:text-base">

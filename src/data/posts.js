@@ -1,3 +1,5 @@
+import { images } from "@/data/images";
+
 export const posts = [
   {
     slug: "seo-basics-every-beginner-should-know",
@@ -7,6 +9,7 @@ export const posts = [
     category: "SEO",
     date: "[Month DD, 2026]",
     readTime: "[5 min read]",
+    image: images.blog[0],
     content: [
       {
         type: "p",
@@ -34,6 +37,7 @@ export const posts = [
     category: "Careers",
     date: "[Month DD, 2026]",
     readTime: "[6 min read]",
+    image: images.blog[1],
     content: [
       {
         type: "p",
@@ -61,6 +65,7 @@ export const posts = [
     category: "Careers",
     date: "[Month DD, 2026]",
     readTime: "[7 min read]",
+    image: images.blog[2],
     content: [
       {
         type: "p",
@@ -88,6 +93,7 @@ export const posts = [
     category: "Ads",
     date: "[Month DD, 2026]",
     readTime: "[5 min read]",
+    image: images.blog[3],
     content: [
       {
         type: "p",
@@ -115,6 +121,7 @@ export const posts = [
     category: "Social media",
     date: "[Month DD, 2026]",
     readTime: "[6 min read]",
+    image: images.blog[4],
     content: [
       {
         type: "p",
@@ -142,6 +149,7 @@ export const posts = [
     category: "Careers",
     date: "[Month DD, 2026]",
     readTime: "[7 min read]",
+    image: images.blog[5],
     content: [
       {
         type: "p",

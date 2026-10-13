@@ -6,6 +6,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { StaggerContainer, StaggerItem } from "@/components/ui/Reveal";
 import { UserCheck } from "lucide-react";
+import { SiteImage } from "@/components/ui/SiteImage";
 
 export function Mentors() {
   return (
@@ -31,10 +32,12 @@ export function Mentors() {
                   {/* Circular Photo Placeholder */}
                   <div className="relative mx-auto w-24 h-24 mb-5">
                     <div className="w-full h-full rounded-full bg-surface-2 border-2 border-line group-hover:border-accent flex items-center justify-center font-heading font-bold text-accent text-xl transition-colors shadow-inner overflow-hidden">
-                      {/* Initials or Graphic */}
-                      <span className="text-muted group-hover:text-accent transition-colors">
-                        {mentor.name.slice(1, 2) || "M"}
-                      </span>
+                      <SiteImage
+                        image={mentor.image}
+                        fill
+                        className="rounded-full object-cover"
+                        sizes="96px"
+                      />
                     </div>
 
                     <div className="absolute bottom-0 right-0 p-1.5 rounded-full bg-primary text-bg shadow-md">

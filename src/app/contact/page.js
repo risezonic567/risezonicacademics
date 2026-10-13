@@ -5,6 +5,8 @@ import { Reveal, StaggerContainer, StaggerItem } from "@/components/ui/Reveal";
 import { Card } from "@/components/ui/Card";
 import { Accordion } from "@/components/ui/Accordion";
 import { OpenModalButton } from "@/components/ui/OpenModalButton";
+import { images } from "@/data/images";
+import { SiteImage } from "@/components/ui/SiteImage";
 import {
   ChevronRight,
   Phone,
@@ -225,6 +227,14 @@ export default function ContactPage() {
               />
             */}
             <div className="relative w-full aspect-[4/3] md:aspect-[16/9] rounded-[24px] bg-gradient-to-br from-surface-2 via-surface to-bg border border-accent/30 shadow-2xl overflow-hidden flex flex-col items-center justify-center p-6 text-center group">
+              <div className="absolute inset-0">
+                <SiteImage
+                  image={images.contactMap}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 1200px"
+                  className="object-cover"
+                />
+              </div>
               <div
                 aria-hidden="true"
                 className="absolute inset-0 opacity-[0.06] bg-[radial-gradient(#2DD4BF_1px,transparent_1px)] [background-size:20px_20px]"
