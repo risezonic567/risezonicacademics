@@ -5,6 +5,7 @@ import { Reveal, StaggerContainer, StaggerItem } from "@/components/ui/Reveal";
 import { Card } from "@/components/ui/Card";
 import { Accordion } from "@/components/ui/Accordion";
 import { OpenModalButton } from "@/components/ui/OpenModalButton";
+import { LeadForm } from "@/components/modal/LeadForm";
 import { images } from "@/data/images";
 import { SiteImage } from "@/components/ui/SiteImage";
 import {
@@ -123,10 +124,24 @@ export default function ContactPage() {
       {/* 2. Contact Cards Grid */}
       <section className="py-16 sm:py-20 bg-bg relative">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
-          <StaggerContainer
-            staggerDelay={0.08}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-          >
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">
+            <div className="order-first lg:order-last">
+              <Card
+                variant="surface"
+                className="rounded-lg border border-line bg-bg p-8"
+              >
+                <h2 className="mb-6 text-2xl font-heading font-bold text-text">
+                  Send us a message
+                </h2>
+                <LeadForm source="contact-page" standalone compact />
+              </Card>
+            </div>
+
+            <div className="order-last lg:order-first">
+              <StaggerContainer
+                staggerDelay={0.08}
+                className="grid grid-cols-1 gap-6 sm:grid-cols-2"
+              >
             {contactCards.map((card) => {
               const Icon = card.icon;
 
@@ -178,29 +193,31 @@ export default function ContactPage() {
                 </StaggerItem>
               );
             })}
-          </StaggerContainer>
+              </StaggerContainer>
 
-          {/* 3. Action Row */}
-          <div className="mt-12 sm:mt-16 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <OpenModalButton
-              source="contact-callback"
-              variant="primary"
-              size="lg"
-              className="w-full sm:w-auto px-8 py-3.5 text-sm sm:text-base font-bold"
-            >
-              <span>Request a callback</span>
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </OpenModalButton>
+              {/* 3. Action Row */}
+              <div className="mt-8 flex flex-col items-stretch gap-4 sm:flex-row sm:items-center">
+                <OpenModalButton
+                  source="contact-callback"
+                  variant="primary"
+                  size="lg"
+                  className="w-full px-8 py-3.5 text-base font-bold sm:w-auto"
+                >
+                  <span>Request a callback</span>
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </OpenModalButton>
 
-            <a
-              href={siteConfig.contact.whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl border border-line text-text hover:border-accent hover:text-accent font-semibold transition-all text-sm sm:text-base active:scale-[0.98]"
-            >
-              <MessageCircle className="w-4 h-4 text-accent" />
-              <span>Chat on WhatsApp</span>
-            </a>
+                <a
+                  href={siteConfig.contact.whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-line px-7 py-3.5 text-base font-semibold text-text transition-colors hover:border-accent hover:text-accent sm:w-auto"
+                >
+                  <MessageCircle className="w-4 h-4 text-accent" />
+                  <span>Chat on WhatsApp</span>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>

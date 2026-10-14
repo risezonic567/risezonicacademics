@@ -8,6 +8,7 @@ import { siteConfig } from "@/data/site";
 import { coursePlans, moduleGroups } from "@/data/courses";
 import { OpenModalButton } from "@/components/ui/OpenModalButton";
 import { useLeadModal } from "@/components/modal/LeadModalProvider";
+import { SiteImage } from "@/components/ui/SiteImage";
 import { MobileMenu } from "./MobileMenu";
 
 export function Navbar() {
@@ -74,9 +75,7 @@ export function Navbar() {
             >
               Hire from us
             </OpenModalButton>
-            <a href="#" className="hover:text-accent">
-              Login
-            </a>
+          
           </div>
         </div>
       </div>
@@ -85,7 +84,7 @@ export function Navbar() {
           {/* Left: logo + navigation links */}
           <div className="flex items-center gap-8 xl:gap-12">
             <Link href="/" className="flex items-center gap-2.5 shrink-0">
-              <div className="w-9 h-9 rounded-md bg-primary text-ink flex items-center justify-center font-heading font-bold text-lg">
+              <div className="w-9 h-9 rounded-md bg-primary text-on-primary flex items-center justify-center font-heading font-bold text-lg">
                 R
               </div>
               <div className="flex items-baseline gap-2 font-heading text-xl font-bold text-text">
@@ -150,23 +149,35 @@ export function Navbar() {
                                     onClick={() => setIsDropdownOpen(false)}
                                     className="group/item block p-3 rounded-md hover:bg-surface-2 transition-colors"
                                   >
-                                    <div className="flex items-center justify-between gap-3">
-                                      <span className="text-base font-bold text-text group-hover/item:text-accent transition-colors">
-                                        {plan.name}
+                                    <div className="flex items-center gap-3">
+                                      <span className="h-14 w-14 shrink-0 overflow-hidden rounded-md">
+                                        <SiteImage
+                                          image={plan.image}
+                                          fill
+                                          className="h-full w-full rounded-md object-cover"
+                                          sizes="56px"
+                                        />
                                       </span>
-                                      {plan.isPopular ? (
-                                        <span className="text-sm font-medium text-accent">
-                                          Most popular
+                                      <span className="min-w-0 flex-1">
+                                        <span className="flex items-center justify-between gap-3">
+                                          <span className="text-base font-bold text-text group-hover/item:text-accent transition-colors">
+                                            {plan.name}
+                                          </span>
+                                          {plan.isPopular ? (
+                                            <span className="text-sm font-medium text-accent">
+                                              Most popular
+                                            </span>
+                                          ) : (
+                                            <span className="text-sm font-medium text-muted">
+                                              {plan.duration}
+                                            </span>
+                                          )}
                                         </span>
-                                      ) : (
-                                        <span className="text-sm font-medium text-muted">
-                                          {plan.duration}
+                                        <span className="mt-0.5 block line-clamp-1 text-sm font-medium text-muted">
+                                          {plan.targetRole}
                                         </span>
-                                      )}
+                                      </span>
                                     </div>
-                                    <p className="text-sm font-medium text-muted line-clamp-1 mt-0.5">
-                                      {plan.targetRole}
-                                    </p>
                                   </Link>
                                 ))}
                               </div>
@@ -232,7 +243,7 @@ export function Navbar() {
             <OpenModalButton
               source="navbar"
               variant="primary"
-              size="sm"
+              size="md"
               className="hidden text-base font-bold sm:inline-flex"
             >
               Book free counselling

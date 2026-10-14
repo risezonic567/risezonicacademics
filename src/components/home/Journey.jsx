@@ -55,7 +55,7 @@ export function Journey() {
             <OpenModalButton
               source="steps-cta"
               variant="primary"
-              className="mt-7 text-[17px] hover:bg-primary hover:border-accent"
+              className="mt-7 text-[17px] hover:bg-primary hover:border-accent hover:text-on-primary"
             >
               Book free counselling
             </OpenModalButton>

@@ -65,6 +65,16 @@ export const images = {
     photo("1506794778202-cad84cf45f1d", "Learner portrait after a career placement", 600, 600),
     photo("1573497019940-1c28c88b4f3e", "Learner portrait after a career placement", 600, 600),
   ],
+  placementEvents: [
+    photo("1524178232363-1fb2b075b655", "Learners working together in a classroom", 960, 720),
+    photo("1531482615713-2afd69097998", "Team discussing a campaign project", 960, 720),
+    photo("1517245386807-bb43f82c33c4", "Colleagues collaborating around a table", 960, 720),
+    photo("1522071820081-009f0129c71c", "Team planning work in a shared workspace", 960, 720),
+    photo("1552664730-d307ca884978", "Learners attending a workshop", 960, 720),
+    photo("1519389950473-47ba0277781c", "Colleagues working at computers", 960, 720),
+    photo("1553877522-43269d4ea984", "Creative team sharing ideas in a studio", 960, 720),
+    photo("1460925895917-afdab827c52f", "Team reviewing digital campaign analytics", 960, 720),
+  ],
   about: photo("1432888498266-38ffec3eaf0a", "Team planning a learning and work program", 1200, 900),
   plans: {
     starter: photo("1504384308090-c894fdcc538d", "Team learning digital marketing fundamentals", 1000, 600),
@@ -82,6 +92,6 @@ export const images = {
     photo("1432888498266-38ffec3eaf0a", "Freelancers working together on a marketing project", 1200, 630),
   ],
   videoPoster: photo("1504384308090-c894fdcc538d", "Learners attending a digital marketing demo class", 1280, 720),
-  og: localImage("og-default", "Risezonic Academics social preview", 1200, 630),
-  contactMap: localImage("contact-map", "Placeholder map showing the academy location", 1200, 675),
+  og: photo("1504384308090-c894fdcc538d", "Learners attending a digital marketing class", 1200, 630),
+  contactMap: photo("1552664730-d307ca884978", "Learners collaborating in a classroom", 1200, 675),
 };

@@ -25,7 +25,7 @@ export function Button({
 
   const variantStyles = {
     primary:
-      "bg-primary text-ink border-primary hover:bg-accent-hover hover:border-accent-hover",
+      "bg-primary text-on-primary font-bold border-primary hover:bg-accent-hover hover:border-accent-hover",
     secondary:
       "bg-surface border border-line text-text hover:border-primary hover:text-accent-hover",
     outline:

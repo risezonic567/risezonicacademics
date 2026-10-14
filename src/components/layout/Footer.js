@@ -595,7 +595,7 @@ export function Footer() {
           {/* Center Brand Logo Row */}
           <div className="py-10 border-b border-line flex flex-col items-center justify-center text-center">
             <Link href="/" className="flex items-center gap-3 mb-2">
-              <div className="w-[38px] h-[38px] rounded-xl bg-primary text-ink flex items-center justify-center font-heading font-bold text-lg shadow">
+              <div className="w-[38px] h-[38px] rounded-xl bg-primary text-on-primary flex items-center justify-center font-heading font-bold text-lg shadow">
                 R
               </div>
               <span className="font-heading text-2xl font-bold tracking-wider text-text">

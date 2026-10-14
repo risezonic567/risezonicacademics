@@ -7,6 +7,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { coursePlans, moduleGroups } from "@/data/courses";
 import { faqs } from "@/data/faqs";
 import { notFound } from "next/navigation";
+import { SiteImage } from "@/components/ui/SiteImage";
 
 export const instant = false;
 
@@ -96,6 +97,15 @@ export default async function CourseDetailPage({ params }) {
       <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
         <div className="space-y-16 lg:col-span-2">
           <header>
+            <div className="relative mb-6 aspect-video max-h-56 overflow-hidden rounded-lg">
+              <SiteImage
+                image={plan.image}
+                fill
+                priority
+                className="h-full w-full object-cover"
+                sizes="(max-width: 768px) 100vw, 66vw"
+              />
+            </div>
             <h1 className="text-4xl font-heading font-bold text-text">
               {plan.name} course
             </h1>

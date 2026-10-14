@@ -37,7 +37,7 @@ export function Programs() {
                       : "border-line bg-bg hover:border-primary"
                   }`}
                 >
-                  <div className="relative mb-6 aspect-video overflow-hidden rounded-lg bg-surface-2">
+                  <div className="relative mb-6 aspect-video max-h-40 overflow-hidden rounded-lg bg-surface-2">
                     <SiteImage
                       image={plan.image}
                       fill
@@ -47,7 +47,7 @@ export function Programs() {
                   </div>
 
                   {isPro && (
-                    <div className="mb-4 inline-flex rounded-[4px] bg-primary px-3 py-1 text-sm font-semibold text-ink">
+                    <div className="mb-4 inline-flex rounded-[4px] bg-primary px-3 py-1 text-sm font-bold text-on-primary">
                       Most popular
                     </div>
                   )}
@@ -91,7 +91,7 @@ export function Programs() {
                       source={`plan-${plan.slug}`}
                       course={plan.slug}
                       variant="primary"
-                      className="w-full text-[17px] hover:bg-primary hover:border-accent sm:w-auto"
+                      className="w-full text-[17px] hover:bg-primary hover:border-accent hover:text-on-primary sm:w-auto"
                     >
                       Enquire now
                     </OpenModalButton>

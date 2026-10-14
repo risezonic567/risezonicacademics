@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { OpenModalButton } from "@/components/ui/OpenModalButton";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { SiteImage } from "@/components/ui/SiteImage";
 import { coursePlans, moduleGroups } from "@/data/courses";
 import { faqs } from "@/data/faqs";
 
@@ -93,6 +94,14 @@ export default function CoursesPage() {
               className="flex h-full flex-col p-6"
             >
               <div className="flex-1">
+                <div className="relative mb-5 aspect-video max-h-40 overflow-hidden rounded-lg">
+                  <SiteImage
+                    image={plan.image}
+                    fill
+                    className="h-full w-full object-cover"
+                    sizes="(max-width: 768px) 100vw, 25vw"
+                  />
+                </div>
                 <h2 className="text-2xl font-heading font-bold text-text">
                   <Link
                     href={`/courses/${plan.slug}`}

@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { siteConfig } from "@/data/site";
 import { coursePlans } from "@/data/courses";
 import { OpenModalButton } from "@/components/ui/OpenModalButton";
+import { SiteImage } from "@/components/ui/SiteImage";
 
 export function MobileMenu({ isOpen, onClose }) {
   const pathname = usePathname();
@@ -60,7 +61,7 @@ export function MobileMenu({ isOpen, onClose }) {
               {/* Header */}
               <div className="p-5 border-b border-line flex items-center justify-between">
                 <Link href="/" onClick={onClose} className="flex items-center gap-2.5">
-                  <div className="w-9 h-9 rounded-md bg-primary text-ink flex items-center justify-center font-heading font-bold text-lg">
+                  <div className="w-9 h-9 rounded-md bg-primary text-on-primary flex items-center justify-center font-heading font-bold text-lg">
                     R
                   </div>
                   <div className="flex items-baseline gap-2 font-heading text-xl font-bold text-text">
@@ -111,9 +112,17 @@ export function MobileMenu({ isOpen, onClose }) {
                         key={plan.slug}
                         href={`/courses/${plan.slug}`}
                         onClick={onClose}
-                        className="flex items-center justify-between px-3 py-2.5 rounded-md text-base font-semibold text-muted hover:text-text hover:bg-surface-2 transition-colors"
+                        className="flex items-center gap-3 px-3 py-2.5 rounded-md text-base font-semibold text-muted hover:text-text hover:bg-surface-2 transition-colors"
                       >
-                        <span className="font-semibold">{plan.name}</span>
+                        <span className="h-10 w-10 shrink-0 overflow-hidden rounded-md">
+                          <SiteImage
+                            image={plan.image}
+                            fill
+                            className="h-full w-full rounded-md object-cover"
+                            sizes="40px"
+                          />
+                        </span>
+                        <span className="min-w-0 flex-1 font-semibold">{plan.name}</span>
                         <span className="text-sm text-muted">{plan.level}</span>
                       </Link>
                     ))}

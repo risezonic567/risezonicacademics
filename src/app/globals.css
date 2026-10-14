@@ -9,6 +9,7 @@
   --color-surface-2: #EAF2F0;
   --color-light: #D1FAE5;
   --color-ink: #0B1111;
+  --color-on-primary: #FFFFFF;
   --color-text: #0B1111;
   --color-muted: #4B5563;
   --color-line: #E2E8E6;
@@ -80,4 +81,13 @@ h6 {
 button,
 a {
   -webkit-tap-highlight-color: transparent;
+}
+
+.placement-gallery .swiper-pagination-bullet {
+  background-color: var(--color-line);
+  opacity: 1;
+}
+
+.placement-gallery .swiper-pagination-bullet-active {
+  background-color: var(--color-primary);
 }

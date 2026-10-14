@@ -21,7 +21,7 @@ export function StickyMobileCta() {
           variant="primary"
           className="w-full py-3.5 flex items-center justify-center gap-2 text-sm font-bold"
         >
-          <Sparkles className="w-4 h-4 text-ink" />
+          <Sparkles className="w-4 h-4 text-on-primary" />
           <span>Book Free Counselling</span>
         </OpenModalButton>
       </div>

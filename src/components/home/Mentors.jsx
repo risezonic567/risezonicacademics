@@ -40,7 +40,7 @@ export function Mentors() {
                       />
                     </div>
 
-                    <div className="absolute bottom-0 right-0 p-1.5 rounded-full bg-primary text-ink">
+                    <div className="absolute bottom-0 right-0 p-1.5 rounded-full bg-primary text-on-primary">
                       <UserCheck className="w-3.5 h-3.5" />
                     </div>
                   </div>

@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Link from "next/link";
 import { siteConfig } from "@/data/site";
 import { hiringPartners } from "@/data/partners";
@@ -7,6 +8,8 @@ import { Reveal, StaggerContainer, StaggerItem } from "@/components/ui/Reveal";
 import { Card } from "@/components/ui/Card";
 import { OpenModalButton } from "@/components/ui/OpenModalButton";
 import { SiteImage } from "@/components/ui/SiteImage";
+import { PlacementGallery } from "@/components/placement/PlacementGallery";
+import { placedLearners, placementEvents } from "@/data/placed";
 import {
   ChevronRight,
   FileText,
@@ -23,6 +26,9 @@ import {
   DollarSign,
   GraduationCap,
 } from "lucide-react";
+
+const GRID_COLUMNS = 3;
+const GRID_ROWS = 2;
 
 export const metadata = {
   title: "Placement",
@@ -238,6 +244,23 @@ export default function PlacementPage() {
           </div>
         </div>
       </section>
+
+      <Suspense
+        fallback={
+          <section className="py-20 sm:py-24 bg-surface border-y border-line">
+            <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
+              <h2 className="text-3xl sm:text-4xl font-heading font-bold text-text">
+                Our placed learners
+              </h2>
+            </div>
+          </section>
+        }
+      >
+        <PlacementGallery
+          learners={placedLearners.slice(0, GRID_COLUMNS * GRID_ROWS)}
+          events={placementEvents}
+        />
+      </Suspense>
 
       {/* 4. Hiring Partners Grid */}
       <section className="py-20 sm:py-24 bg-bg relative">

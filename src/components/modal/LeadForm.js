@@ -30,7 +30,13 @@ const leadSchema = z.object({
   honeypot: z.string().optional(),
 });
 
-export function LeadForm({ source = "modal", initialCourse = "", onClose }) {
+export function LeadForm({
+  source = "modal",
+  initialCourse = "",
+  onClose,
+  standalone = false,
+  compact = false,
+}) {
   const [submissionState, setSubmissionState] = useState("idle"); // 'idle' | 'submitting' | 'success' | 'error'
   const [submittedName, setSubmittedName] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -89,17 +95,27 @@ export function LeadForm({ source = "modal", initialCourse = "", onClose }) {
           <CheckCircle2 className="w-8 h-8" />
         </div>
         <h3 className="text-xl font-bold font-heading text-text mb-2">
-          Counselling Requested
+          {standalone ? "Message sent" : "Counselling Requested"}
         </h3>
         <p className="text-muted text-sm max-w-sm mb-6">
-          Thanks, {submittedName || "there"}. We will call you within [24 hours] to confirm your free demo class.
+          {standalone
+            ? `Thanks, ${submittedName || "there"}. We will be in touch soon.`
+            : `Thanks, ${submittedName || "there"}. We will call you within [24 hours] to confirm your free demo class.`}
         </p>
         <button
           type="button"
-          onClick={onClose}
-          className="w-full sm:w-auto px-8 py-3 rounded-xl bg-primary text-ink font-semibold hover:bg-accent-hover transition-colors"
+          onClick={() => {
+            if (standalone) {
+              reset();
+              setSubmissionState("idle");
+              setSubmittedName("");
+            } else {
+              onClose?.();
+            }
+          }}
+          className="w-full sm:w-auto px-8 py-3 rounded-xl bg-primary text-on-primary font-bold hover:bg-accent-hover transition-colors"
         >
-          Close
+          {standalone ? "Send another message" : "Close"}
         </button>
       </div>
     );
@@ -128,49 +144,49 @@ export function LeadForm({ source = "modal", initialCourse = "", onClose }) {
 
       {/* Full Name */}
       <div>
-        <label className="block text-xs font-medium text-muted uppercase tracking-wider mb-1.5">
+        <label className={`block ${compact ? "text-base font-semibold" : "text-xs font-medium uppercase tracking-wider"} text-muted mb-1.5`}>
           Full Name <span className="text-accent">*</span>
         </label>
         <input
           type="text"
           placeholder="e.g. Rahul Sharma"
           {...register("fullName")}
-          className="w-full px-3.5 py-2.5 rounded-xl bg-bg border border-line text-text placeholder-muted/50 text-sm focus:border-accent focus:ring-2 focus:ring-accent focus:outline-none transition-colors"
+          className={`w-full px-3.5 py-2.5 ${compact ? "min-h-12 text-[17px]" : "text-sm"} rounded-xl bg-bg border border-line text-text placeholder-muted/50 focus:border-accent focus:ring-2 focus:ring-accent focus:outline-none transition-colors`}
         />
         {errors.fullName && (
-          <p className="mt-1 text-xs text-red-700">{errors.fullName.message}</p>
+          <p className={`mt-1 ${compact ? "text-sm" : "text-xs"} text-red-700`}>{errors.fullName.message}</p>
         )}
       </div>
 
       {/* Phone & Email Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <div>
-          <label className="block text-xs font-medium text-muted uppercase tracking-wider mb-1.5">
+          <label className={`block ${compact ? "text-base font-semibold" : "text-xs font-medium uppercase tracking-wider"} text-muted mb-1.5`}>
             Phone Number <span className="text-accent">*</span>
           </label>
           <input
             type="tel"
             placeholder="10-digit mobile number"
             {...register("phone")}
-            className="w-full px-3.5 py-2.5 rounded-xl bg-bg border border-line text-text placeholder-muted/50 text-sm focus:border-accent focus:ring-2 focus:ring-accent focus:outline-none transition-colors"
+            className={`w-full px-3.5 py-2.5 ${compact ? "min-h-12 text-[17px]" : "text-sm"} rounded-xl bg-bg border border-line text-text placeholder-muted/50 focus:border-accent focus:ring-2 focus:ring-accent focus:outline-none transition-colors`}
           />
           {errors.phone && (
-            <p className="mt-1 text-xs text-red-700">{errors.phone.message}</p>
+            <p className={`mt-1 ${compact ? "text-sm" : "text-xs"} text-red-700`}>{errors.phone.message}</p>
           )}
         </div>
 
         <div>
-          <label className="block text-xs font-medium text-muted uppercase tracking-wider mb-1.5">
+          <label className={`block ${compact ? "text-base font-semibold" : "text-xs font-medium uppercase tracking-wider"} text-muted mb-1.5`}>
             Email Address <span className="text-accent">*</span>
           </label>
           <input
             type="email"
             placeholder="name@example.com"
             {...register("email")}
-            className="w-full px-3.5 py-2.5 rounded-xl bg-bg border border-line text-text placeholder-muted/50 text-sm focus:border-accent focus:ring-2 focus:ring-accent focus:outline-none transition-colors"
+            className={`w-full px-3.5 py-2.5 ${compact ? "min-h-12 text-[17px]" : "text-sm"} rounded-xl bg-bg border border-line text-text placeholder-muted/50 focus:border-accent focus:ring-2 focus:ring-accent focus:outline-none transition-colors`}
           />
           {errors.email && (
-            <p className="mt-1 text-xs text-red-700">{errors.email.message}</p>
+            <p className={`mt-1 ${compact ? "text-sm" : "text-xs"} text-red-700`}>{errors.email.message}</p>
           )}
         </div>
       </div>
@@ -178,27 +194,27 @@ export function LeadForm({ source = "modal", initialCourse = "", onClose }) {
       {/* City & Course Program Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <div>
-          <label className="block text-xs font-medium text-muted uppercase tracking-wider mb-1.5">
+          <label className={`block ${compact ? "text-base font-semibold" : "text-xs font-medium uppercase tracking-wider"} text-muted mb-1.5`}>
             City <span className="text-accent">*</span>
           </label>
           <input
             type="text"
             placeholder="e.g. New Delhi"
             {...register("city")}
-            className="w-full px-3.5 py-2.5 rounded-xl bg-bg border border-line text-text placeholder-muted/50 text-sm focus:border-accent focus:ring-2 focus:ring-accent focus:outline-none transition-colors"
+            className={`w-full px-3.5 py-2.5 ${compact ? "min-h-12 text-[17px]" : "text-sm"} rounded-xl bg-bg border border-line text-text placeholder-muted/50 focus:border-accent focus:ring-2 focus:ring-accent focus:outline-none transition-colors`}
           />
           {errors.city && (
-            <p className="mt-1 text-xs text-red-700">{errors.city.message}</p>
+            <p className={`mt-1 ${compact ? "text-sm" : "text-xs"} text-red-700`}>{errors.city.message}</p>
           )}
         </div>
 
         <div>
-          <label className="block text-xs font-medium text-muted uppercase tracking-wider mb-1.5">
+          <label className={`block ${compact ? "text-base font-semibold" : "text-xs font-medium uppercase tracking-wider"} text-muted mb-1.5`}>
             Interested Program <span className="text-accent">*</span>
           </label>
           <select
             {...register("course")}
-            className="w-full px-3.5 py-2.5 rounded-xl bg-bg border border-line text-text text-sm focus:border-accent focus:ring-2 focus:ring-accent focus:outline-none transition-colors"
+            className={`w-full px-3.5 py-2.5 ${compact ? "min-h-12 text-[17px]" : "text-sm"} rounded-xl bg-bg border border-line text-text focus:border-accent focus:ring-2 focus:ring-accent focus:outline-none transition-colors`}
           >
             {coursePlans.map((plan) => (
               <option key={plan.slug} value={plan.slug} className="bg-surface text-text">
@@ -206,18 +222,18 @@ export function LeadForm({ source = "modal", initialCourse = "", onClose }) {
               </option>
             ))}
             <option value="not-sure" className="bg-surface text-text">
-              Not sure yet (Guidance needed)
+              {compact ? "Not sure yet" : "Not sure yet (Guidance needed)"}
             </option>
           </select>
           {errors.course && (
-            <p className="mt-1 text-xs text-red-700">{errors.course.message}</p>
+            <p className={`mt-1 ${compact ? "text-sm" : "text-xs"} text-red-700`}>{errors.course.message}</p>
           )}
         </div>
       </div>
 
       {/* Preferred Mode */}
       <div>
-        <label className="block text-xs font-medium text-muted uppercase tracking-wider mb-1.5">
+        <label className={`block ${compact ? "text-base font-semibold" : "text-xs font-medium uppercase tracking-wider"} text-muted mb-1.5`}>
           Preferred Learning Mode <span className="text-accent">*</span>
         </label>
         <div className="grid grid-cols-2 gap-3">
@@ -228,7 +244,7 @@ export function LeadForm({ source = "modal", initialCourse = "", onClose }) {
               {...register("preferredMode")}
               className="accent-primary"
             />
-            <span className="text-sm font-medium text-text">Live Online</span>
+            <span className={compact ? "text-base font-medium text-text" : "text-sm font-medium text-text"}>Live Online</span>
           </label>
           <label className="flex items-center gap-2 p-2.5 rounded-xl bg-surface-2 border border-line cursor-pointer hover:border-primary/50 transition-colors">
             <input
@@ -237,24 +253,24 @@ export function LeadForm({ source = "modal", initialCourse = "", onClose }) {
               {...register("preferredMode")}
               className="accent-primary"
             />
-            <span className="text-sm font-medium text-text">Classroom (Offline)</span>
+            <span className={compact ? "text-base font-medium text-text" : "text-sm font-medium text-text"}>Classroom (Offline)</span>
           </label>
         </div>
         {errors.preferredMode && (
-          <p className="mt-1 text-xs text-red-700">{errors.preferredMode.message}</p>
+          <p className={`mt-1 ${compact ? "text-sm" : "text-xs"} text-red-700`}>{errors.preferredMode.message}</p>
         )}
       </div>
 
       {/* Message (Optional) */}
       <div>
-        <label className="block text-xs font-medium text-muted uppercase tracking-wider mb-1.5">
+        <label className={`block ${compact ? "text-base font-semibold" : "text-xs font-medium uppercase tracking-wider"} text-muted mb-1.5`}>
           Questions or Notes (Optional)
         </label>
         <textarea
           rows={2}
           placeholder="Tell us about your learning goals or questions..."
           {...register("message")}
-          className="w-full px-3.5 py-2 rounded-xl bg-bg border border-line text-text placeholder-muted/50 text-sm focus:border-accent focus:ring-2 focus:ring-accent focus:outline-none resize-none transition-colors"
+          className={`w-full px-3.5 py-2 ${compact ? "min-h-12 text-[17px]" : "text-sm"} rounded-xl bg-bg border border-line text-text placeholder-muted/50 focus:border-accent focus:ring-2 focus:ring-accent focus:outline-none resize-none transition-colors`}
         />
       </div>
 
@@ -262,15 +278,15 @@ export function LeadForm({ source = "modal", initialCourse = "", onClose }) {
       <button
         type="submit"
         disabled={submissionState === "submitting"}
-        className="w-full py-3.5 px-6 rounded-xl bg-primary text-ink font-semibold text-sm sm:text-base flex items-center justify-center gap-2 hover:bg-accent-hover transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
+        className="w-full py-3.5 px-6 rounded-xl bg-primary text-on-primary font-bold text-base flex items-center justify-center gap-2 hover:bg-accent-hover transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
       >
         {submissionState === "submitting" ? (
           <>
-            <Loader2 className="w-4 h-4 animate-spin text-ink" />
-            <span>Submitting details...</span>
+            <Loader2 className="w-4 h-4 animate-spin text-on-primary" />
+            <span>{standalone ? "Sending message..." : "Submitting details..."}</span>
           </>
         ) : (
-          <span>Book Free Demo & Counselling</span>
+          <span>{standalone ? "Send message" : "Book Free Demo & Counselling"}</span>
         )}
       </button>
 
