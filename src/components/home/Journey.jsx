@@ -35,7 +35,7 @@ export function Journey() {
     {
       num: "05",
       title: "Get hired",
-      description: "Resume, mock interviews and introductions to hiring teams.",
+      description: "Resume, mock interview and introductions to hiring teams.",
       duration: "[Week 5]",
     },
   ];
