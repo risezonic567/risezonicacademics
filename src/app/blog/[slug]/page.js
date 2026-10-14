@@ -176,7 +176,7 @@ export default async function BlogPostPage({ params }) {
         <div className="mt-14 rounded-2xl bg-surface border border-line p-6 sm:p-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="space-y-1">
             <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-accent uppercase tracking-wider">
-              <Sparkles className="w-3.5 h-3.5" />
+              {/* <Sparkles className="w-3.5 h-3.5" /> */}
               <span>Free 1-on-1 Strategy Call</span>
             </div>
             <h3 className="text-lg sm:text-xl font-heading font-bold text-text">

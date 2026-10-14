@@ -20,7 +20,7 @@ export function AnnouncementBar() {
     >
       <div className="max-w-[1200px] mx-auto flex items-center justify-between gap-3">
         <div className="flex-1 flex items-center justify-center gap-2 text-center truncate sm:overflow-visible">
-          <Sparkles className="w-3.5 h-3.5 shrink-0 text-on-primary" />
+          {/* <Sparkles className="w-3.5 h-3.5 shrink-0 text-on-primary" /> */}
           <span className="truncate sm:overflow-visible text-on-primary">
             {siteConfig.announcement.text}
           </span>

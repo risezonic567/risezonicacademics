@@ -469,7 +469,7 @@ export function Footer() {
             {/* Column 1: Recent News & Events */}
             <div>
               <h3 className={headingClass}>
-                <Sparkles className="w-4 h-4 text-accent" />
+                {/* <Sparkles className="w-4 h-4 text-accent" /> */}
                 <span>Recent News & Events</span>
               </h3>
               <ul className="space-y-5 text-base text-muted">
