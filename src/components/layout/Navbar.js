@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { ChevronDown, Menu } from "lucide-react";
 import { siteConfig } from "@/data/site";
@@ -40,15 +41,15 @@ export function Navbar() {
 
   return (
     <>
-      <div className="hidden lg:block bg-light border-b border-line">
-        <div className="max-w-[1200px] mx-auto px-5 sm:px-8 h-11 flex items-center justify-between gap-6 text-sm font-semibold text-text">
+      <div className="hidden lg:block bg-[#0b1111] border-b border-white/10">
+        <div className="max-w-[1600px] mx-auto px-5 sm:px-8 h-11 flex items-center justify-between gap-6 text-sm font-semibold text-white">
           <div className="flex items-center gap-2 whitespace-nowrap">
             <span>Free demo class this Saturday</span>
             <span aria-hidden="true">|</span>
             <OpenModalButton
               source="utility-strip"
               variant="ghost"
-              className="p-0 min-h-0 h-auto text-sm font-bold text-accent underline hover:text-accent hover:bg-transparent"
+              className="p-0 min-h-0 h-auto text-sm font-bold text-accent underline hover:text-accent "
             >
               Reserve a seat
             </OpenModalButton>
@@ -71,7 +72,7 @@ export function Navbar() {
             <OpenModalButton
               source="hire-from-us"
               variant="ghost"
-              className="p-0 min-h-0 h-auto text-sm font-semibold text-text hover:text-accent hover:bg-transparent"
+              className="p-0 min-h-0 h-auto text-sm font-semibold text-white hover:text-accent "
             >
               Hire from us
             </OpenModalButton>
@@ -79,23 +80,24 @@ export function Navbar() {
           </div>
         </div>
       </div>
-      <header className="sticky top-0 z-40 w-full bg-bg border-b border-line">
-        <div className="max-w-[1200px] mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between gap-6">
+      <header className="sticky top-0 z-40 w-full bg-[#0b1111] border-b border-white/10">
+        <div className="relative max-w-[1600px] mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between gap-6">
           {/* Left: logo + navigation links */}
-          <div className="flex items-center gap-8 xl:gap-12">
-            <Link href="/" className="flex items-center gap-2.5 shrink-0">
-              <div className="w-9 h-9 rounded-md bg-primary text-on-primary flex items-center justify-center font-heading font-bold text-lg">
-                R
-              </div>
-              <div className="flex items-baseline gap-2 font-heading text-xl font-bold text-text">
-                <span>{siteConfig.shortName}</span>
-                <span className="hidden text-muted font-semibold text-base sm:inline">
-                  {siteConfig.subName}
-                </span>
-              </div>
+          <div className="flex items-center">
+            <Link href="/" className="flex items-center shrink-0">
+              <span className="relative block h-14 w-[150px] overflow-hidden">
+                <Image
+                  src="/images/logo/lojo%20risezonic%20academy.png"
+                  alt="Risezonic Academy"
+                  width={150}
+                  height={150}
+                  className="absolute left-0 top-[-48px] max-w-none"
+                  priority
+                />
+              </span>
             </Link>
 
-            <nav className="hidden lg:flex items-center gap-1">
+            <nav className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center gap-1">
               {siteConfig.navLinks.map((link) => {
                 const isActive =
                   link.href === "/"
@@ -115,10 +117,10 @@ export function Navbar() {
                         type="button"
                         onClick={() => setIsDropdownOpen((prev) => !prev)}
                         aria-expanded={isDropdownOpen}
-                        className={`relative px-3 py-2 text-base font-bold transition-colors flex items-center gap-1 cursor-pointer hover:text-text ${
+                        className={`relative px-3 py-2 text-base font-bold transition-colors flex items-center gap-1 cursor-pointer hover:text-white ${
                           isActive || isDropdownOpen
                             ? "text-accent"
-                            : "text-muted"
+                            : "text-white"
                         }`}
                       >
                         <span>{link.label}</span>
@@ -224,8 +226,8 @@ export function Navbar() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`relative px-3 py-2 text-base font-bold transition-colors hover:text-text ${
-                      isActive ? "text-accent" : "text-muted"
+                    className={`relative px-3 py-2 text-base font-bold transition-colors hover:text-white ${
+                      isActive ? "text-accent" : "text-white"
                     }`}
                   >
                     <span>{link.label}</span>
@@ -254,7 +256,7 @@ export function Navbar() {
               type="button"
               aria-label="Open menu"
               onClick={() => setIsMobileMenuOpen(true)}
-              className="lg:hidden w-11 h-11 flex items-center justify-center rounded-md border border-line text-text hover:border-accent transition-colors cursor-pointer"
+              className="lg:hidden w-11 h-11 flex items-center justify-center rounded-md border border-white/20 text-white hover:border-accent transition-colors cursor-pointer"
             >
               <Menu className="w-6 h-6" />
             </button>

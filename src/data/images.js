@@ -27,10 +27,10 @@ export const images = {
     photo("1544005313-94ddf0286df2", "Instructor teaching a marketing class", 600, 600),
   ],
   projects: [
-    photo("1524178232363-1fb2b075b655", "Students working together on a campaign project", 800, 600),
-    photo("1531482615713-2afd69097998", "Team discussing a search campaign case study", 800, 600),
-    photo("1517245386807-bb43f82c33c4", "Learners collaborating on a marketing project", 800, 600),
-    photo("1522071820081-009f0129c71c", "Team planning a digital advertising campaign", 800, 600),
+    photo("1524178232363-1fb2b075b655", "Students working together on a campaign project", 1000, 625),
+    photo("1531482615713-2afd69097998", "Team discussing a search campaign case study", 1000, 625),
+    photo("1517245386807-bb43f82c33c4", "Learners collaborating on a marketing project", 1000, 625),
+    photo("1522071820081-009f0129c71c", "Team planning a digital advertising campaign", 1000, 625),
   ],
   testimonials: [
     photo("1506794778202-cad84cf45f1d", "Digital marketing course learner portrait", 200, 200),
