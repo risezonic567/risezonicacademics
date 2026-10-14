@@ -44,7 +44,7 @@ function CounterItem({ icon: Icon, value, label, index }) {
         initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 16 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
         transition={{ duration: 0.5, delay: index * 0.1 }}
-        className="text-3xl sm:text-4xl font-heading font-bold text-text tracking-tight flex items-baseline gap-1"
+        className="text-3xl sm:text-4xl font-heading font-extrabold text-text tracking-tight flex items-baseline gap-1"
       >
         <span className="text-accent">{value}</span>
       </motion.div>

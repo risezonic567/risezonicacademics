@@ -23,7 +23,7 @@ export function SectionHeading({
         <h2
           className={
             titleClassName ||
-            "text-2xl sm:text-3xl lg:text-4xl font-heading font-semibold text-text leading-tight tracking-tight"
+            "text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-text leading-tight tracking-tight"
           }
         >
           {renderedTitle}

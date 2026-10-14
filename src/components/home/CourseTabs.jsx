@@ -20,7 +20,7 @@ export function CourseTabs() {
         <SectionHeading
           title="Explore Deep-Dive Module Tracks"
           subtitle="Engineered with modern tools and practical frameworks to give you real hands-on execution mastery."
-          titleClassName="text-[40px] font-heading font-semibold leading-tight tracking-tight text-text"
+          titleClassName="text-[40px] font-heading font-bold leading-tight tracking-tight text-text"
           subtitleClassName="mt-4 text-lg sm:text-xl text-muted font-normal leading-relaxed max-w-[65ch]"
         />
 
@@ -64,7 +64,7 @@ export function CourseTabs() {
                     <Sparkles className="w-3.5 h-3.5 text-accent" />
                     <span>Track Overview</span>
                   </div>
-                  <h3 className="text-4xl font-heading font-semibold text-text">
+                  <h3 className="text-4xl font-heading font-bold text-text">
                     {activeGroup.title}
                   </h3>
                   <p className="mt-3 text-lg text-muted leading-relaxed">

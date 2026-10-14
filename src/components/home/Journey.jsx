@@ -45,7 +45,7 @@ export function Journey() {
       <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20">
           <div className="self-start lg:sticky lg:top-28">
-            <h2 className="font-heading text-[clamp(2rem,3.2vw,2.75rem)] font-semibold leading-tight tracking-tight text-text">
+            <h2 className="font-heading text-[clamp(2rem,3.2vw,2.75rem)] font-bold leading-tight tracking-tight text-text">
               From day one to your first job
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-muted">
@@ -75,10 +75,10 @@ export function Journey() {
                 }}
                 className="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-x-5 gap-y-2 border-b border-line py-6 sm:grid-cols-[auto_minmax(0,1fr)_auto] sm:gap-x-6"
               >
-                <span className="row-span-2 font-heading text-5xl font-semibold leading-none text-accent">
+                <span className="row-span-2 font-heading text-5xl font-extrabold leading-none text-accent">
                   {step.num}
                 </span>
-                <h3 className="font-heading text-2xl font-semibold leading-tight text-text">
+                <h3 className="font-heading text-2xl font-bold leading-tight text-text">
                   {step.title}
                 </h3>
                 <span className="col-start-2 text-[17px] leading-relaxed text-text sm:col-start-2">

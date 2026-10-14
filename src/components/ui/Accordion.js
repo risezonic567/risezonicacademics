@@ -41,7 +41,7 @@ export function Accordion({
               aria-expanded={isOpen}
               className="w-full py-4 sm:py-5 px-5 sm:px-6 flex items-center justify-between text-left gap-4 cursor-pointer focus-visible:outline-2 focus-visible:outline-accent rounded-xl"
             >
-              <span className="font-heading font-semibold text-text text-base sm:text-lg leading-tight">
+              <span className="font-heading font-bold text-text text-base sm:text-lg leading-tight">
                 {item.question || item.title}
               </span>
               <span

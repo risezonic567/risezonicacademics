@@ -8,7 +8,7 @@ export default function sitemap() {
   const staticPages = [
     "",
     "/courses",
-    "/placement",
+   "/placement",
     "/about",
     "/blog",
     "/contact",

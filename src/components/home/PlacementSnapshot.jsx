@@ -32,7 +32,7 @@ export function PlacementSnapshot() {
                 Peak Achievement
               </span>
             </div>
-            <div className="text-3xl sm:text-4xl font-heading font-bold text-text">
+            <div className="text-3xl sm:text-4xl font-heading font-extrabold text-text">
               {siteConfig.stats.highestPackage}
             </div>
             <p className="mt-2 text-sm text-muted">
@@ -52,7 +52,7 @@ export function PlacementSnapshot() {
                 Cohort Median
               </span>
             </div>
-            <div className="text-3xl sm:text-4xl font-heading font-bold text-text">
+            <div className="text-3xl sm:text-4xl font-heading font-extrabold text-text">
               {siteConfig.stats.averagePackage}
             </div>
             <p className="mt-2 text-sm text-muted">

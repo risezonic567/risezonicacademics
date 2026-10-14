@@ -1,4 +1,4 @@
-import { Bricolage_Grotesque, Figtree } from "next/font/google";
+import { Plus_Jakarta_Sans, Figtree } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/data/site";
 import { LeadModalProvider } from "@/components/modal/LeadModalProvider";
@@ -6,9 +6,9 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { StickyMobileCta } from "@/components/layout/StickyMobileCta";
 
-const bricolage = Bricolage_Grotesque({
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["600", "700"],
+  weight: ["700", "800"],
   variable: "--font-heading",
   display: "swap",
 });
@@ -38,7 +38,7 @@ export default function RootLayout({ children }) {
       lang="en"
       data-scroll-behavior="smooth"
       suppressHydrationWarning
-      className={`${bricolage.variable} ${figtree.variable} scroll-smooth antialiased`}
+      className={`${plusJakartaSans.variable} ${figtree.variable} scroll-smooth antialiased`}
     >
       <body
         suppressHydrationWarning

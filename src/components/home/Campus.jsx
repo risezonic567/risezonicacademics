@@ -65,7 +65,6 @@ export function Campus() {
           subtitle="A state-of-the-art facility engineered for immersive learning, campaign execution, and networking."
         />
 
-        {/* 5-Item Bento Grid */}
         <StaggerContainer
           staggerDelay={0.08}
           className="grid grid-cols-1 md:grid-cols-3 gap-5 auto-rows-[220px]"
@@ -87,26 +86,24 @@ export function Campus() {
                       className="object-cover"
                     />
                   </div>
-                  {/* Top Header */}
+                  <div aria-hidden="true" className="absolute inset-0 bg-black/45" />
                   <div className="relative z-10 flex items-center justify-between">
                     <div className="w-10 h-10 rounded-xl bg-surface-2 border border-line text-accent flex items-center justify-center group-hover:scale-105 transition-transform">
                       <Icon className="w-5 h-5" />
                     </div>
-                    <span className="text-[11px] font-semibold text-muted bg-surface-2 px-2.5 py-1 rounded-full border border-line">
+                    <span className="text-sm font-semibold text-white bg-black/55 px-2.5 py-1 rounded-full border border-white/30">
                       {item.category}
                     </span>
                   </div>
 
-                  {/* Center Placeholder Watermark */}
                   <div className="relative z-10 my-auto text-center py-4">
                   </div>
 
-                  {/* Bottom Text */}
                   <div className="relative z-10">
-                    <h3 className="font-heading font-bold text-base sm:text-lg text-text mb-1 group-hover:text-accent transition-colors">
+                    <h3 className="font-heading font-bold text-base sm:text-lg text-white mb-1 transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-xs text-muted leading-relaxed line-clamp-2">
+                    <p className="text-sm font-medium text-white leading-relaxed line-clamp-2">
                       {item.description}
                     </p>
                   </div>

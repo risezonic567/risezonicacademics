@@ -188,7 +188,7 @@ export default function PlacementPage() {
                 <TrendingUp className="w-6 h-6" />
               </div>
               <div>
-                <div className="text-2xl sm:text-3xl font-heading font-bold text-text">
+                <div className="text-2xl sm:text-3xl font-heading font-extrabold text-text">
                   {siteConfig.stats.highestPackage}
                 </div>
                 <div className="text-xs text-muted font-medium mt-0.5">
@@ -203,7 +203,7 @@ export default function PlacementPage() {
                 <DollarSign className="w-6 h-6" />
               </div>
               <div>
-                <div className="text-2xl sm:text-3xl font-heading font-bold text-text">
+                <div className="text-2xl sm:text-3xl font-heading font-extrabold text-text">
                   {siteConfig.stats.averagePackage}
                 </div>
                 <div className="text-xs text-muted font-medium mt-0.5">
@@ -218,7 +218,7 @@ export default function PlacementPage() {
                 <Building2 className="w-6 h-6" />
               </div>
               <div>
-                <div className="text-2xl sm:text-3xl font-heading font-bold text-text">
+                <div className="text-2xl sm:text-3xl font-heading font-extrabold text-text">
                   [00+]
                 </div>
                 <div className="text-xs text-muted font-medium mt-0.5">
@@ -233,7 +233,7 @@ export default function PlacementPage() {
                 <GraduationCap className="w-6 h-6" />
               </div>
               <div>
-                <div className="text-2xl sm:text-3xl font-heading font-bold text-text">
+                <div className="text-2xl sm:text-3xl font-heading font-extrabold text-text">
                   [00+]
                 </div>
                 <div className="text-xs text-muted font-medium mt-0.5">
@@ -394,7 +394,7 @@ export default function PlacementPage() {
             <div className="rounded-2xl bg-surface-2 border border-accent/30 p-6 sm:p-7 flex items-start gap-4">
               <AlertCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
               <div>
-                <h4 className="font-heading font-semibold text-text text-sm sm:text-base mb-1">
+                  <h4 className="font-heading font-bold text-text text-sm sm:text-base mb-1">
                   Our Commitment to Transparency
                 </h4>
                 <p className="text-xs sm:text-sm text-muted leading-relaxed">

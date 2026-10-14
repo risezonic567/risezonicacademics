@@ -238,7 +238,7 @@ export default function AboutPage() {
                   <Users className="w-6 h-6" />
                 </div>
                 <div>
-                  <div className="text-2xl sm:text-3xl font-heading font-bold text-text">
+                  <div className="text-2xl sm:text-3xl font-heading font-extrabold text-text">
                     {siteConfig.stats.studentsTrained}
                   </div>
                   <div className="text-xs text-muted font-medium mt-0.5">
@@ -253,7 +253,7 @@ export default function AboutPage() {
                   <FolderGit2 className="w-6 h-6" />
                 </div>
                 <div>
-                  <div className="text-2xl sm:text-3xl font-heading font-bold text-text">
+                  <div className="text-2xl sm:text-3xl font-heading font-extrabold text-text">
                     {siteConfig.stats.projectsBuilt}
                   </div>
                   <div className="text-xs text-muted font-medium mt-0.5">
@@ -268,7 +268,7 @@ export default function AboutPage() {
                   <GraduationCap className="w-6 h-6" />
                 </div>
                 <div>
-                  <div className="text-2xl sm:text-3xl font-heading font-bold text-text">
+                  <div className="text-2xl sm:text-3xl font-heading font-extrabold text-text">
                     {siteConfig.stats.mentorsCount}
                   </div>
                   <div className="text-xs text-muted font-medium mt-0.5">
@@ -283,7 +283,7 @@ export default function AboutPage() {
                   <Star className="w-6 h-6 fill-accent text-accent" />
                 </div>
                 <div>
-                  <div className="text-2xl sm:text-3xl font-heading font-bold text-text">
+                  <div className="text-2xl sm:text-3xl font-heading font-extrabold text-text">
                     {siteConfig.stats.rating}
                   </div>
                   <div className="text-xs text-muted font-medium mt-0.5">

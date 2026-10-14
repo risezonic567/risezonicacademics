@@ -26,7 +26,7 @@ export function Mentors() {
             <StaggerItem key={mentor.id} className="h-full flex">
               <Card
                 variant="surface"
-                className="w-full p-6 flex flex-col justify-between text-center group hover:border-accent/50"
+                className="w-full p-7 flex flex-col justify-between text-center group hover:border-accent/50"
               >
                 <div>
                   {/* Circular Photo Placeholder */}
@@ -46,18 +46,18 @@ export function Mentors() {
                   </div>
 
                   {/* Name & Role */}
-                  <h3 className="font-heading font-bold text-lg text-text mb-1 group-hover:text-accent transition-colors">
+                  <h3 className="font-heading font-bold text-2xl text-text mb-1 group-hover:text-accent transition-colors">
                     {mentor.name}
                   </h3>
-                  <div className="text-xs font-semibold text-accent mb-2">
+                  <div className="text-lg font-medium text-accent mb-2">
                     {mentor.role}
                   </div>
-                  <div className="inline-block px-2.5 py-0.5 rounded-full bg-surface-2 border border-line text-[11px] text-muted font-medium mb-3">
+                  <div className="inline-block px-2.5 py-0.5 rounded-full bg-surface-2 border border-line text-[17px] text-muted font-medium mb-3">
                     {mentor.experience}
                   </div>
 
                   {/* Bio */}
-                  <p className="text-xs text-muted leading-relaxed line-clamp-3 mb-5">
+                  <p className="text-[17px] text-muted leading-relaxed mb-5">
                     {mentor.bio}
                   </p>
                 </div>
@@ -67,7 +67,7 @@ export function Mentors() {
                   {mentor.skills.map((skill, i) => (
                     <span
                       key={i}
-                      className="px-2 py-0.5 rounded bg-surface-2 text-[10px] text-muted font-medium"
+                      className="px-2 py-0.5 rounded bg-surface-2 text-[15px] text-muted font-medium"
                     >
                       {skill}
                     </span>

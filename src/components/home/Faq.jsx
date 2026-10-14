@@ -63,7 +63,7 @@ export function Faq() {
                 >
                   <div className="flex items-center gap-3">
                     <HelpCircle className="w-4 h-4 text-accent shrink-0 hidden sm:block" />
-                    <span className="font-heading font-semibold text-text text-sm sm:text-base">
+                    <span className="font-heading font-bold text-text text-sm sm:text-base">
                       {faq.question}
                     </span>
                   </div>

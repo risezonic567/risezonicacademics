@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { testimonials } from "@/data/testimonials";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
-import { ChevronLeft, ChevronRight, Star, Quote, Award } from "lucide-react";
+import { ChevronLeft, ChevronRight, Star, Award } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { SiteImage } from "@/components/ui/SiteImage";
 
@@ -43,17 +43,11 @@ export function SuccessStories() {
               >
                 <Card
                   variant="surface"
-                  className="p-8 sm:p-10 relative overflow-hidden border-accent/25"
+                  className="min-h-[320px] sm:min-h-[290px] p-6 lg:p-8 relative flex flex-col border-accent/25"
                 >
-                  {/* Decorative Watermark Quote Icon */}
-                  <Quote
-                    aria-hidden="true"
-                    className="absolute -bottom-4 -right-4 w-32 h-32 text-accent/5 pointer-events-none"
-                  />
-
                   {/* Top Bar: Stars + Package Badge */}
                   <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
-                    <div className="flex items-center gap-1">
+                    <div className="flex shrink-0 items-center gap-1">
                       {[...Array(5)].map((_, i) => (
                         <Star
                           key={i}
@@ -62,19 +56,19 @@ export function SuccessStories() {
                       ))}
                     </div>
 
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-light border border-primary/30 text-accent text-xs font-semibold">
-                      <Award className="w-3.5 h-3.5" />
+                    <div className="inline-flex max-w-full items-center gap-1.5 px-3 py-1 rounded-full bg-light border border-primary/30 text-accent text-[15px] font-semibold whitespace-nowrap">
+                      <Award className="w-4 h-4 shrink-0" />
                       <span>Package: {currentTestimonial.package}</span>
                     </div>
                   </div>
 
                   {/* Quote Body */}
-                  <p className="text-base sm:text-lg text-text leading-relaxed font-normal mb-8 italic">
+                  <p className="text-lg text-text leading-relaxed font-normal break-words mb-8">
                     &ldquo;{currentTestimonial.quote}&rdquo;
                   </p>
 
                   {/* Student Details */}
-                  <div className="flex items-center gap-3.5 border-t border-line/60 pt-5">
+                  <div className="mt-auto flex items-center gap-3.5 border-t border-line/60 pt-5">
                     <div className="w-11 h-11 rounded-full bg-surface-2 border border-accent/40 flex items-center justify-center font-heading font-bold text-accent text-sm shrink-0">
                       <SiteImage
                         image={currentTestimonial.image}
@@ -84,13 +78,13 @@ export function SuccessStories() {
                       />
                     </div>
                     <div>
-                      <h4 className="font-heading font-bold text-text text-sm sm:text-base">
+                      <h4 className="font-heading font-bold text-text text-lg">
                         {currentTestimonial.studentName}
                       </h4>
-                      <div className="text-xs text-muted flex items-center gap-2 mt-0.5">
+                      <div className="text-[15px] text-muted flex flex-wrap items-center gap-x-2 gap-y-1 mt-0.5">
                         <span>{currentTestimonial.roleAtCompany}</span>
                         <span>•</span>
-                        <span className="text-accent">{currentTestimonial.batch}</span>
+                        <span>{currentTestimonial.batch}</span>
                       </div>
                     </div>
                   </div>

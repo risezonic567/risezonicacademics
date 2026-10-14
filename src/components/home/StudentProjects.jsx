@@ -14,7 +14,7 @@ export function StudentProjects() {
         <SectionHeading
           title="Real Projects Built By Our Learners"
           subtitle="From zero ad spend to multi-channel scaling. Explore verified student capstone deliverables."
-          titleClassName="text-[40px] font-heading font-semibold leading-tight tracking-tight text-text"
+          titleClassName="text-[40px] font-heading font-bold leading-tight tracking-tight text-text"
           subtitleClassName="mt-4 text-lg text-muted font-normal leading-relaxed max-w-[65ch]"
         />
 
@@ -42,7 +42,7 @@ export function StudentProjects() {
                   </div>
                 </div>
                 <div className="bg-surface p-5">
-                  <h3 className="font-heading text-xl font-semibold text-text">
+                  <h3 className="font-heading text-xl font-bold text-text">
                     {project.title}
                   </h3>
                   <p className="mt-1 text-base text-muted">

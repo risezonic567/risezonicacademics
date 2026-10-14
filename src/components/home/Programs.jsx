@@ -17,7 +17,7 @@ export function Programs() {
           subtitle="From beginner foundations to executive marketing leadership. Master high-converting digital campaigns."
           align="left"
           className="max-w-2xl mb-10"
-          titleClassName="text-[clamp(2rem,3.2vw,2.75rem)] font-heading font-semibold text-text leading-tight tracking-tight"
+          titleClassName="text-[clamp(2rem,3.2vw,2.75rem)] font-heading font-bold text-text leading-tight tracking-tight"
           subtitleClassName="mt-4 text-lg sm:text-xl text-muted font-normal leading-relaxed max-w-2xl"
         />
 
@@ -57,7 +57,7 @@ export function Programs() {
                     <span>{plan.duration}</span>
                   </div>
 
-                  <h3 className="mb-2 font-heading text-[28px] font-semibold leading-tight tracking-tight text-text sm:text-[32px]">
+                  <h3 className="mb-2 font-heading text-[28px] font-bold leading-tight tracking-tight text-text sm:text-[32px]">
                     {plan.name}
                   </h3>
                   <p className="mb-3 text-base text-muted">

@@ -53,10 +53,25 @@ h4,
 h5,
 h6 {
   font-family: var(--font-heading), -apple-system, BlinkMacSystemFont, sans-serif;
-  font-weight: 600;
-  letter-spacing: -0.04em;
-  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -0.02em;
   color: var(--color-text);
+}
+
+h1 {
+  font-weight: 800;
+}
+
+h1,
+h2 {
+  line-height: 1.12;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.05;
 }
 
 h1,
