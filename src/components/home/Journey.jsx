@@ -11,7 +11,7 @@ export function Journey() {
     {
       num: "01",
       title: "Enroll",
-      description: "Pick the plan that fits your goal and reserve your seat.",
+      description: "Pick the plan tha fits your goal and reserve your seat.",
       duration: "[Week 1]",
     },
     {
