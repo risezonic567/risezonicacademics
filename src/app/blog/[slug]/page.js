@@ -67,7 +67,7 @@ export default async function BlogPostPage({ params }) {
       name: siteConfig.name,
       logo: {
         "@type": "ImageObject",
-        url: `${siteConfig.url}/logo.png`,
+        url: `${siteConfig.url}/images/logo/lojo%20risezonic%20academy.png`,
       },
     },
     mainEntityOfPage: {

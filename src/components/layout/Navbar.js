@@ -42,7 +42,7 @@ export function Navbar() {
   return (
     <>
       <div className="hidden lg:block bg-[#0b1111] border-b border-white/10">
-        <div className="max-w-[1600px] mx-auto px-5 sm:px-8 h-11 flex items-center justify-between gap-6 text-sm font-semibold text-white">
+        {/* <div className="mx-auto max-w-[1600px] px-4 lg:px-4 h-11 flex items-center justify-between gap-6 text-sm font-semibold text-white">
           <div className="flex items-center gap-2 whitespace-nowrap">
             <span>Free demo class this Saturday</span>
             <span aria-hidden="true">|</span>
@@ -78,26 +78,25 @@ export function Navbar() {
             </OpenModalButton>
           
           </div>
-        </div>
+        </div> */}
       </div>
       <header className="sticky top-0 z-40 w-full bg-[#0b1111] border-b border-white/10">
-        <div className="relative max-w-[1600px] mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between gap-6">
-          {/* Left: logo + navigation links */}
-          <div className="flex items-center">
-            <Link href="/" className="flex items-center shrink-0">
-              <span className="relative block h-14 w-[150px] overflow-hidden">
-                <Image
-                  src="/images/logo/lojo%20risezonic%20academy.png"
-                  alt="Risezonic Academy"
-                  width={150}
-                  height={150}
-                  className="absolute left-0 top-[-48px] max-w-none"
-                  priority
-                />
-              </span>
-            </Link>
+        <div className="mx-auto max-w-[1600px] px-4 lg:px-4 h-[80px] flex items-center justify-between gap-6">
+          <Link href="/" className="ml-4 flex items-center shrink-0 xl:ml-[200px]">
+            <span className="relative block h-14 w-[150px] overflow-hidden">
+              <Image
+                src="/images/logo/lojo%20risezonic%20academy.png"
+                alt="Risezonic Academy"
+                width={150}
+                height={150}
+                className="absolute left-0 top-[-48px] max-w-none"
+                priority
+              />
+            </span>
+          </Link>
 
-            <nav className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center gap-1">
+          <div className="flex items-center gap-6">
+            <nav aria-label="Main" className="hidden lg:flex items-center gap-1">
               {siteConfig.navLinks.map((link) => {
                 const isActive =
                   link.href === "/"
@@ -117,6 +116,7 @@ export function Navbar() {
                         type="button"
                         onClick={() => setIsDropdownOpen((prev) => !prev)}
                         aria-expanded={isDropdownOpen}
+                        aria-current={isActive ? "page" : undefined}
                         className={`relative px-3 py-2 text-base font-bold transition-colors flex items-center gap-1 cursor-pointer hover:text-white ${
                           isActive || isDropdownOpen
                             ? "text-accent"
@@ -226,6 +226,7 @@ export function Navbar() {
                   <Link
                     key={link.href}
                     href={link.href}
+                    aria-current={isActive ? "page" : undefined}
                     className={`relative px-3 py-2 text-base font-bold transition-colors hover:text-white ${
                       isActive ? "text-accent" : "text-white"
                     }`}
@@ -238,15 +239,11 @@ export function Navbar() {
                 );
               })}
             </nav>
-          </div>
-
-          {/* Right: call to action */}
-          <div className="flex items-center gap-5">
             <OpenModalButton
               source="navbar"
               variant="primary"
               size="md"
-              className="hidden text-base font-bold sm:inline-flex"
+              className="hidden text-base font-bold lg:inline-flex"
             >
               Book free counselling
             </OpenModalButton>
@@ -255,6 +252,7 @@ export function Navbar() {
             <button
               type="button"
               aria-label="Open menu"
+              aria-expanded={isMobileMenuOpen}
               onClick={() => setIsMobileMenuOpen(true)}
               className="lg:hidden w-11 h-11 flex items-center justify-center rounded-md border border-white/20 text-white hover:border-accent transition-colors cursor-pointer"
             >

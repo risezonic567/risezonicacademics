@@ -84,8 +84,7 @@ export const coursePlans = [
     highlights: [
       "Complete SEO & organic social media fundamentals",
       "Hands-on website design with WordPress",
-      "Practical exercises on live campaign simulations",
-      "Beginner-friendly resume and portfolio support",
+     
     ],
     includedModuleGroupIds: ["foundation", "career"],
     features: {
@@ -114,8 +113,7 @@ export const coursePlans = [
     highlights: [
       "Full performance marketing: Google Ads, Meta Ads & LinkedIn Ads",
       "Real ad spend budget provided for campaign practice",
-      "End-to-end GA4 event tracking and conversion setup",
-      "Comprehensive placement assistance with hiring partners",
+ 
     ],
     includedModuleGroupIds: ["foundation", "performance", "growth", "career"],
     features: {
@@ -144,8 +142,7 @@ export const coursePlans = [
     highlights: [
       "Covers all 5 module tracks including AI and advanced growth",
       "High-budget multi-channel campaign architecture",
-      "Global freelancing & agency scaling playbook",
-      "Priority executive placement and lifetime network access",
+    
     ],
     includedModuleGroupIds: ["foundation", "performance", "growth", "ai-creative", "career"],
     features: {
@@ -174,8 +171,65 @@ export const coursePlans = [
     highlights: [
       "Choose specific modules from Performance, Growth, or AI",
       "Flexible schedule designed for working professionals",
-      "Direct consultation with mentors to design your syllabus",
-      "Targeted project work specific to your niche",
+     
+    ],
+    includedModuleGroupIds: ["performance", "ai-creative"],
+    features: {
+      duration: "[Flexible]",
+      modulesCount: "Custom Selected Tracks",
+      liveClasses: "Flexible Evening & Weekend Batches",
+      projects: "Custom Industry Project",
+      internship: "Career Guidance on Demand",
+      certificate: "Module-Specific Credentials",
+      support: "Dedicated Mentor Office Hours",
+    },
+  },
+    {
+    slug: "customss",
+    image: images.plans.custom,
+    name: "Custom Modules",
+    level: "Any",
+    duration: "[Flexible]",
+    rating: "[0.0]",
+    ratingCount: "[0,000]",
+    targetRole: "Pick What You Need",
+    salaryRange: "[Depends on track]",
+    isPopular: false,
+    summary:
+      "Tailor your learning journey by selecting specific modules that match your exact business or career goals.",
+    highlights: [
+      "Choose specific modules from Performance, Growth, or AI",
+      "Flexible schedule designed for working professionals",
+     
+    ],
+    includedModuleGroupIds: ["performance", "ai-creative"],
+    features: {
+      duration: "[Flexible]",
+      modulesCount: "Custom Selected Tracks",
+      liveClasses: "Flexible Evening & Weekend Batches",
+      projects: "Custom Industry Project",
+      internship: "Career Guidance on Demand",
+      certificate: "Module-Specific Credentials",
+      support: "Dedicated Mentor Office Hours",
+    },
+  },
+    {
+    slug: "customs",
+    image: images.plans.custom,
+    name: "Custom Modules",
+    level: "Any",
+    duration: "[Flexible]",
+    rating: "[0.0]",
+    ratingCount: "[0,000]",
+    targetRole: "Pick What You Need",
+    salaryRange: "[Depends on track]",
+    isPopular: false,
+    summary:
+      "Tailor your learning journey by selecting specific modules that match your exact business or career goals.",
+    highlights: [
+      "Choose specific modules from Performance, Growth, or AI",
+      "Flexible schedule designed for working professionals",
+     
     ],
     includedModuleGroupIds: ["performance", "ai-creative"],
     features: {

@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { X, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -60,13 +61,16 @@ export function MobileMenu({ isOpen, onClose }) {
             <div>
               {/* Header */}
               <div className="p-5 border-b border-line flex items-center justify-between">
-                <Link href="/" onClick={onClose} className="flex items-center gap-2.5">
-                  <div className="w-9 h-9 rounded-md bg-primary text-on-primary flex items-center justify-center font-heading font-bold text-lg">
-                    R
-                  </div>
-                  <div className="flex items-baseline gap-2 font-heading text-xl font-bold text-text">
-                    <span>{siteConfig.shortName}</span>
-                  </div>
+                <Link href="/" onClick={onClose} className="flex items-center">
+                  <span className="relative block h-14 w-[150px] overflow-hidden">
+                    <Image
+                      src="/images/logo/lojo%20risezonic%20academy.png"
+                      alt="Risezonic Academy"
+                      width={150}
+                      height={150}
+                      className="absolute left-0 top-[-48px] max-w-none"
+                    />
+                  </span>
                 </Link>
 
                 <button

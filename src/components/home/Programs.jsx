@@ -23,7 +23,7 @@ export function Programs() {
 
         <StaggerContainer
           staggerDelay={0.1}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch"
+          className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch"
         >
           {coursePlans.map((plan) => {
             const isPro = plan.isPopular;
@@ -57,21 +57,21 @@ export function Programs() {
                     <span>{plan.duration}</span>
                   </div>
 
-                  <h3 className="mb-2 font-heading text-[28px] font-bold leading-tight tracking-tight text-text sm:text-[32px]">
+                  <h3 className="mb-2 font-heading text-[10px] font-bold leading-tight tracking-tight text-text sm:text-[20px]">
                     {plan.name}
                   </h3>
                   <p className="mb-3 text-base text-muted">
                     {plan.rating} ({plan.ratingCount} learners)
                   </p>
-                  <p className="mb-6 text-lg leading-relaxed text-text">
+                  <p className="mb-6 text-md leading-relaxed text-text">
                     {plan.summary}
                   </p>
 
                   <ul className="mb-6 divide-y divide-line border-y border-line">
-                    {plan.highlights.slice(0, 4).map((bullet) => (
+                    {plan.highlights.slice(0, 6).map((bullet) => (
                       <li
                         key={bullet}
-                        className="py-3 text-[17px] leading-relaxed text-text"
+                        className="py-3 text-[16px] leading-relaxed text-text"
                       >
                         {bullet}
                       </li>
@@ -91,7 +91,7 @@ export function Programs() {
                       source={`plan-${plan.slug}`}
                       course={plan.slug}
                       variant="primary"
-                      className="w-full text-[17px] hover:bg-primary hover:border-accent hover:text-on-primary sm:w-auto"
+                      className="w-full text-[16px] hover:bg-primary hover:border-accent hover:text-on-primary sm:w-auto"
                     >
                       Enquire now
                     </OpenModalButton>
