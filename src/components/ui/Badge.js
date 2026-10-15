@@ -9,8 +9,9 @@ export function Badge({
   className = "",
 }) {
   const variantStyles = {
-    accent: "bg-accent/12 border-accent/35 text-accent",
-    primary: "bg-light border-primary/40 text-accent",
+    accent: "bg-[#D1FAE5] border-[#14B8A6]/30 text-[#0F766E]",
+    primary: "bg-[#14B8A6] border-transparent text-white",
+    secondary: "bg-[#F0F5F3] border-line text-text",
     muted: "bg-surface-2 border-line text-muted",
   };
 

@@ -25,11 +25,11 @@ export function Button({
 
   const variantStyles = {
     primary:
-      "bg-primary text-on-primary font-bold border-primary hover:bg-accent-hover hover:border-accent-hover",
+      "bg-primary text-on-primary font-bold border-primary hover:bg-accent-hover hover:border-accent-hover shadow-xs hover:shadow-[0_4px_16px_rgba(20,184,166,0.25)]",
     secondary:
-      "bg-surface border border-line text-text hover:border-primary hover:text-accent-hover",
+      "bg-white border border-line text-text hover:border-primary hover:text-accent shadow-xs",
     outline:
-      "bg-transparent border border-line text-text hover:border-primary hover:text-accent-hover",
+      "bg-transparent border border-line text-text hover:border-primary hover:text-accent",
     ghost:
       "bg-transparent border border-transparent text-muted hover:text-text hover:bg-surface-2",
   };
