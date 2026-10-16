@@ -1,9 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { images } from "@/data/images";
 import { demoClass } from "@/data/videos";
-import { SiteImage } from "@/components/ui/SiteImage";
 
 export function YouTubeEmbed({ video = demoClass }) {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -24,11 +22,10 @@ export function YouTubeEmbed({ video = demoClass }) {
 
   return (
     <div className="relative aspect-video w-full overflow-hidden rounded-2xl">
-      <SiteImage
-        image={images.videoPoster}
-        fill
-        sizes="(max-width: 768px) 100vw, 720px"
-        className="object-cover"
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(https://i.ytimg.com/vi/${video.youtubeId}/hqdefault.jpg)` }}
       />
       <button
         type="button"

@@ -2,11 +2,11 @@
 
 import React, { useState } from "react";
 import { moduleGroups } from "@/data/courses";
-import { SectionHeading } from "@/components/ui/SectionHeading";
-import { OpenModalButton } from "@/components/ui/OpenModalButton";
-import { CheckCircle2, Wrench, Sparkles, ArrowRight, Download, BookOpen } from "lucide-react";
+import { CheckCircle2, Sparkles, ArrowRight, BookOpen, Play } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { YouTubeEmbed } from "@/components/ui/YouTubeEmbed";
+import { moduleTrackVideos } from "@/data/videos";
 
 export function CourseTabs() {
   const [activeTabId, setActiveTabId] = useState(moduleGroups[0].id);
@@ -69,56 +69,41 @@ export function CourseTabs() {
             className="rounded-3xl bg-[#F8FAF9] border border-line/80 p-7 sm:p-10 lg:p-12 relative overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.03)]"
           >
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-              {/* Left Column: Overview, Tools, and CTA (5 cols) */}
-              <div className="lg:col-span-5 space-y-6">
+              {/* Left Column: Short overview and track video (5 cols) */}
+              <div className="lg:col-span-5 space-y-5">
                 <div>
                   <div className="mb-2.5 inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#0F766E] bg-[#D1FAE5] px-3 py-1 rounded-full">
                     <Sparkles className="w-3.5 h-3.5 text-[#14B8A6]" />
-                    <span>Track Specialization</span>
+                    <span>Track Preview</span>
                   </div>
 
                   <h3 className="text-2xl sm:text-3xl font-heading font-bold text-text">
                     {activeGroup.title}
                   </h3>
 
-                  <p className="mt-3 text-sm sm:text-base text-muted leading-relaxed">
+                  <p className="mt-2 text-sm sm:text-base text-muted leading-relaxed line-clamp-3">
                     {activeGroup.description}
                   </p>
                 </div>
 
-                {/* Tools Stack */}
-                <div className="p-5 rounded-2xl bg-white border border-line/80 shadow-xs">
-                  <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#0F766E] mb-3">
-                    <Wrench className="w-4 h-4 text-[#14B8A6]" />
-                    <span>Industry Tools & Platforms</span>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {activeGroup.tools.map((tool, i) => (
-                      <span
-                        key={i}
-                        className="px-3.5 py-1.5 rounded-lg bg-[#D1FAE5]/60 border border-[#D1FAE5] text-xs font-bold text-[#0F766E]"
-                      >
-                        {tool}
-                      </span>
-                    ))}
+                <div className="rounded-2xl border border-line/80 bg-white p-2 shadow-xs">
+                  <YouTubeEmbed
+                    key={activeGroup.id}
+                    video={{
+                      ...moduleTrackVideos[activeGroup.id],
+                      title: moduleTrackVideos[activeGroup.id]?.title || `${activeGroup.title} track preview`,
+                    }}
+                  />
+                  <div className="flex items-center gap-2 px-2 pb-1 pt-3 text-xs font-semibold text-muted">
+                    <Play className="h-3.5 w-3.5 fill-current text-[#0F9F93]" aria-hidden="true" />
+                    <span>Watch the {activeGroup.title} overview</span>
                   </div>
                 </div>
 
-                {/* CTAs */}
-                <div className="pt-2 flex flex-col sm:flex-row items-center gap-3">
-                  <OpenModalButton
-                    source={`module-${activeGroup.id}`}
-                    course={activeGroup.id}
-                    variant="primary"
-                    className="w-full sm:w-auto px-6 py-3 text-sm font-bold bg-[#14B8A6] hover:bg-[#0D9488] text-white shadow-xs transition-all hover:shadow-[0_4px_16px_rgba(20,184,166,0.3)] flex items-center justify-center gap-2"
-                  >
-                    <Download className="w-4 h-4" />
-                    <span>Download Module Syllabus</span>
-                  </OpenModalButton>
-
+                <div className="pt-1">
                   <Link
                     href="/courses"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-3 text-sm font-bold text-[#0F766E] hover:text-[#14B8A6] transition-colors"
+                    className="inline-flex items-center gap-1.5 text-sm font-bold text-[#0F766E] transition-colors hover:text-[#14B8A6]"
                   >
                     <span>View all tracks</span>
                     <ArrowRight className="w-4 h-4 text-[#14B8A6]" />

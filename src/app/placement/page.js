@@ -2,12 +2,10 @@ import { Suspense } from "react";
 import Link from "next/link";
 import { siteConfig } from "@/data/site";
 import { hiringPartners } from "@/data/partners";
-import { testimonials } from "@/data/testimonials";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal, StaggerContainer, StaggerItem } from "@/components/ui/Reveal";
 import { Card } from "@/components/ui/Card";
 import { OpenModalButton } from "@/components/ui/OpenModalButton";
-import { SiteImage } from "@/components/ui/SiteImage";
 import { PlacementGallery } from "@/components/placement/PlacementGallery";
 import { placedLearners, placementEvents } from "@/data/placed";
 import {
@@ -25,10 +23,18 @@ import {
   Briefcase,
   DollarSign,
   GraduationCap,
+  CirclePlay,
 } from "lucide-react";
 
 const GRID_COLUMNS = 3;
 const GRID_ROWS = 2;
+
+const videoReviews = Array.from({ length: 8 }, (_, index) => ({
+  id: index + 1,
+  title: `Learner video review ${String(index + 1).padStart(2, "0")}`,
+  // Add the real video URL here when it is ready.
+  videoUrl: "",
+}));
 
 export const metadata = {
   title: "Placement",
@@ -289,63 +295,53 @@ export default function PlacementPage() {
         </div>
       </section>
 
-      {/* 5. Placed Learners (6 Cards) */}
+      {/* 5. Honest Learner Video Reviews */}
       <section className="py-20 sm:py-28 bg-surface border-y border-line relative">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <SectionHeading
-            title="Placed Learners & Roles"
-            highlightWord="Learners"
-            subtitle="Meet recent graduates who successfully transitioned into digital marketing and growth careers."
+            title="Honest Learner Video Reviews"
+            highlightWord="Reviews"
+            subtitle="Hear directly from our learners. We share their own words and experiences, without scripted claims."
           />
 
           <StaggerContainer
-            staggerDelay={0.08}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-12"
+            staggerDelay={0.06}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 mt-12"
           >
-            {testimonials.slice(0, 6).map((student) => (
-              <StaggerItem key={student.id} className="h-full flex">
-                <Card
-                  variant="surface"
-                  className="p-6 sm:p-7 flex flex-col justify-between group hover:border-accent/40"
-                >
-                  <div>
-                    {/* Top Header: Avatar placeholder & Package */}
-                    <div className="flex items-center justify-between gap-3 mb-5">
-                      <div className="flex items-center gap-3">
-                        <div className="w-11 h-11 rounded-full bg-surface-2 border border-accent/40 flex items-center justify-center font-heading font-bold text-accent text-sm shrink-0">
-                          <SiteImage
-                            image={student.placementImage}
-                            fill
-                            className="rounded-full object-cover"
-                            sizes="44px"
-                          />
-                        </div>
-                        <div>
-                          <h4 className="font-heading font-bold text-text text-sm sm:text-base">
-                            {student.studentName}
-                          </h4>
-                          <span className="text-xs text-muted block truncate max-w-[140px]">
-                            {student.roleAtCompany}
-                          </span>
-                        </div>
-                      </div>
-
-                      <span className="px-2.5 py-1 rounded-full bg-light border border-primary/30 text-accent text-xs font-semibold shrink-0">
-                        {student.package}
+            {videoReviews.map((review) => (
+              <StaggerItem key={review.id} className="h-full">
+                <div className="h-full overflow-hidden rounded-2xl border border-line bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-lg">
+                  {review.videoUrl ? (
+                    <a
+                      href={review.videoUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`Watch ${review.title}`}
+                      className="group relative flex aspect-video items-center justify-center overflow-hidden bg-gradient-to-br from-teal-950 via-teal-800 to-slate-900"
+                    >
+                      <span className="absolute inset-0 bg-black/10 transition-colors group-hover:bg-black/25" />
+                      <CirclePlay className="relative h-14 w-14 text-white drop-shadow-lg transition-transform group-hover:scale-110" strokeWidth={1.5} />
+                    </a>
+                  ) : (
+                    <div className="relative flex aspect-video items-center justify-center overflow-hidden bg-gradient-to-br from-teal-950 via-teal-800 to-slate-900">
+                      <div className="absolute -right-8 -top-12 h-36 w-36 rounded-full border border-white/10" />
+                      <div className="absolute -bottom-16 -left-8 h-40 w-40 rounded-full border border-white/10" />
+                      <CirclePlay className="relative h-14 w-14 text-white/90" strokeWidth={1.5} />
+                      <span className="absolute bottom-3 left-3 rounded-full border border-white/20 bg-black/25 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-white/90">
+                        Video review
                       </span>
                     </div>
-
-                    {/* One-Line Quote Placeholder */}
-                    <p className="text-xs sm:text-sm text-muted italic leading-relaxed border-t border-line/60 pt-4">
-                      &ldquo;{student.quote}&rdquo;
-                    </p>
+                  )}
+                  <div className="flex items-center justify-between gap-3 p-4 sm:p-5">
+                    <div>
+                      <h3 className="font-heading text-sm font-bold text-text">{review.title}</h3>
+                      <p className="mt-1 text-xs text-muted">Real learner experience</p>
+                    </div>
+                    <span className="shrink-0 rounded-lg bg-accent/10 px-2.5 py-1.5 text-xs font-bold text-accent">
+                      {String(review.id).padStart(2, "0")}
+                    </span>
                   </div>
-
-                  <div className="pt-4 mt-4 border-t border-line/40 flex items-center justify-between text-[11px] text-muted/70">
-                    <span>Verified Placement</span>
-                    <span className="text-accent">{student.batch}</span>
-                  </div>
-                </Card>
+                </div>
               </StaggerItem>
             ))}
           </StaggerContainer>

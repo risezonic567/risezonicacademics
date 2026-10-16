@@ -5,6 +5,7 @@ import { LeadModalProvider } from "@/components/modal/LeadModalProvider";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { StickyMobileCta } from "@/components/layout/StickyMobileCta";
+import ContactSidebar from "@/components/ContactSidebar";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -47,6 +48,7 @@ export default function RootLayout({ children }) {
         <LeadModalProvider>
           <Navbar />
           <main className="flex-1 w-full">{children}</main>
+          <ContactSidebar />
           <Footer />
           <StickyMobileCta />
         </LeadModalProvider>
