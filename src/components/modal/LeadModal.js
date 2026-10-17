@@ -24,29 +24,29 @@ export function LeadModal({ isOpen, onClose, source, initialCourse }) {
             </Dialog.Overlay>
 
             {/* Modal Dialog Content */}
-            <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 pointer-events-none overflow-y-auto">
+            <div className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto p-2 pointer-events-none sm:p-4">
               <Dialog.Content asChild>
                 <motion.div
                   initial={{ opacity: 0, scale: 0.96, y: 20 }}
                   animate={{ opacity: 1, scale: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.96, y: 20 }}
                   transition={{ duration: 0.25, ease: "easeOut" }}
-                  className="pointer-events-auto relative w-full sm:max-w-[520px] max-h-[92vh] sm:max-h-[90vh] flex flex-col bg-surface border border-line rounded-t-[24px] sm:rounded-[20px] overflow-hidden focus:outline-none"
+                  className="pointer-events-auto relative flex max-h-[88dvh] min-h-0 w-full max-w-[390px] flex-col overflow-hidden rounded-2xl border border-line bg-surface focus:outline-none sm:max-h-[85vh] sm:rounded-[20px]"
                   aria-describedby="lead-modal-description"
                 >
                   {/* Modal Header */}
-                  <div className="px-6 pt-6 pb-4 border-b border-line flex items-start justify-between relative bg-surface-2">
+                  <div className="relative flex shrink-0 items-start justify-between border-b border-line bg-surface-2 px-4 pb-3 pt-3.5 sm:px-5 sm:pb-3.5 sm:pt-4">
                     <div>
                       <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-accent/15 border border-accent/30 text-accent text-xs font-medium mb-1.5">
                         <Sparkles className="w-3.5 h-3.5 text-accent" />
                         <span>Free 1-on-1 Session</span>
                       </div>
-                      <Dialog.Title className="text-xl sm:text-2xl font-bold font-heading text-text">
+                      <Dialog.Title className="pr-2 font-heading text-lg font-bold text-text sm:text-2xl">
                         Book Free Counselling
                       </Dialog.Title>
                       <Dialog.Description
                         id="lead-modal-description"
-                        className="text-xs sm:text-sm text-muted mt-1"
+                        className="mt-1 text-xs leading-relaxed text-muted sm:text-sm"
                       >
                         Talk to our career mentors, audit course roadmaps, and reserve your seat.
                       </Dialog.Description>
@@ -64,12 +64,13 @@ export function LeadModal({ isOpen, onClose, source, initialCourse }) {
                   </div>
 
                   {/* Modal Body */}
-                  <div className="p-6 overflow-y-auto max-h-[calc(92vh-100px)] sm:max-h-[calc(90vh-110px)] custom-scrollbar">
+                  <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-3.5 py-3 custom-scrollbar sm:px-4 sm:py-4">
                     <LeadForm
                       key={initialCourse || "default"}
                       source={source}
                       initialCourse={initialCourse}
                       onClose={onClose}
+                      compact
                     />
                   </div>
                 </motion.div>

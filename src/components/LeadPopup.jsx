@@ -3,8 +3,8 @@
 import { useEffect, useRef } from "react";
 import { useLeadModal } from "@/components/modal/LeadModalProvider";
 
-// Show the standard counselling form three times during the first minute.
-const OPEN_TIMES = [10_000, 30_000, 50_000];
+const OPEN_DELAY = 30_000;
+const STORAGE_KEY = "leadPopupSeen";
 
 export default function LeadPopup() {
   const { isOpen, openModal } = useLeadModal();
@@ -12,13 +12,19 @@ export default function LeadPopup() {
   isOpenRef.current = isOpen;
 
   useEffect(() => {
-    const timers = OPEN_TIMES.map((delay) =>
-      setTimeout(() => {
-        if (!isOpenRef.current) openModal({ source: "auto-popup", course: "pro" });
-      }, delay),
-    );
+    try {
+      if (sessionStorage.getItem(STORAGE_KEY) === "1") return;
+    } catch {}
 
-    return () => timers.forEach(clearTimeout);
+    const timer = setTimeout(() => {
+      if (isOpenRef.current) return;
+      try {
+        sessionStorage.setItem(STORAGE_KEY, "1");
+      } catch {}
+      openModal({ source: "auto-popup", course: "pro" });
+    }, OPEN_DELAY);
+
+    return () => clearTimeout(timer);
   }, [openModal]);
 
   return null;

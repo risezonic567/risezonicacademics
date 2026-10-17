@@ -122,7 +122,7 @@ export function LeadForm({
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+    <form onSubmit={handleSubmit(onSubmit)} className={compact ? "space-y-3" : "space-y-4"}>
       {/* Honeypot field (hidden from real users) */}
       <div className="hidden" aria-hidden="true">
         <label htmlFor="website_hp">Leave empty</label>
@@ -144,49 +144,49 @@ export function LeadForm({
 
       {/* Full Name */}
       <div>
-        <label className={`block ${compact ? "text-base font-semibold" : "text-xs font-medium uppercase tracking-wider"} text-muted mb-1.5`}>
+        <label className={`block ${compact ? "text-sm font-semibold" : "text-xs font-medium uppercase tracking-wider"} text-muted mb-1`}>
           Full Name <span className="text-accent">*</span>
         </label>
         <input
           type="text"
           placeholder="e.g. Rahul Sharma"
           {...register("fullName")}
-          className={`w-full px-3.5 py-2.5 ${compact ? "min-h-12 text-[17px]" : "text-sm"} rounded-xl bg-bg border border-line text-text placeholder-muted/50 focus:border-accent focus:ring-2 focus:ring-accent focus:outline-none transition-colors`}
+          className={`w-full px-3 py-2 ${compact ? "min-h-10 text-base" : "text-sm"} rounded-xl bg-bg border border-line text-text placeholder-muted/50 focus:border-accent focus:ring-2 focus:ring-accent focus:outline-none transition-colors`}
         />
         {errors.fullName && (
-          <p className={`mt-1 ${compact ? "text-sm" : "text-xs"} text-red-700`}>{errors.fullName.message}</p>
+          <p className={`mt-1 ${text-xs} text-red-700`}>{errors.fullName.message}</p>
         )}
       </div>
 
       {/* Phone & Email Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <div>
-          <label className={`block ${compact ? "text-base font-semibold" : "text-xs font-medium uppercase tracking-wider"} text-muted mb-1.5`}>
+          <label className={`block ${compact ? "text-sm font-semibold" : "text-xs font-medium uppercase tracking-wider"} text-muted mb-1`}>
             Phone Number <span className="text-accent">*</span>
           </label>
           <input
             type="tel"
             placeholder="10-digit mobile number"
             {...register("phone")}
-            className={`w-full px-3.5 py-2.5 ${compact ? "min-h-12 text-[17px]" : "text-sm"} rounded-xl bg-bg border border-line text-text placeholder-muted/50 focus:border-accent focus:ring-2 focus:ring-accent focus:outline-none transition-colors`}
+          className={`w-full px-3 py-2 ${compact ? "min-h-10 text-base" : "text-sm"} rounded-xl bg-bg border border-line text-text placeholder-muted/50 focus:border-accent focus:ring-2 focus:ring-accent focus:outline-none transition-colors`}
           />
           {errors.phone && (
-            <p className={`mt-1 ${compact ? "text-sm" : "text-xs"} text-red-700`}>{errors.phone.message}</p>
+            <p className={`mt-1 ${text-xs} text-red-700`}>{errors.phone.message}</p>
           )}
         </div>
 
         <div>
-          <label className={`block ${compact ? "text-base font-semibold" : "text-xs font-medium uppercase tracking-wider"} text-muted mb-1.5`}>
+          <label className={`block ${compact ? "text-sm font-semibold" : "text-xs font-medium uppercase tracking-wider"} text-muted mb-1`}>
             Email Address <span className="text-accent">*</span>
           </label>
           <input
             type="email"
             placeholder="name@example.com"
             {...register("email")}
-            className={`w-full px-3.5 py-2.5 ${compact ? "min-h-12 text-[17px]" : "text-sm"} rounded-xl bg-bg border border-line text-text placeholder-muted/50 focus:border-accent focus:ring-2 focus:ring-accent focus:outline-none transition-colors`}
+            className={`w-full px-3 py-2 ${compact ? "min-h-10 text-base" : "text-sm"} rounded-xl bg-bg border border-line text-text placeholder-muted/50 focus:border-accent focus:ring-2 focus:ring-accent focus:outline-none transition-colors`}
           />
           {errors.email && (
-            <p className={`mt-1 ${compact ? "text-sm" : "text-xs"} text-red-700`}>{errors.email.message}</p>
+            <p className={`mt-1 ${text-xs} text-red-700`}>{errors.email.message}</p>
           )}
         </div>
       </div>
@@ -194,27 +194,27 @@ export function LeadForm({
       {/* City & Course Program Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <div>
-          <label className={`block ${compact ? "text-base font-semibold" : "text-xs font-medium uppercase tracking-wider"} text-muted mb-1.5`}>
+          <label className={`block ${compact ? "text-sm font-semibold" : "text-xs font-medium uppercase tracking-wider"} text-muted mb-1`}>
             City <span className="text-accent">*</span>
           </label>
           <input
             type="text"
             placeholder="e.g. New Delhi"
             {...register("city")}
-            className={`w-full px-3.5 py-2.5 ${compact ? "min-h-12 text-[17px]" : "text-sm"} rounded-xl bg-bg border border-line text-text placeholder-muted/50 focus:border-accent focus:ring-2 focus:ring-accent focus:outline-none transition-colors`}
+            className={`w-full px-3 py-2 ${compact ? "min-h-10 text-base" : "text-sm"} rounded-xl bg-bg border border-line text-text placeholder-muted/50 focus:border-accent focus:ring-2 focus:ring-accent focus:outline-none transition-colors`}
           />
           {errors.city && (
-            <p className={`mt-1 ${compact ? "text-sm" : "text-xs"} text-red-700`}>{errors.city.message}</p>
+            <p className={`mt-1 ${text-xs} text-red-700`}>{errors.city.message}</p>
           )}
         </div>
 
         <div>
-          <label className={`block ${compact ? "text-base font-semibold" : "text-xs font-medium uppercase tracking-wider"} text-muted mb-1.5`}>
+          <label className={`block ${compact ? "text-sm font-semibold" : "text-xs font-medium uppercase tracking-wider"} text-muted mb-1`}>
             Interested Program <span className="text-accent">*</span>
           </label>
           <select
             {...register("course")}
-            className={`w-full px-3.5 py-2.5 ${compact ? "min-h-12 text-[17px]" : "text-sm"} rounded-xl bg-bg border border-line text-text focus:border-accent focus:ring-2 focus:ring-accent focus:outline-none transition-colors`}
+            className={`w-full px-3 py-2 ${compact ? "min-h-10 text-base" : "text-sm"} rounded-xl bg-bg border border-line text-text focus:border-accent focus:ring-2 focus:ring-accent focus:outline-none transition-colors`}
           >
             {coursePlans.map((plan) => (
               <option key={plan.slug} value={plan.slug} className="bg-surface text-text">
@@ -226,14 +226,14 @@ export function LeadForm({
             </option>
           </select>
           {errors.course && (
-            <p className={`mt-1 ${compact ? "text-sm" : "text-xs"} text-red-700`}>{errors.course.message}</p>
+            <p className={`mt-1 ${text-xs} text-red-700`}>{errors.course.message}</p>
           )}
         </div>
       </div>
 
       {/* Preferred Mode */}
       <div>
-        <label className={`block ${compact ? "text-base font-semibold" : "text-xs font-medium uppercase tracking-wider"} text-muted mb-1.5`}>
+        <label className={`block ${compact ? "text-sm font-semibold" : "text-xs font-medium uppercase tracking-wider"} text-muted mb-1`}>
           Preferred Learning Mode <span className="text-accent">*</span>
         </label>
         <div className="grid grid-cols-2 gap-3">
@@ -244,7 +244,7 @@ export function LeadForm({
               {...register("preferredMode")}
               className="accent-primary"
             />
-            <span className={compact ? "text-base font-medium text-text" : "text-sm font-medium text-text"}>Live Online</span>
+            <span className="text-sm font-medium text-text">Live Online</span>
           </label>
           <label className="flex items-center gap-2 p-2.5 rounded-xl bg-surface-2 border border-line cursor-pointer hover:border-primary/50 transition-colors">
             <input
@@ -253,24 +253,24 @@ export function LeadForm({
               {...register("preferredMode")}
               className="accent-primary"
             />
-            <span className={compact ? "text-base font-medium text-text" : "text-sm font-medium text-text"}>Classroom (Offline)</span>
+            <span className="text-sm font-medium text-text">Classroom (Offline)</span>
           </label>
         </div>
         {errors.preferredMode && (
-          <p className={`mt-1 ${compact ? "text-sm" : "text-xs"} text-red-700`}>{errors.preferredMode.message}</p>
+          <p className={`mt-1 ${text-xs} text-red-700`}>{errors.preferredMode.message}</p>
         )}
       </div>
 
       {/* Message (Optional) */}
       <div>
-        <label className={`block ${compact ? "text-base font-semibold" : "text-xs font-medium uppercase tracking-wider"} text-muted mb-1.5`}>
+        <label className={`block ${compact ? "text-sm font-semibold" : "text-xs font-medium uppercase tracking-wider"} text-muted mb-1`}>
           Questions or Notes (Optional)
         </label>
         <textarea
           rows={2}
           placeholder="Tell us about your learning goals or questions..."
           {...register("message")}
-          className={`w-full px-3.5 py-2 ${compact ? "min-h-12 text-[17px]" : "text-sm"} rounded-xl bg-bg border border-line text-text placeholder-muted/50 focus:border-accent focus:ring-2 focus:ring-accent focus:outline-none resize-none transition-colors`}
+          className={`w-full px-3.5 py-2 ${compact ? "min-h-10 text-base" : "text-sm"} rounded-xl bg-bg border border-line text-text placeholder-muted/50 focus:border-accent focus:ring-2 focus:ring-accent focus:outline-none resize-none transition-colors`}
         />
       </div>
 
@@ -278,7 +278,7 @@ export function LeadForm({
       <button
         type="submit"
         disabled={submissionState === "submitting"}
-        className="w-full py-3.5 px-6 rounded-xl bg-primary text-on-primary font-bold text-base flex items-center justify-center gap-2 hover:bg-accent-hover transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
+        className="w-full py-3 px-5 rounded-xl bg-primary text-on-primary font-bold text-base flex items-center justify-center gap-2 hover:bg-accent-hover transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
       >
         {submissionState === "submitting" ? (
           <>
