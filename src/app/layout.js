@@ -6,6 +6,8 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { StickyMobileCta } from "@/components/layout/StickyMobileCta";
 import ContactSidebar from "@/components/ContactSidebar";
+import { OfferCountdown } from "@/components/layout/OfferCountdown";
+import LeadPopup from "@/components/LeadPopup";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -49,6 +51,8 @@ export default function RootLayout({ children }) {
           <Navbar />
           <main className="flex-1 w-full">{children}</main>
           <ContactSidebar />
+          <OfferCountdown />
+          <LeadPopup />
           <Footer />
           <StickyMobileCta />
         </LeadModalProvider>

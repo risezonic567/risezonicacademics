@@ -10,6 +10,10 @@ export const siteConfig = {
     text: "New batch starts [date] | Free demo class | Reserve a seat",
     batchDate: "[date]",
   },
+  offer: {
+    // Update this deadline and the advertised fee before publishing a new offer.
+    endsAt: "2026-10-31T23:59:59+05:30",
+  },
   contact: {
     phone: "[+91 00000 00000]",
     whatsapp: "https://wa.me/910000000000",

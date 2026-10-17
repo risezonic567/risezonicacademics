@@ -55,7 +55,7 @@ export function Hero() {
             <span className="sr-only">Digital marketing skills to get hired, start freelancing and grow your business</span>
             <span aria-hidden="true" className="block">Digital marketing skills to</span>
             <span aria-hidden="true" className="relative mt-1 block h-[1.3em] sm:mt-2">
-              <span style={{ color: "#5eead4" }} className="inline-block capitalize">
+              <span style={{ color: "#0ce0eb" }} className="inline-block capitalize">
                 {reduceMotion ? "get hired" : typedWord}
                 {!reduceMotion && <span  className="ml-0.5  inline-block animate-pulse">|</span>}
               </span>
@@ -98,6 +98,7 @@ export function Hero() {
           <div className="flex items-center gap-1.5 rounded-full border border-line bg-surface px-3 py-1 text-sm font-semibold text-text"><Award className="h-3.5 w-3.5 text-accent" />Certificate</div>
           <div className="flex items-center gap-1.5 rounded-full border border-line bg-surface px-3 py-1 text-sm font-semibold text-text"><TrendingUp className="h-3.5 w-3.5 text-accent" />94.2% placement</div>
         </motion.div>
+
       </div>
     </section>
   );

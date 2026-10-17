@@ -12,13 +12,11 @@ import { Campus } from "@/components/home/Campus";
 import { Faq } from "@/components/home/Faq";
 import { FinalCta } from "@/components/home/FinalCta";
 import EnrollmentToast from "@/components/EnrollmentToast";
-import LeadPopup from "@/components/LeadPopup";
 export default function HomePage() {
   return (
     <>
       <Hero />
       <EnrollmentToast />
- <LeadPopup />
       <Stats />
       <Programs />
       <CampaignLab />

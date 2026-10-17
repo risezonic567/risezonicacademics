@@ -1,11 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 // 👉 Apne real details yahan daalo
 const PHONE = "+919999999999";
 const WHATSAPP = "919999999999"; // country code ke saath, + ke bina
 const EMAIL = "info@risezonic.com";
+
+// Hero kitna scroll hone tak "hero" maana jaye (0.6 = screen height ka 60%)
+const HERO_HEIGHT_RATIO = 0.6;
 
 const ITEMS = [
   {
@@ -29,39 +32,87 @@ const ITEMS = [
       </svg>
     ),
   },
- {
-  label: "Email us",
-  href: `mailto:${EMAIL}`,
-  bg: "bg-orange-500",
-  icon: (
-    <svg
-      viewBox="0 0 24 24"
-      className="h-5 w-5"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <rect x="3" y="5" width="18" height="14" rx="2" />
-      <path d="M3 7l9 6 9-6" />
-    </svg>
-  ),
-},
+  {
+    label: "Email us",
+    href: `mailto:${EMAIL}`,
+    bg: "bg-orange-500",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        className="h-5 w-5"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <rect x="3" y="5" width="18" height="14" rx="2" />
+        <path d="M3 7l9 6 9-6" />
+      </svg>
+    ),
+  },
 ];
 
 export default function ContactSidebar() {
-  const [open, setOpen] = useState(true); // true = shuru se khula rahega
+  const [open, setOpen] = useState(false); // hero par shuru me band
+  const onHeroRef = useRef(true);
+  const hoverOpened = useRef(false);
+
+  useEffect(() => {
+    const isOnHero = () => window.scrollY < window.innerHeight * HERO_HEIGHT_RATIO;
+
+    // page load (ya refresh) par sahi state set karo
+    onHeroRef.current = isOnHero();
+    setOpen(!onHeroRef.current); // hero par = band, hero ke neeche = khula
+
+    const onScroll = () => {
+      const onHero = isOnHero();
+      if (onHero !== onHeroRef.current) {
+        onHeroRef.current = onHero;
+        hoverOpened.current = false;
+        setOpen(!onHero); // hero se gaye = khulo, hero par aaye = band
+      }
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, []);
+
+  // Band hone par hover se khulo, mouse hatne par wapas band
+  const handleEnter = () => {
+    if (!open) {
+      hoverOpened.current = true;
+      setOpen(true);
+    }
+  };
+
+  const handleLeave = () => {
+    if (hoverOpened.current) {
+      hoverOpened.current = false;
+      setOpen(false);
+    }
+  };
+
+  const handleToggle = () => {
+    hoverOpened.current = false;
+    setOpen((v) => !v);
+  };
 
   return (
     <div
+      onMouseEnter={handleEnter}
+      onMouseLeave={handleLeave}
       className={`fixed right-0 top-1/2 z-[9998] flex -translate-y-1/2 items-center transition-transform duration-500 ease-out ${
         open ? "translate-x-0" : "translate-x-14"
       }`}
     >
       {/* Handle: khula hone par ✕, band hone par chat icon */}
       <button
-        onClick={() => setOpen((v) => !v)}
+        onClick={handleToggle}
         aria-label={open ? "Close contact options" : "Open contact options"}
         aria-expanded={open}
         className="relative flex h-14 w-10 items-center justify-center rounded-l-xl bg-teal-500 text-white shadow-lg transition hover:bg-teal-600"
@@ -89,7 +140,6 @@ export default function ContactSidebar() {
         )}
       </button>
 
-      {/* Panel */}
       <div className="flex w-14 flex-col gap-3 rounded-l-2xl bg-white p-2.5 shadow-2xl ring-1 ring-black/5">
         {ITEMS.map((item, i) => (
           <a
