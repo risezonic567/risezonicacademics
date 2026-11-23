@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 // 👉 Apne real details yahan daalo
 const PHONE = "+919999999999";
 const WHATSAPP = "919999999999"; // country code ke saath, + ke bina
-const EMAIL = "info@risezonic.com";
+const EMAIL = "info@risezonicacademy.com";
 
 // Hero kitna scroll hone tak "hero" maana jaye (0.6 = screen height ka 60%)
 const HERO_HEIGHT_RATIO = 0.6;

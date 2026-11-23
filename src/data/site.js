@@ -18,7 +18,7 @@ export const siteConfig = {
     phone: "[+91 00000 00000]",
     whatsapp: "https://wa.me/910000000000",
     whatsappLink: "https://wa.me/910000000000?text=[Hi%20Risezonic%20Academics]",
-    email: "[admissions@risezonic.com]",
+    email: "info@risezonicacademy.com",
     address: "[Rise Tower, Knowledge Park, Cyber City, India]",
     hours: "[Mon - Sat: 9:00 AM - 7:00 PM]",
     mapLabel: "Map: add Google Maps embed here",
