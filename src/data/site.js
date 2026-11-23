@@ -5,7 +5,7 @@ export const siteConfig = {
   tagline: "Live mentors, real campaigns and placement support, all in one program.",
   description:
     "Risezonic Academics is a premier digital marketing training academy offering mentor-led, project-based courses with dedicated placement assistance.",
-  url: "https://academics.risezonic.com",
+  url: "https://risezonicacademy.com",
   announcement: {
     text: "New batch starts [date] | Free demo class | Reserve a seat",
     batchDate: "[date]",
