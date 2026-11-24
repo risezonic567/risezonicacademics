@@ -34,11 +34,12 @@ export const mentors = [
   {
     id: "mentor-4",
     name: "Sneha Kulkarni",
-    role: "Retention & CRM Automation Lead",
+    role: "Social Media Lead",
     experience: "7+ yrs exp &bull; Ex-Nykaa Brands",
-    bio: "Expert in building automated WhatsApp sequences, Klaviyo email nurture funnels, and scaling customer lifetime value for e-commerce.",
+    bio: "Builds brand presence across Instagram, LinkedIn and YouTube—content calendars, community engagement, and organic growth systems that convert followers into customers.",
     avatar: "/placeholder-mentor-4.jpg",
     image: images.mentors[3],
-    skills: ["WhatsApp Marketing", "Klaviyo CRM", "Shopify Scale"],
+    skills: ["Instagram Growth", "Content Strategy", "Reels & Shorts"],
   },
 ];
+
