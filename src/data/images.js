@@ -13,6 +13,13 @@ const localImage = (file, alt, width, height) => ({
   height,
 });
 
+const localPhoto = (path, alt, width, height) => ({
+  src: `/images/${path}`,
+  alt,
+  width,
+  height,
+});
+
 export const images = {
   hero: photo("1522202176988-66273c2fd55f", "Students collaborating in a bright classroom", 1600, 700),
   avatars: [
@@ -21,10 +28,10 @@ export const images = {
     photo("1500648767791-00dcc994a43e", "Learner portrait", 120, 120),
   ],
   mentors: [
-    photo("1438761681033-6461ffad8d80", "Instructor explaining a digital marketing strategy", 600, 600),
-    photo("1472099645785-5658abf4ff4e", "Instructor reviewing a campaign with learners", 600, 600),
-    photo("1580489944761-15a19d654956", "Instructor guiding a creative workshop", 600, 600),
-    photo("1544005313-94ddf0286df2", "Instructor teaching a marketing class", 600, 600),
+    localPhoto("mentors/mentor-1.jpg", "Shushma Tiwari, Head of Performance Marketing", 600, 600),
+    localPhoto("mentors/mentor-2.jpg", "Rocky Sharma, SEO & Organic Growth Director", 600, 600),
+    localPhoto("mentors/mentor-3.jpg", "Ruhanika Shegal, Creative Director & Brand Strategist", 600, 600),
+    localPhoto("mentors/mentor-4.jpg", "Akshit Kumar, Social Media Lead", 600, 600),
   ],
   projects: [
     photo("1524178232363-1fb2b075b655", "Students working together on a campaign project", 1000, 625),
